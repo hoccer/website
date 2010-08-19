@@ -118,6 +118,13 @@ div#latest_posts footer {
   font-style: italic;
 }
 
+div#how_to {
+  margin-top: 8px;
+  border: 1px solid #bdbdbd;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
 div#how_to header {
   background-image: -webkit-gradient(
     linear,
