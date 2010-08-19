@@ -25,10 +25,11 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="css/defaults.css" />
+    <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- For the less-enabled mobile browsers like Opera Mini -->
-    <!--<link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">-->
+    <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1" />
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="js/modernizr-1.5.min.js"></script>
@@ -42,25 +43,134 @@
   <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
   <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
   <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-
-    <div id="container">
       <header>
-
+        <div class="row">
+          <div class="column grid_3">
+            <img src="images/logo.jpg" alt="logo" />
+          </div>
+          <nav id="main_navigation" class="column grid_9">
+            <ul>
+              <li><a href="#">Send & Receive</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Developer</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">t</a></li>
+              <li><a href="#">f</a></li>
+            </ul>
+          </nav>
+        </div>
       </header>
 
-      <div id="main">
+        <div class="row" id="splash_screen">
+          <div class="column grid_12">
+            <div class="row">
+              <div class="column grid_6" id="splash_description">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+              <div class="column grid_3" id="iphone">
+                <img src="images/iphone.jpg" alt="iphone" />
+              </div>
+              <div class="column grid_3" id="android">
+                <img src="images/android_phone.jpg" alt="iphone" />
+              </div>
+            </div>
+          </div>
+        </div>
 
-      </div>
+        <div class="row">
 
-      <footer>
+          <div class="column grid_6">
+            <div id="how_to">
+              <header>
+                <h2>How to share data with hoccer</h2>
+              </header>
+            </div>
+          </div>
 
-      </footer>
-    </div> <!--! end of #container -->
+          <div class="column grid_6">
 
+            <div id="features">
+              <div class="row">
+                <div class="column grid_3 app_market">
+                  <img src="images/app_store.jpg" alt="app store" />
+                </div>
+                <div class="column grid_3 app_market">
+                  <img src="images/app_store.jpg" alt="app store" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="column grid_6">
+                  <hr />
+                  <div>
+                    <h4>Features</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column grid_3">
+                  <ul>
+                    <li>It can fly</li>
+                    <li>Cuts through a shoe</li>
+                    <li>Works with Bump, not!</li>
+                    <li>Throws your Catches</li>
+                    <li>No Cupons</li>
+                  </ul>
+                </div>
 
-    <!-- Javascript at the bottom for fast page loading -->
+                <div class="column grid_3">
+                  <ul>
+                    <li>It can fly</li>
+                    <li>Throws your Catches</li>
+                    <li>No Cupons</li>
+                    <li>Share whatever you want</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+            <div id="latest_posts">
+              <h2>Lastest Posts</h2>
+              <hr />
+
+              <ul>
+                <li>
+                  <h5>Developing Hoccer for Android</h5>
+                  <p>
+                    We released another Hoccer Android update with lots of
+                    important fixes and some usability enhancements.
+                  </p>
+                  <footer>18.08.2010 by Rodja Trappe</footer>
+                </li>
+                <li>
+                  <h5>Hoccer won the Google Challenge</h5>
+                  <p>
+                    We released another Hoccer Android update with lots of
+                    important fixes and some usability enhancements.
+                  </p>
+                  <footer>12.07.2010 by Danuta Barberowski</footer>
+                </li>
+                <li>
+                  <h5>Developing Hoccer for Android</h5>
+                  <p>
+                    We released another Hoccer Android update with lots of
+                    important fixes and some usability enhancements.
+                  </p>
+                  <footer>02.06.2010 by Robert Palmer</footer>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
     <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
 
     <script src="js/plugins.js?v=1"></script>

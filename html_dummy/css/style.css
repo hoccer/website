@@ -1,1 +1,146 @@
-body { background-color: #ffffff }
+body {
+  background-color: #fbfbfb;
+  line-height: 18px;
+  font-size: 14px;
+  font-family: "Helvetica", sans-serif;
+}
+
+hr {
+  color: #c5c5c5;
+  background-color: #c5c5c5;
+}
+
+h4 {
+  font-size: 16px;
+  color: #999999;
+  text-shadow: 1px 1px 0px #ffffff;
+}
+
+header div.row div img {
+  margin-top: 18px;
+}
+
+nav#main_navigation {
+  text-align: right;
+}
+
+nav#main_navigation ul {
+  margin-top: 54px;
+}
+
+nav#main_navigation li {
+  display: inline;
+  padding-left: 15px;
+}
+
+nav#main_navigation a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #999999;
+}
+
+div#splash_screen {
+  margin-top: 18px;
+  background-image: url(../images/splash_screen.jpg);
+  background-repeat: no-repeat;
+}
+
+div#splash_screen div#splash_description {
+  padding-top: 190px;
+  padding-left: 20px;
+  line-height: 18px;
+  width: 440px;
+  color: #ffffff;
+}
+
+div#splash_screen div#iphone {
+  margin-top: 61px;
+}
+
+div#splash_screen div#android {
+  margin-top: 61px;
+}
+
+div#features {
+  background-color: #e7e7e7;
+  height: 270px;
+  width: 458px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+div.app_market {
+  width: 190px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+div#features .grid_3 {
+  margin-right: 0px;
+}
+
+div.grid_6 h4 {
+  padding-left: 20px;
+}
+
+div#features ul {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+div#how_to {
+  background-color: #e7e7e7;
+  height: 540px;
+}
+
+div#latest_posts {
+  margin-top: 36px;
+}
+
+div#latest_posts ul li {
+  background-image: url(../images/talking_bullit.jpg);
+  background-repeat: no-repeat;
+  background-position: 0px 2px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  list-style-type: none;
+}
+
+div#latest_posts ul li h5 {
+  color: #339bb1;
+}
+
+div#latest_posts footer {
+  font-size: 11px;
+  font-style: italic;
+}
+
+div#how_to header {
+  background-image: -webkit-gradient(
+    linear,
+    0% 100%, 0% 0%,
+    from(#a3a3a3),
+    to(#c8c8c8)
+  );
+
+  background-image: -moz-linear-gradient(90deg,#a3a3a3,#c8c8c8 );
+
+  height: 54px;
+}
+
+div#how_to header h2 {
+  padding-top: 18px;
+  padding-left: 20px;
+  font-size: 24px;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 0px -1px 0px #808080;
+
+}
+
+div.row {
+  /*background-color: yellow;*/
+}
