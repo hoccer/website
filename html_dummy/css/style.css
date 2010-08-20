@@ -225,7 +225,7 @@ body > footer li a {
 
 div#page_header {
   margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 36px;
   height: 181px;
   background-image: url(../images/page_header.jpg);
   background-repeat: no-repeat;
@@ -252,6 +252,19 @@ div#page_header p {
   margin-bottom: 20px;
   color: #ffffff;
 }
+
+div.page article h2 {
+  margin-bottom: 18px;
+}
+
+
+article hr {
+  height: 1px;
+  border-top: 1px solid #c9c9c9;
+  background-color: #ebebeb;
+  border-bottom: 1px solid #fbfbfb;
+}
+
 
 div.row {
   /*background-color: yellow;*/
