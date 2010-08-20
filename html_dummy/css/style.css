@@ -7,7 +7,9 @@ body {
 
 hr {
   color: #c5c5c5;
-  background-color: #c5c5c5;
+  background-color: #777777;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 h4 {
@@ -176,6 +178,38 @@ div#how_to ul li p {
 div#how_to ul li img {
   float: left;
   padding-right: 20px;
+}
+
+body > footer {
+  height: 180px;
+  background-image: -webkit-gradient(
+    linear,
+    0% 0%, 0% 100%,
+    from(#bababa),
+    to(#909090)
+  );
+
+  background-image: -moz-linear-gradient(90deg,#a3a3a3,#c8c8c8 );
+  #858585 => #a4a4a4
+}
+
+body > footer p, body > footer ul {
+  color: #eeeeee;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+body > footer ul {
+  margin-left: 0px;
+}
+
+body > footer li {
+  list-style-type: none;
+}
+
+body > footer li a {
+  text-decoration: none;
+  color: #eeeeee;
 }
 
 div.row {
