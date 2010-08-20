@@ -12,7 +12,7 @@ hr {
 
 h4 {
   font-size: 16px;
-  color: #999999;
+  color: #707070;
   text-shadow: 1px 1px 0px #ffffff;
 }
 
@@ -90,11 +90,6 @@ div#features ul {
   margin-left: 40px;
 }
 
-div#how_to {
-  background-color: #e7e7e7;
-  height: 540px;
-}
-
 div#latest_posts {
   margin-top: 36px;
 }
@@ -119,6 +114,7 @@ div#latest_posts footer {
 }
 
 div#how_to {
+  background-color: #e7e7e7;
   border: 1px solid #bdbdbd;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -133,7 +129,12 @@ div#how_to header {
   );
 
   background-image: -moz-linear-gradient(90deg,#a3a3a3,#c8c8c8 );
-
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #c6c6c6;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  -moz-border-radius: 4px 4px 0px 0px;
+  -webkit-border-radius: 4px 4px 0px 0px;
   height: 54px;
 }
 
@@ -144,7 +145,37 @@ div#how_to header h2 {
   font-weight: normal;
   color: #ffffff;
   text-shadow: 0px -1px 0px #808080;
+}
 
+
+div#how_to {
+  -moz-box-shadow: 0 0 8px gold;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 0 8px gold;
+}
+
+div#how_to ul {
+  margin-left: 0px;
+  border-top: 1px solid #bdbdbd;
+}
+
+div#how_to ul li {
+  padding: 20px;
+  border-bottom: 1px solid #c3c3c3;
+  list-style-type: none;
+}
+
+div#how_to ul li:last-child {
+  border: none;
+}
+
+div#how_to ul li p {
+  margin-top: 10px;
+}
+
+div#how_to ul li img {
+  float: left;
+  padding-right: 20px;
 }
 
 div.row {
