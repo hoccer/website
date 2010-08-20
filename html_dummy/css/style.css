@@ -221,6 +221,38 @@ body > footer li a {
   color: #eeeeee;
 }
 
+/* Company */
+
+div#page_header {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 181px;
+  background-image: url(../images/page_header.jpg);
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+div#page_header h1 {
+  margin-top: 36px;
+  margin-left: 20px;
+  color: #ffffff;
+  font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size:30px;
+  font-weight:300;
+}
+
+div#page_header p {
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
 div.row {
   /*background-color: yellow;*/
 }
