@@ -212,19 +212,15 @@
             </div>
           </div>
           <div class="row">
-            <div class="column grid_3">
+            <div class="column grid_3 tweet">
               <p>
-                We proudly present you the best android Hoccer ever! Enjoy major
-                performance and user interface improvements. Download at android
-                market. <em>18.08.2010</em>
               </p>
             </div>
-            <div class="column grid_3">
+            <div class="column grid_3 tweet">
               <p>
-                We released another Android update: Improved History view and
-                minor usability enhancements. <em>12.07.2010</em>
               </p>
             </div>
+
             <div class="column grid_2">
               &nbsp;
             </div>
@@ -252,6 +248,9 @@
 
     <script src="js/plugins.js?v=1"></script>
     <script src="js/script.js?v=1"></script>
+	<script type="text/javascript" charset="utf-8" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script>
+	
+
 
     <!--[if lt IE 7 ]>
       <script src="js/dd_belatedpng.js?v=1"></script>
