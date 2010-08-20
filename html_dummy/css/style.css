@@ -92,6 +92,12 @@ div#features ul {
   margin-left: 40px;
 }
 
+div#features hr {
+  border-top: 1px solid #c5c5c5;
+  background-color: #f0f0f0;
+  width: 458px;
+}
+
 div#latest_posts {
   margin-top: 36px;
 }
@@ -151,9 +157,9 @@ div#how_to header h2 {
 
 
 div#how_to {
-  -moz-box-shadow: 0 0 8px gold;
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-  box-shadow: 0 0 8px gold;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
 }
 
 div#how_to ul {
@@ -177,7 +183,10 @@ div#how_to ul li p {
 
 div#how_to ul li img {
   float: left;
-  padding-right: 20px;
+  margin-right: 20px;
+  border: 1px solid #bdbdbd;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 body > footer {
