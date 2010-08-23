@@ -219,7 +219,7 @@ body > footer {
 }
 
 body > footer p, body > footer ul {
-  color: #eeeeee;
+  color: #ffffff;
   font-size: 12px;
   margin-top: 20px;
 }
@@ -234,7 +234,12 @@ body > footer li {
 
 body > footer li a {
   text-decoration: none;
-  color: #eeeeee;
+  color: #ffffff;
+}
+
+body > footer li a:visited {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 /* Company */
