@@ -22,6 +22,13 @@ h4 {
   text-shadow: 1px 1px 0px #ffffff;
 }
 
+/* Possible IE Breakage ahead */
+.column {
+  overflow: visible;
+}
+
+/* Page Header */
+
 header div.row div img {
   margin-top: 18px;
 }
@@ -45,26 +52,43 @@ nav#main_navigation a {
   color: #999999;
 }
 
-div#splash_screen {
-  margin-top: 18px;
-  background-image: url(../images/splash_screen.jpg);
-  background-repeat: no-repeat;
+/* Page Footer */
+
+body > footer {
+  height: 180px;
+  background-image: -webkit-gradient(
+    linear,
+    0% 0%, 0% 100%,
+    from(#bababa),
+    to(#909090)
+  );
+
+  background-image: -moz-linear-gradient(90deg,#a3a3a3,#c8c8c8 );
+  #858585 => #a4a4a4
 }
 
-div#splash_screen div#splash_description {
-  padding-top: 190px;
-  padding-left: 20px;
-  line-height: 18px;
-  width: 440px;
+body > footer p, body > footer ul {
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+body > footer ul {
+  margin-left: 0px;
+}
+
+body > footer li {
+  list-style-type: none;
+}
+
+body > footer li a {
+  text-decoration: none;
   color: #ffffff;
 }
 
-div#splash_screen div#iphone {
-  margin-top: 61px;
-}
-
-div#splash_screen div#android {
-  margin-top: 61px;
+body > footer li a:visited {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 div#articles {
@@ -205,92 +229,6 @@ div#latest_posts footer {
   -webkit-border-radius: 5px;
 }
 
-body > footer {
-  height: 180px;
-  background-image: -webkit-gradient(
-    linear,
-    0% 0%, 0% 100%,
-    from(#bababa),
-    to(#909090)
-  );
-
-  background-image: -moz-linear-gradient(90deg,#a3a3a3,#c8c8c8 );
-  #858585 => #a4a4a4
-}
-
-body > footer p, body > footer ul {
-  color: #ffffff;
-  font-size: 12px;
-  margin-top: 20px;
-}
-
-body > footer ul {
-  margin-left: 0px;
-}
-
-body > footer li {
-  list-style-type: none;
-}
-
-body > footer li a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-body > footer li a:visited {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-/* Company */
-
-div#page_header {
-  margin-top: 8px;
-  margin-bottom: 36px;
-  height: 181px;
-  background-image: url(../images/page_header.jpg);
-  background-repeat: no-repeat;
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-div#page_header h1 {
-  margin-top: 36px;
-  margin-left: 20px;
-  color: #ffffff;
-  font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Arial,Helvetica,sans-serif;
-  font-size:30px;
-  font-weight:300;
-}
-
-div#page_header p {
-  margin-top: 24px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-div.page article h2 {
-  margin-top: 54px;
-  margin-bottom: 18px;
-}
-
-div.page article p {
-  margin-top: 18px;
-  margin-bottom: 18px;
-}
-
-article hr {
-  height: 1px;
-  border-top: 1px solid #c9c9c9;
-  background-color: #ebebeb;
-  border-bottom: 1px solid #fbfbfb;
-}
-
 .widget_box {
   background-color: #E7E7E7;
   border: 1px solid #BDBDBD;
@@ -323,7 +261,74 @@ article hr {
   margin-bottom: 30px;
 }
 
+div#splash_screen, div.page_header {
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
 
-div.row {
-  /*background-color: yellow;*/
+div#splash_screen {
+  margin-top: 18px;
+  margin-bottom: 90px;
+  height: 380px;
+  background-image: url(../images/splash_screen.jpg);
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+div#splash_screen #iphone {
+  position: absolute;
+  left: 480px;
+  top: 54px
+}
+
+div#splash_screen #android {
+  position: absolute;
+  left: 720px;
+  top: 54px;
+}
+
+div.page_header {
+  margin-top: 8px;
+  margin-bottom: 36px;
+  height: 181px;
+  background-image: url(../images/page_header.jpg);
+}
+
+div.page_header h1 {
+  margin-top: 36px;
+  margin-left: 20px;
+  color: #ffffff;
+  font-family:'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size:30px;
+  line-height: 34px;
+  font-weight:300;
+}
+
+div.page_header p {
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+div.column article h2 {
+  margin-top: 54px;
+  margin-bottom: 18px;
+}
+
+div.column article p {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+article hr {
+  height: 1px;
+  border-top: 1px solid #c9c9c9;
+  background-color: #ebebeb;
+  border-bottom: 1px solid #fbfbfb;
 }
