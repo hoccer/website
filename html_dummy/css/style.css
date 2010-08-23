@@ -253,16 +253,57 @@ div#page_header p {
   color: #ffffff;
 }
 
+div.page article {
+  margin-bottom: 54px;
+}
+
 div.page article h2 {
   margin-bottom: 18px;
 }
 
+div.page article p {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
 
 article hr {
   height: 1px;
   border-top: 1px solid #c9c9c9;
   background-color: #ebebeb;
   border-bottom: 1px solid #fbfbfb;
+}
+
+.widget_box {
+  background-color: #E7E7E7;
+  border: 1px solid #BDBDBD;
+  border-bottom-left-radius: 4px 4px;
+  border-bottom-right-radius: 4px 4px;
+  border-top-left-radius: 4px 4px;
+  border-top-right-radius: 4px 4px;
+  margin-bottom: 18px;
+  padding-top: 18px;
+}
+
+.widget_box h4 {
+  border-bottom: 1px solid #C5C5C5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+}
+
+.widget_box ul {
+  margin-left: 20px;
+}
+
+.widget_box > section {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.widget_box p, .widget_box ul {
+  margin-bottom: 30px;
 }
 
 
