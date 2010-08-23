@@ -61,7 +61,7 @@
                 </div>
               </div>
               <div class="row">
-                <?php dynamic_sidebar( 'frontpage-app-store' ) ?>
+                <?php dynamic_sidebar( 'frontpage-features' ) ?>
               </div>
             </div>
 

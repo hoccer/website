@@ -117,5 +117,14 @@ function toolbox_widgets_init() {
 		'before_title' => '',
 		'after_title' => '',
 	) );
+
+	register_sidebar( array (
+		'name' => __( 'Frontpage Features', 'themename' ),
+		'id' => 'frontpage-features',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }
 add_action( 'init', 'toolbox_widgets_init' );
