@@ -1,4 +1,13 @@
-		<?php get_header() ?>
+    <?php
+        /**
+        * Template Name: Frontpage
+        * Description: Frontpage with custom grid
+        *
+        * @package WordPress
+        * @subpackage Toolbox
+        */
+        get_header() ?>
+
         <div class="row" id="splash_screen">
           <div class="column grid_12">
             <div class="row">
@@ -12,13 +21,14 @@
 
 
 
-			  <div class="column grid_3" id="iphone">
-
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/iphone.jpg" alt="iphone" />
+              <div class="column grid_3" id="iphone">
+                <img src="<?php bloginfo('stylesheet_directory'); ?>/images/iphone.jpg" alt="iphone" />
               </div>
+
               <div class="column grid_3" id="android">
                 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/android_phone.jpg" alt="iphone" />
               </div>
+
             </div>
           </div>
         </div>
@@ -27,39 +37,7 @@
 
           <div class="column grid_6" style="overflow: visible;">
             <div id="how_to">
-              <header>
-                <h2>How to share data with hoccer</h2>
-              </header>
-              <ul>
-                <li>
-                  <img src="images/how_to_1.jpg" alt="how it works 1" />
-                  <h4>Throw Data</h4>
-                  <p>
-                    To transfer data to multiple users pick a file and “throw”
-                    it. It’s simple: just move your phone like throwing a
-                    frisbee.
-                  </p>
-                  <div style="clear: both"></div>
-                </li>
-                <li>
-                  <img src="images/how_to_2.jpg" alt="how it works 2" />
-                  <h4>Catch Thrown Data</h4>
-                  <p>
-                    To “catch” thrown data simply move your arm and your mobile
-                    like catching a ball.
-                  </p>
-                  <div style="clear: both"></div>
-                </li>
-                <li>
-                  <img src="images/how_to_3.jpg" alt="how it works 3" />
-                  <h4>Drag</h4>
-                  <p>
-                    To transfer data from one mobile to another simply drag
-                    your picked file from one touchscreen to the other.
-                  </p>
-                  <div style="clear: both"></div>
-                </li>
-              </ul>
+              <?php dynamic_sidebar( 'frontpage-how-to' ) ?>
             </div>
           </div>
 
@@ -83,24 +61,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="column grid_3">
-                  <ul>
-                    <li>It can fly</li>
-                    <li>Cuts through a shoe</li>
-                    <li>Works with Bump, not!</li>
-                    <li>Throws your Catches</li>
-                    <li>No Cupons</li>
-                  </ul>
-                </div>
-
-                <div class="column grid_3">
-                  <ul>
-                    <li>It can fly</li>
-                    <li>Throws your Catches</li>
-                    <li>No Cupons</li>
-                    <li>Share whatever you want</li>
-                  </ul>
-                </div>
+                <?php dynamic_sidebar( 'frontpage-app-store' ) ?>
               </div>
             </div>
 
@@ -127,3 +88,4 @@
 
   </body>
 </html>
+

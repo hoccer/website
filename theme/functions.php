@@ -52,7 +52,7 @@ function toolbox_filter_wp_title( $title, $separator ) {
 	// Don't affect wp_title() calls in feeds.
 	if ( is_feed() )
 		return $title;
-		
+
 	// The $paged global variable contains the page number of a listing of posts.
 	// The $page global variable contains the page number of a single post that is paged.
 	// We'll display whichever one applies, if we're not looking at the first page.
@@ -107,6 +107,15 @@ function toolbox_widgets_init() {
 		'after_widget' => "</li>",
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array (
+		'name' => __( 'Frontpage Howto', 'themename' ),
+		'id' => 'frontpage-how-to',
+		'before_widget' => '',
+		'after_widget' => "",
+		'before_title' => '',
+		'after_title' => '',
 	) );
 }
 add_action( 'init', 'toolbox_widgets_init' );
