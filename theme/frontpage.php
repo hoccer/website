@@ -70,9 +70,10 @@
               <hr />
 
               <ul>
+                <?php query_posts('type=page&posts_per_page=3') ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                 <li>
-                  <h5><?php the_title() ?></h5>
+                  <h5><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
                   <p><?php the_content() ?></p>
                   <footer><?php the_date() ?> by <?php the_author() ?></footer>
                 </li>
@@ -85,7 +86,7 @@
         </div>
 
         <?php get_footer() ?>
-
   </body>
 </html>
+
 

@@ -33,7 +33,7 @@
           <ul>
             <li><a href="#">Subscribe RSS Feed</a></li>
             <li><a href="#">Follow us on Twitter</a></li>
-            <li><a href="#">Hoccer on Facebooki</a></li>
+            <li><a href="#">Hoccer on Facebook</a></li>
           </ul>
         </div>
 

@@ -43,7 +43,7 @@ nav#main_navigation a {
 
 div#splash_screen {
   margin-top: 18px;
-  background-image: url(images/splash_screen.jpg);
+  background-image: url(../images/splash_screen.jpg);
   background-repeat: no-repeat;
 }
 
@@ -103,7 +103,7 @@ div#latest_posts {
 }
 
 div#latest_posts ul li {
-  background-image: url(images/talking_bullit.jpg);
+  background-image: url(../images/talking_bullit.jpg);
   background-repeat: no-repeat;
   background-position: 0px 2px;
   padding-left: 30px;

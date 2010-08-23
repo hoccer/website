@@ -24,15 +24,15 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); print "/css/defaults.css" ?>" />
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); print "/css/grid.css" ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/defaults.css" />
+    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/grid.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/style.css" />
 
     <!-- For the less-enabled mobile browsers like Opera Mini -->
     <link rel="stylesheet" media="handheld" href="<?php bloginfo( 'stylesheet_directory' ); print "/css/handheld.css?v=1" ?>" />
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-    <script src="js/modernizr-1.5.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/modernizr-1.5.min.js"></script>
 
   </head>
 
