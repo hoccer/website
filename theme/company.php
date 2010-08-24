@@ -10,7 +10,8 @@
 
       <div class="page">
         <div class="row">
-          <div class="column grid_12 page_header">
+          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "page_header" : "page_header_small")   ?>    
+          <div class="column grid_12 <?php echo $header_class ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
             <h1><?php the_title() ?></h1>
@@ -52,7 +53,7 @@
         
           <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
-              <h2>Lastest Posts</h2>
+              <h2>Latest Posts</h2>
               <hr />
 
               <ul>
@@ -60,7 +61,7 @@
                  <?php while ( have_posts() ) : the_post(); ?>
                  <li>
                  <h5><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
-                 <p><?php the_content() ?></p>
+                 <p><?php the_excerpt() ?></p>
                  <footer><?php the_date() ?> by <?php the_author() ?></footer>
                   </li>
                   <?php endwhile; ?>
