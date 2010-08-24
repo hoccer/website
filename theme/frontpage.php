@@ -8,36 +8,41 @@
         */
         get_header() ?>
 
-        <div class="row" id="splash_screen">
-          <div class="column grid_12">
-            <div class="row">
-              <div class="column grid_6" id="splash_description">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
-
-
-
-              <div class="column grid_3" id="iphone">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/images/iphone.jpg" alt="iphone" />
-              </div>
-
-              <div class="column grid_3" id="android">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/images/android_phone.jpg" alt="iphone" />
-              </div>
-
+        <div class="row">
+          <div class="column grid_12 page_header" id="splash_screen">
+            <h1 class="grid_5">
+              Share Images, contacts, texts, URLs with ease using gestures.
+              Zero configuration, based on your geolocation.
+            </h1>
+            <p class="grid_5">
+              Hoccer is a new app for fast and easy exchange of information and
+              content. Hoccer allows for the instant transfer of data, by way of
+              intuitive gesturing with your phone, eliminating the sometimes
+              cumbersome and time.
+            </p>
+            <div class="grid_3" id="iphone">
+              <img src="/images/iphone.jpg" alt="iphone" />
+            </div>
+            <div class="grid_3" id="android">
+              <img src="/images/android_phone.jpg" alt="iphone" />
             </div>
           </div>
         </div>
 
-        <div class="row" style="padding-top: 10px">
 
-          <div class="column grid_6" style="overflow: visible;">
-            <div id="how_to">
-              <?php dynamic_sidebar( 'frontpage-how-to' ) ?>
+        <div class="row" id="articles">
+	
+          <div class="column grid_6">
+            <div class="info_box">
+				<header>
+				  <h2>How to share data with hoccer</h2>
+				</header>
+				<section>
+				    <ul>
+					
+                <?php dynamic_sidebar( 'frontpage-how-to' ) ?>
+                    </ul>
+                </section>
             </div>
           </div>
 
