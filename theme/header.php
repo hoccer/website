@@ -46,18 +46,20 @@
       <header>
         <div class="row">
           <div class="column grid_3">
-            <img src="images/logo.jpg" alt="logo" />
+             <a href="/">
+            <img src="<?php bloginfo('template_url'); ?>/images/logo.jpg" alt="logo" />
+            </a>
           </div>
           <nav id="main_navigation" class="column grid_9">
             <ul>
-              <li><a href="#">Send &amp; Receive</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Developer</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">t</a></li>
-              <li><a href="#">f</a></li>
+              <li><a href="/hoc/">Send &amp; Receive</a></li>
+              <li><a href="/support/">Support</a></li>
+              <li><a href="/developer/">Developer</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/company/">Company</a></li>
+              <li><a href="/contact/">Contact</a></li>
+              <li><a href="http://www.twitter.com/hoccer">t</a></li>
+              <li><a href="http://www.facebook.com/hoccer">f</a></li>
             </ul>
           </nav>
         </div>
