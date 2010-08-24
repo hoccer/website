@@ -101,24 +101,6 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
  */
 function toolbox_widgets_init() {
 	register_sidebar( array (
-		'name' => __( 'Sidebar', 'themename' ),
-		'id' => 'sidebar',
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</li>",
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-
-	register_sidebar( array (
-		'name' => __( 'Frontpage Howto', 'themename' ),
-		'id' => 'frontpage-how-to',
-		'before_widget' => '',
-		'after_widget' => "",
-		'before_title' => '',
-		'after_title' => '',
-	) );
-
-	register_sidebar( array (
 		'name' => __( 'Frontpage Features', 'themename' ),
 		'id' => 'frontpage-features',
 		'before_widget' => '',
