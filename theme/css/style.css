@@ -52,7 +52,9 @@ nav#main_navigation li {
 nav#main_navigation a {
   text-decoration: none;
   font-size: 14px;
+  line-height: 19px;
   color: #999999;
+  vertical-align: top;
 }
 
 /* Page Footer */
