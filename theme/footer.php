@@ -23,17 +23,17 @@
         </div>
         <div class="column grid_2">
           <ul>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Press</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/press/">Press</a></li>
           </ul>
         </div>
         <div class="column grid_2">
           <ul>
-            <li><a href="#">Subscribe RSS Feed</a></li>
-            <li><a href="#">Follow us on Twitter</a></li>
-            <li><a href="#">Hoccer on Facebook</a></li>
+            <li><a href="">Subscribe RSS Feed</a></li>
+            <li><a href="http://www.twitter.com/hoccer">Follow us on Twitter</a></li>
+            <li><a href="http://www.facebook.com/hoccer">Hoccer on Facebook</a></li>
           </ul>
         </div>
 
