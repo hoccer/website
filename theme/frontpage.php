@@ -11,14 +11,10 @@
         <div class="row">
           <div class="column grid_12 page_header" id="splash_screen">
             <h1 class="grid_5">
-              Share Images, contacts, texts, URLs with ease using gestures.
-              Zero configuration, based on your geolocation.
+            <?php echo get_post_meta($post->ID, "tagline", true) ?>
             </h1>
             <p class="grid_5">
-              Hoccer is a new app for fast and easy exchange of information and
-              content. Hoccer allows for the instant transfer of data, by way of
-              intuitive gesturing with your phone, eliminating the sometimes
-              cumbersome and time.
+            <?php echo get_post_meta($post->ID, "description", true) ?>
             </p>
             <div class="grid_3" id="iphone">
               <img src="/images/iphone.jpg" alt="iphone" />
@@ -34,15 +30,9 @@
 	
           <div class="column grid_6">
             <div class="info_box">
-				<header>
-				  <h2>How to share data with hoccer</h2>
-				</header>
-				<section>
-				    <ul>
-					
-                <?php dynamic_sidebar( 'frontpage-how-to' ) ?>
-                    </ul>
-                </section>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <?php the_content() ?>
+                <?php endwhile; endif; ?>
             </div>
           </div>
 
