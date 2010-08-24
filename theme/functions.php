@@ -110,15 +110,6 @@ function toolbox_widgets_init() {
 	) );
 	
 	register_sidebar( array (
-		'name' => __( 'Company Sidebar', 'themename' ),
-		'id' => 'company_sidebar',
-		'before_widget' => '<div class="widget_box">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>',
-	) );
-	
-	register_sidebar( array (
 		'name' => __( 'Company Infobox', 'themename' ),
 		'id' => 'company_infobox',
 		'before_widget' => '<div class="info_box">',

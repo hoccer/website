@@ -50,6 +50,7 @@
             <?php dynamic_sidebar( 'company_sidebar' ) ?>
             
         
+          <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
               <h2>Lastest Posts</h2>
               <hr />
@@ -65,7 +66,8 @@
                   <?php endwhile; ?>
               </ul>
             </div>
-
+            <? endif; ?>
+            
           </div>
         </div>
 
