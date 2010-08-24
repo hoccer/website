@@ -58,8 +58,8 @@
               <li><a href="/blog/">Blog</a></li>
               <li><a href="/company/">Company</a></li>
               <li><a href="/contact/">Contact</a></li>
-              <li><a href="http://www.twitter.com/hoccer">t</a></li>
-              <li><a href="http://www.facebook.com/hoccer">f</a></li>
+              <li><a href="http://www.twitter.com/hoccer"><img src="<?php bloginfo('template_url'); ?>/images/twitter.png" alt="twitter"/></a></li>
+              <li><a href="http://www.facebook.com/hoccer"><img src="<?php bloginfo('template_url'); ?>/images/facebook.png" alt="facebook"/></a></li>
             </ul>
           </nav>
         </div>
