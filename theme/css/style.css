@@ -22,6 +22,9 @@ h4 {
   text-shadow: 1px 1px 0px #ffffff;
 }
 
+a {
+    text-decoration: none;
+}
 /* Possible IE Breakage ahead */
 .column {
   overflow: visible;

@@ -2,7 +2,7 @@
       <hr />
       <div class="row">
         <div class="column grid_8">
-          <h4>Latest Tweets</h4>
+          <a href="http://www.twitter.com/hoccer"><h4>Latest Tweets</h4></a>
         </div>
         <div class="column grid_4">
           <h4>About Hoccer</h4>
@@ -31,7 +31,7 @@
         </div>
         <div class="column grid_2">
           <ul>
-            <li><a href="">Subscribe RSS Feed</a></li>
+            <li><a href="<?php bloginfo('rss2_url'); ?>">Subscribe RSS Feed</a></li>
             <li><a href="http://www.twitter.com/hoccer">Follow us on Twitter</a></li>
             <li><a href="http://www.facebook.com/hoccer">Hoccer on Facebook</a></li>
           </ul>
