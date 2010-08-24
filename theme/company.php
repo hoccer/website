@@ -53,31 +53,14 @@
               <hr />
 
               <ul>
-                <li>
-                  <h5>Developing Hoccer for Android</h5>
-                  <p>
-                    We released another Hoccer Android update with lots of
-                    important fixes and some usability enhancements.
-                  </p>
-                  <footer>18.08.2010 by Rodja Trappe</footer>
-                </li>
-                <li>
-                  <h5>Hoccer won the Google Challenge</h5>
-                  <p>
-                    We released another Hoccer Android update with lots of
-                    important fixes and some usability enhancements.
-                  </p>
-                  <footer>12.07.2010 by Danuta Barberowski</footer>
-                </li>
-                <li>
-                  <h5>Developing Hoccer for Android</h5>
-                  <p>
-                    We released another Hoccer Android update with lots of
-                    important fixes and some usability enhancements.
-                  </p>
-                  <footer>02.06.2010 by Robert Palmer</footer>
-                </li>
-
+                 <?php query_posts('type=page&posts_per_page=3') ?>
+                 <?php while ( have_posts() ) : the_post(); ?>
+                 <li>
+                 <h5><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                 <p><?php the_content() ?></p>
+                 <footer><?php the_date() ?> by <?php the_author() ?></footer>
+                  </li>
+                  <?php endwhile; ?>
               </ul>
             </div>
 
