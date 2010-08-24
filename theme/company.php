@@ -31,6 +31,22 @@
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
+           <?php
+              $title = get_post_meta($post->ID, "sidebar_title", false);
+              $content = get_post_meta($post->ID, "sidebar_content", false);
+              if ($content != null && $title != null) :
+                for ($i = 0; $i < count($content); $i++):
+           ?>
+              <div class="widget_box">
+                <h4><?php echo $title[$i] ?></h4>
+                <section>
+                  <?php echo $content[$i] ?>    
+                </section>
+              </div>
+           <? endfor; endif; ?>
+            
+           
+           
             <?php dynamic_sidebar( 'company_sidebar' ) ?>
             
         
