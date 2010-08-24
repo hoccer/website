@@ -11,11 +11,12 @@
       <div class="page">
         <div class="row">
           <div class="column grid_12 page_header">
-            <h1>Company</h1>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            
+            <h1><?php the_title() ?></h1>
             <p class="grid_5">
-              Our Mission Statement/Vision: Hoccer installed on any device.
-              easy exchange of information and content. Hoccer allows for the
-              instant of data, by way of intuitive gesturing.
+              <?php 
+                echo get_post_meta($post->ID, "description", true) ?>
             </p>
           </div>
         </div>
@@ -38,7 +39,6 @@
               </section>
             </div>
           
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php the_content(); ?>
             <?php endwhile; endif; ?>
           
