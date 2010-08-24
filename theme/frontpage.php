@@ -41,10 +41,14 @@
             <div id="features">
               <div class="row">
                 <div class="column grid_3 app_market">
-                  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/app_store.jpg" alt="app store" />
+                    <a href="http://itunes.apple.com/de/app/hoccer/id340180776?mt=8" alt="Hoccer for iPhone">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/app_store.jpg" alt="app store" />
+                    </a>
                 </div>
                 <div class="column grid_3 app_market">
-                  <img src="<?php bloginfo('stylesheet_directory'); ?>/images/app_store.jpg" alt="app store" />
+                    <a href="http://apps.doubletwist.com/Hoccer:-transfer-data/-6581303752730936964" alt="Hoccer for Android">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/app_store.jpg" alt="andriod market" />
+                    </a>
                 </div>
               </div>
               <div class="row">
