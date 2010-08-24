@@ -23,29 +23,15 @@
 
         <div class="row" id="articles">
           <div class="column grid_7">
-            <div class="info_box">
-              <header>
-                <h2>How to share data with hoccer</h2>
-              </header>
-              <section>
-                <p>
-                  Hoccer uses Geolocation. Are you tired of typing contact
-                  details into your mobile phone although the person is standing
-                  right in front of you? You need to exchange data with a large
-                  number of people at the same time? You want to share a
-                  presentation with your audience right now?
-                </p>
-                <p><a href="#">Find Out Why »</a></p>
-              </section>
-            </div>
-          
+              <?php dynamic_sidebar( 'company_infobox' ) ?>
+     
                 <?php the_content(); ?>
             <?php endwhile; endif; ?>
           
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
-            <?php dynamic_sidebar( 'company-sidebar' ) ?>
+            <?php dynamic_sidebar( 'company_sidebar' ) ?>
             
         
           <div id="latest_posts">

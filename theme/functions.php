@@ -135,6 +135,15 @@ function toolbox_widgets_init() {
 		'before_title' => '<h4>',
 		'after_title' => '</h4>',
 	) );
+	
+	register_sidebar( array (
+		'name' => __( 'Company Infobox', 'themename' ),
+		'id' => 'company_infobox',
+		'before_widget' => '<div class="info_box">',
+		'after_widget' => '</div>',
+		'before_title' => ' <header><h2>',
+		'after_title' => '</h2></header>',
+	) );
 		
 }
 add_action( 'init', 'toolbox_widgets_init' );
