@@ -319,6 +319,7 @@ div.page_header h1 {
   font-size:30px;
   line-height: 34px;
   font-weight:300;
+  text-shadow:0px 1px 1px #019598;
 }
 
 div.page_header.page_header_small h1 {
