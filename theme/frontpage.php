@@ -17,17 +17,17 @@
             <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
             <div class="grid_3" id="iphone">
-              <img src="/images/iphone.jpg" alt="iphone" />
+              <img src="<?php bloginfo('template_directory') ?>/images/iphone.jpg" alt="iphone" />
             </div>
             <div class="grid_3" id="android">
-              <img src="/images/android_phone.jpg" alt="iphone" />
+              <img src="<?php bloginfo('template_directory') ?>/images/android_phone.jpg" alt="iphone" />
             </div>
           </div>
         </div>
 
 
         <div class="row" id="articles">
-	
+
           <div class="column grid_6">
             <div class="info_box">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

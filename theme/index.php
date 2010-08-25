@@ -9,11 +9,11 @@
      get_header() ?>
       <div class="page">
         <div class="row">
-          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "page_header" : "page_header_small")   ?>    
+          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "page_header" : "page_header_small")   ?>
           <div class="column grid_12 page_header <?php echo $header_class ?>">
             <h1>Blog</h1>
             <p class="grid_5">
-              <?php 
+              <?php
                 echo get_post_meta($post->ID, "description", true) ?>
             </p>
           </div>
@@ -21,7 +21,7 @@
 
         <div class="row" id="articles">
           <div class="column grid_7">
-              <?php 
+              <?php
                 $title = get_post_meta($post->ID, "infobox_title", true);
                 $content = get_post_meta($post->ID, "infobox_content", true);
                 if ($content != null && $title != null) :
@@ -33,19 +33,19 @@
                     </section>
                 </div>
                 <?php endif; ?>
-                
+
                 <?php if (have_posts()) :
                     while (have_posts()) : the_post(); ?>
                         <article>
-                            <a href="<?php the_permalink() ?>"><h2><?php the_title() ?></h2></a>
+                            <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
                             <hr />
                             <?php the_content() ?>
-                            Posted on <?php the_date() ?> by <?php the_author() ?>
-                            
+                            <em>Posted on <?php the_date() ?> by <?php the_author() ?></em>
+
                         </article>
-                    <?php endwhile; 
+                    <?php endwhile;
                 endif; ?>
-                
+
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
@@ -58,16 +58,16 @@
               <div class="widget_box">
                 <h4><?php echo $title[$i] ?></h4>
                 <section>
-                  <?php echo $content[$i] ?>    
+                  <?php echo $content[$i] ?>
                 </section>
               </div>
            <? endfor; endif; ?>
-            
-           
-           
+
+
+
             <?php dynamic_sidebar( 'company_sidebar' ) ?>
-            
-        
+
+
           <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
               <h2>Latest Posts</h2>
@@ -85,12 +85,12 @@
               </ul>
             </div>
             <? endif; ?>
-            
+
           </div>
         </div>
 
 
-        </div>          
+        </div>
         <?php get_footer() ?>
   </body>
 </html>
