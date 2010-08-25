@@ -9,7 +9,7 @@ get_header(); ?>
   <div class="row">
     <?php $header_class = (get_post_meta($post->ID, "description", true) ? "" : "page_header_small")   ?>
     <div class="column grid_12 page_header <?php echo $header_class ?>">
-      <h1>Blog</h1>
+      <h1>Search</h1>
       <p class="grid_5">
         <?php
           echo get_post_meta($post->ID, "description", true) ?>
