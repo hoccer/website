@@ -31,7 +31,9 @@
                ?>
                 <div class="info_box">
                     <header><h2><?php echo $title ?></h2></header>
+                    <section>
                     <?php echo $content ?>
+                    </section>
                 </div>
                 <?php endif; ?>
                 
