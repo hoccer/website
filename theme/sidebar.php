@@ -23,15 +23,4 @@
   </section>
 </div>
 
-<div class="widget_box">
-  <h4><?php _e( 'Meta', 'themename' ); ?></h4>
-  <section>
-    <ul>
-      <?php wp_register(); ?>
-      <li><?php wp_loginout(); ?></li>
-      <?php wp_meta(); ?>
-    </ul>
-  </section>
-</div>
-
 <?php endif; // end sidebar widget area ?>

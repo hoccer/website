@@ -110,6 +110,10 @@ div#articles article:last-child {
   margin-bottom: 0px;
 }
 
+div#articles article div.meta {
+  font-style: italic;
+}
+
 div#features {
   background-color: #e7e7e7;
   height: 270px;
