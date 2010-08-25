@@ -14,7 +14,7 @@
             <?php echo get_post_meta($post->ID, "tagline", true) ?>
             </h1>
             <p class="grid_5">
-            <?php echo get_post_meta($post->ID, "description", true) ?>
+            <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
             <div class="grid_3" id="iphone">
               <img src="<?php bloginfo('template_directory') ?>/images/iphone.jpg" alt="iphone" />

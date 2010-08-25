@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
   <head>
 
-    <title></title>
+    <title><?php the_title() ?></title>
     <meta charset="utf-8" />
 
     <!-- www.phpied.com/conditional-comments-block-downloads/ -->

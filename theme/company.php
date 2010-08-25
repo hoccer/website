@@ -10,14 +10,14 @@
 
       <div class="page">
         <div class="row">
-          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "" : "page_header_small")   ?>    
+          <?php $header_class = (get_post_meta($post->ID, "hoccer_description", true) ? "" : "page_header_small")   ?>    
           <div class="column grid_12 page_header <?php echo $header_class ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
             <h1><?php the_title() ?></h1>
             <p class="grid_5">
               <?php 
-                echo get_post_meta($post->ID, "description", true) ?>
+                echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
           </div>
         </div>
