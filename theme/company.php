@@ -37,8 +37,10 @@
                 </div>
                 <?php endif; ?>
                 
+                <article>
                 <?php the_content() ?>
                 <?php endwhile; endif; ?>
+                </article>
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
