@@ -24,11 +24,21 @@
 
         <div class="row" id="articles">
           <div class="column grid_7">
-              <?php dynamic_sidebar( 'company_infobox' ) ?>
-     
-                <?php the_content(); ?>
-            <?php endwhile; endif; ?>
-          
+              <?php 
+                $title = get_post_meta($post->ID, "infobox_title", true);
+                $content = get_post_meta($post->ID, "infobox_content", true);
+                if ($content != null && $title != null) :
+               ?>
+                <div class="info_box">
+                    <header><h2><?php echo $title ?></h2></header>
+                    <section>
+                    <?php echo $content ?>
+                    </section>
+                </div>
+                <?php endif; ?>
+                
+                <?php the_content() ?>
+                <?php endwhile; endif; ?>
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
