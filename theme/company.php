@@ -10,8 +10,8 @@
 
       <div class="page">
         <div class="row">
-          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "page_header" : "page_header_small")   ?>    
-          <div class="column grid_12 <?php echo $header_class ?>">
+          <?php $header_class = (get_post_meta($post->ID, "description", true) ? "" : "page_header_small")   ?>    
+          <div class="column grid_12 page_header <?php echo $header_class ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
             <h1><?php the_title() ?></h1>
