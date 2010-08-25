@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
   <head>
 
-    <title><?php the_title() ?></title>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <meta charset="utf-8" />
 
     <!-- www.phpied.com/conditional-comments-block-downloads/ -->
