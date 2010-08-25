@@ -25,7 +25,11 @@ get_header(); ?>
         <article>
           <h2><?php the_title(); ?></h2>
           <hr />
-          <div class="entry-meta">
+          <div class="post_content">
+            <?php the_content(); ?>
+            <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
+          </div>
+          <div class="meta">
             <?php
               printf( __( '<span class="meta-prep meta-prep-author">Posted on </span>
               <a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a>
@@ -40,10 +44,7 @@ get_header(); ?>
               );
             ?>
           </div><!-- .entry-meta -->
-          <div class="post_content">
-            <?php the_content(); ?>
-            <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
-          </div>
+
 
           <footer class="entry-meta">
             <?php
