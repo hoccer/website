@@ -280,7 +280,7 @@ div#splash_screen {
   margin-top: 18px;
   margin-bottom: 90px;
   height: 380px;
-  background-image: url(/images/splash_screen.jpg);
+  background-image: url(../images/splash_screen.jpg);
   background-repeat: no-repeat;
   position: relative;
 }
