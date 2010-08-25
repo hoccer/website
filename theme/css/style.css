@@ -167,7 +167,7 @@ div#latest_posts footer {
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
-  margin-bottom: 18px;
+  margin-bottom: 36px;
 }
 
 .info_box header {
@@ -335,7 +335,6 @@ div.page_header p {
 }
 
 div.column article h2 {
-  margin-top: 54px;
   margin-bottom: 15px;
 }
 
