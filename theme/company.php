@@ -1,6 +1,6 @@
 <?php
      /**
-     * Template Name: Company Info
+     * Template Name: Subpage
      * Description: Company Info with custom grid
      *
      * @package WordPress
