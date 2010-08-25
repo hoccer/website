@@ -8,7 +8,7 @@ function updateTwitter(json) {
 		}
 		
 		var date = new Date(json[index]["created_at"]);
-		$(this).html(json[index]["text"] + " <em>" + date.toLocaleDateString()+ "</em>");
+		$(this).html(json[index]["text"] + "<br><em>" + date.toLocaleDateString()+ "</em>");
 	});
 }
 
