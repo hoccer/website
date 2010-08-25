@@ -23,8 +23,9 @@ h4 {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 /* Possible IE Breakage ahead */
 .column {
   overflow: visible;
@@ -268,11 +269,19 @@ div#latest_posts footer {
   border-top: 1px solid #f0f0f0;
   padding-top: 20px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 18px;
 }
 
-.widget_box p, .widget_box ul {
-  margin-bottom: 30px;
+.widget_box input[type=search] {
+  width: 180px;
+}
+
+.widget_box p, .widget_box ul, .widget_box form {
+  margin-bottom: 18px;
+}
+
+.widget_box input[type=text] {
+  border: 1px solid #BDBDBD;
 }
 
 div#splash_screen, div.page_header {
