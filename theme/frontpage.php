@@ -47,7 +47,7 @@
                 </div>
                 <div class="column grid_3 app_market">
                     <a href="http://apps.doubletwist.com/Hoccer:-transfer-data/-6581303752730936964" alt="Hoccer for Android">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/app_store.jpg" alt="andriod market" />
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/market.jpg" alt="andriod market" />
                     </a>
                 </div>
               </div>
