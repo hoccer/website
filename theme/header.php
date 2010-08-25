@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" <?php language_attributes(); ?>>
   <head>
 
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <meta charset="utf-8" />
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
     <!-- www.phpied.com/conditional-comments-block-downloads/ -->
     <!--[if IE]><![endif]-->
@@ -33,7 +33,8 @@
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="<?php bloginfo('template_url'); ?>/js/modernizr-1.5.min.js"></script>
-
+    <?php wp_head(); ?>
+    
   </head>
 
   <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
