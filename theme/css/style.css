@@ -87,12 +87,12 @@ body > footer li {
   list-style-type: none;
 }
 
-body > footer li a {
+body > footer a {
   text-decoration: none;
   color: #ffffff;
 }
 
-body > footer li a:visited {
+body > footer a:visited {
   text-decoration: none;
   color: #ffffff;
 }
