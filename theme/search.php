@@ -5,9 +5,19 @@
  */
 
 get_header(); ?>
-
-    <div id="primary">
-      <div id="content">
+<div class="page">
+  <div class="row">
+    <?php $header_class = (get_post_meta($post->ID, "description", true) ? "" : "page_header_small")   ?>
+    <div class="column grid_12 page_header <?php echo $header_class ?>">
+      <h1>Blog</h1>
+      <p class="grid_5">
+        <?php
+          echo get_post_meta($post->ID, "description", true) ?>
+      </p>
+    </div>
+  </div>
+  <div class="row" id="articles">
+    <div class="column grid_7">
 
       <?php if ( have_posts() ) : ?>
 
@@ -29,8 +39,11 @@ get_header(); ?>
 
       <?php endif; ?>
 
-      </div><!-- #content -->
-    </div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+    </div><!-- #content -->
+    <div class="column grid_1">&nbsp;</div>
+    <div class="column grid_4">
+      <?php get_sidebar(); ?>
+    </div>
+  </div>
+</div><!-- #primary -->
 <?php get_footer(); ?>
