@@ -98,6 +98,7 @@ body > footer li a:visited {
 
 div#articles {
   padding-top: 8px;
+  margin-top: -8px;
 }
 
 div#features {
