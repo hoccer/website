@@ -103,7 +103,7 @@ body > footer li {
   list-style-type: none;
 }
 
-body > footer a {
+body .page_header a, body > footer a {
   text-decoration: none;
   color: #ffffff;
 }
