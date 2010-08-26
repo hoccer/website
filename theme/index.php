@@ -85,11 +85,14 @@
               </ul>
             </div>
             <? endif; ?>
-
+            <div class="column grid_1">&nbsp;</div>
+             <div class="column grid_4">
+               <?php get_sidebar(); ?>
+             </div>
           </div>
         </div>
 
-
+        
         </div>
         <?php get_footer() ?>
   </body>
