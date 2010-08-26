@@ -52,6 +52,6 @@
 <!--[if lt IE 7 ]>
   <script src="js/dd_belatedpng.js?v=1"></script>
 <![endif]-->
-
+<?php wp_footer() ?>
 </body>
 </html>
