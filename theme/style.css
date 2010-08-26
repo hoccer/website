@@ -266,6 +266,9 @@ article hr {
   border-bottom: 1px solid #fbfbfb;
 }
 
+#lightbox {
+  display: none;
+}
 
 div.row {
   /*background-color: yellow;*/
