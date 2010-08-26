@@ -169,6 +169,13 @@ div#latest_posts {
   margin-top: 36px;
 }
 
+div#latest_posts h2 {
+  background-image: url(../images/rss.jpg);
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  line-height: 20px;
+}
+
 div#latest_posts ul li {
   background-image: url(../images/talking_bullit.jpg);
   background-repeat: no-repeat;
