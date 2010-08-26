@@ -434,3 +434,7 @@ body > footer hr {
 #lightbox {
   display: none;
 }
+
+.nav-next {
+  text-align: right;
+}
