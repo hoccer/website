@@ -33,10 +33,25 @@
           </ul>
         </div>
         <div class="column grid_2">
-          <ul>
-            <li><a href="<?php bloginfo('rss2_url'); ?>">Subscribe RSS Feed</a></li>
-            <li><a href="http://www.twitter.com/hoccer">Follow us on Twitter</a></li>
-            <li><a href="http://www.facebook.com/hoccer">Hoccer on Facebook</a></li>
+          <ul id="social">
+            <li>
+              <a href="<?php bloginfo('rss2_url'); ?>">
+                <img src="<?php bloginfo('template_url'); ?>/images/mini_rss.png" />
+                Subscribe RSS Feed
+              </a>
+            </li>
+            <li>
+              <a href="http://www.twitter.com/hoccer">
+                <img src="<?php bloginfo('template_url'); ?>/images/mini_twitter.png" />
+                Follow us on Twitter
+              </a>
+            </li>
+            <li>
+              <a href="http://www.facebook.com/hoccer">
+                <img src="<?php bloginfo('template_url'); ?>/images/mini_facebook.png" />
+                Hoccer on Facebook
+              </a>
+            </li>
           </ul>
         </div>
 

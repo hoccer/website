@@ -454,3 +454,15 @@ body > footer hr {
 .nav-next {
   text-align: right;
 }
+
+ul#social li a {
+  line-height: 20px;
+}
+
+
+ul#social img {
+  -moz-box-shadow:1px 1px 1px #808080;
+  -webkit-box-shadow:1px 1px 1px #808080;
+  box-shadow:1px 1px 1px #808080;
+  vertical-align: middle;
+}
