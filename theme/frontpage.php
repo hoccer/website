@@ -16,14 +16,11 @@
             <p class="grid_5">
             <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
-            <script type="text/javascript" charset="utf-8">
-                jQuery(document).ready(function($){
-                  $(".lbp-inline-link-1").colorbox({width:"652px", height:"460px", inline:true, href:"#lbp-inline-href-1"});
-                });
-            </script>
-            <a class="lbp-inline-link-1" href="#">Image</a>
+            <p class="grid_5">
+                <a class="lbp-inline-link" href="#">Image</a>
+            </p>
             <div style="display: none">
-                <div id="lbp-inline-href-1">
+                <div id="lbp-inline-href">
                     <object width="601" height="338">
                         <param name="allowfullscreen" value="true" />
                         <param name="allowscriptaccess" value="always" />
