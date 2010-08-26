@@ -7,12 +7,14 @@
 
 <?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
 
+
 <div class="widget_box">
   <h4>Search</h4>
   <section>
     <?php get_search_form(); ?>
   </section>
 </div>
+
 
 <div class="widget_box">
   <h4><?php _e( 'Archives', 'themename' ); ?></h4>
@@ -22,5 +24,6 @@
     </ul>
   </section>
 </div>
+
 
 <?php endif; // end sidebar widget area ?>
