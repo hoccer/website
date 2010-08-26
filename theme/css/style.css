@@ -454,3 +454,15 @@ body > footer hr {
 .nav-next {
   text-align: right;
 }
+
+.lbp-inline-link span {
+  vertical-align: top; 
+  display: block; 
+  float: right; 
+  width: 40px;
+}
+#latest_posts h2 a {
+  float: right;
+  font-size: 14px;
+}
+

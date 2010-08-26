@@ -106,9 +106,9 @@ html { -webkit-font-smoothing: antialiased; }
 
 
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
-a:hover, a:active { outline: none; }
+a:hover, a: { outline: none; }
 
-a, a:visited { color:#607890; }
+a, a:active, a:visited { color:#607890; }
 a:hover { color:#036; }
 
 

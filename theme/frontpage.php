@@ -19,7 +19,7 @@
             <p class="grid_2">
             <a class="lbp-inline-link" href="#">
                 <img src="<?php bloginfo('template_directory') ?>/images/demo_thumb.jpg" width="86" height="54" alt="Watch Video">
-                <span style="vertical-align: top; display: block; float: right; width: 40px" class="lbp-inline-link" href="#">Watch Video</span></a>
+                <span>Watch Video</span></a>
             </p>
                 
             <div class="grid_3" id="iphone">
@@ -71,7 +71,7 @@
             </div>
 
             <div id="latest_posts">
-              <h2>Latest Posts</h2>
+              <h2>Latest Posts <a href="/blog/">more »</a></h2>
               <hr />
 
               <ul>
