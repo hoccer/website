@@ -17,9 +17,9 @@
             <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
             <p class="grid_5">
-                <a class="lbp-inline-link" href="#">Image</a>
+                <a class="lbp-inline-link" href="#">Watch Demo</a>
             </p>
-            <div style="display: none">
+            <div id="lightbox">
                 <div id="lbp-inline-href">
                     <object width="601" height="338">
                         <param name="allowfullscreen" value="true" />

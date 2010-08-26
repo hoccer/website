@@ -375,3 +375,7 @@ article hr {
   background-color: #ebebeb;
   border-bottom: 1px solid #fbfbfb;
 }
+
+#lightbox {
+  display: none;
+}
