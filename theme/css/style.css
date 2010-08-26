@@ -236,6 +236,10 @@ div#latest_posts footer {
   border: none;
 }
 
+.info_box ul li br {
+  display: none;
+}
+
 .info_box ul li p {
   margin-top: 10px;
 }
