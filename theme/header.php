@@ -54,9 +54,9 @@
           </div>
           <nav id="main_navigation" class="column grid_9">
             <ul>
-              <li><a href="/hoc/">Send &amp; Receive</a></li>
+              <!-- <li><a href="/hoc/">Send &amp; Receive</a></li> -->
               <li><a href="/support/">Support</a></li>
-              <li><a href="/developer/">Developer</a></li>
+              <!-- <li><a href="/developer/">Developer</a></li> -->
               <li><a href="/blog/">Blog</a></li>
               <li><a href="/company/">Company</a></li>
               <li><a href="/contact/">Contact</a></li>
