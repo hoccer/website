@@ -26,7 +26,7 @@
             <li><a href="/company/">Company</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/contact/">Contact/Press</a></li>
-            <li><a href="/disclaimer/">Disclaimer</a></li>
+            <li><a href="/legal_notice/">Legal Notice</a></li>
           </ul>
         </div>
         <div class="column grid_2">
