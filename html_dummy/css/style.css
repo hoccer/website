@@ -333,3 +333,28 @@ article hr {
   background-color: #ebebeb;
   border-bottom: 1px solid #fbfbfb;
 }
+
+
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#container {
+   min-height: 100%;
+   margin-bottom: -180px;
+   position: relative;
+}
+
+.push {
+  height: 180px;
+  clear: both;
+}
+
+body > footer {
+   height: 180px;
+   position: relative;
+}
+
+
