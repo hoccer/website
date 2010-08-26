@@ -10,13 +10,13 @@
 
       <div class="page">
         <div class="row">
-          <?php $header_class = (get_post_meta($post->ID, "hoccer_description", true) ? "" : "page_header_small")   ?>    
+          <?php $header_class = (get_post_meta($post->ID, "hoccer_description", true) ? "" : "page_header_small")   ?>
           <div class="column grid_12 page_header <?php echo $header_class ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
+
             <h1><?php the_title() ?></h1>
             <p class="grid_5">
-              <?php 
+              <?php
                 echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
           </div>
@@ -24,7 +24,7 @@
 
         <div class="row" id="articles">
           <div class="column grid_7">
-              <?php 
+              <?php
                 $title = get_post_meta($post->ID, "infobox_title", true);
                 $content = get_post_meta($post->ID, "infobox_content", true);
                 if ($content != null && $title != null) :
@@ -36,7 +36,7 @@
                     </section>
                 </div>
                 <?php endif; ?>
-                
+
                 <article>
                 <?php the_content() ?>
                 <?php endwhile; endif; ?>
@@ -53,16 +53,16 @@
               <div class="widget_box">
                 <h4><?php echo $title[$i] ?></h4>
                 <section>
-                  <?php echo $content[$i] ?>    
+                  <?php echo $content[$i] ?>
                 </section>
               </div>
            <? endfor; endif; ?>
-            
-           
-           
+
+
+
             <?php dynamic_sidebar( 'company_sidebar' ) ?>
-            
-        
+
+
           <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
               <h2>Latest Posts</h2>
@@ -80,12 +80,12 @@
               </ul>
             </div>
             <? endif; ?>
-            
+
           </div>
         </div>
 
 
-        </div>          
+        </div>
         <?php get_footer() ?>
   </body>
 </html>

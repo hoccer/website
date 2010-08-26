@@ -384,6 +384,33 @@ article hr {
   border-bottom: 1px solid #fbfbfb;
 }
 
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#container {
+   min-height: 100%;
+   margin-bottom: -180px;
+   position: relative;
+}
+
+.push {
+  height: 300px;
+  clear: both;
+}
+
+body > footer {
+  height: 180px;
+  margin-top: 0px;
+  position: relative;
+}
+
+body > footer hr {
+  margin-top: 0px;
+}
+
 #lightbox {
   display: none;
 }

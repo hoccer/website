@@ -34,7 +34,7 @@
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="<?php bloginfo('template_url'); ?>/js/modernizr-1.5.min.js"></script>
     <?php wp_head(); ?>
-    
+
   </head>
 
   <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -44,6 +44,7 @@
   <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
   <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
   <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+    <div id="container">
       <header>
         <div class="row">
           <div class="column grid_3">
