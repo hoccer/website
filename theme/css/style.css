@@ -188,6 +188,11 @@ div#latest_posts footer {
   font-style: italic;
 }
 
+div#latest_posts hr {
+  background-color: #c9c9c9;
+  border: none;
+}
+
 .info_box {
   background-color: #e7e7e7;
   border: 1px solid #bdbdbd;
@@ -218,8 +223,12 @@ div#latest_posts footer {
 }
 
 .info_box header h2 {
+  background-image: url(../images/light_bulp.png);
+  background-repeat: no-repeat;
+  background-position: 18px 13px;
   padding-top: 18px;
-  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-left: 50px;
   font-size: 24px;
   font-weight: normal;
   color: #ffffff;
