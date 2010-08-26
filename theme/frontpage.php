@@ -16,25 +16,12 @@
             <p class="grid_5">
             <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
-            <p class="grid_5">
-                <a class="lbp-inline-link" href="#">Watch Demo</a>
+            <p class="grid_2">
+            <a class="lbp-inline-link" href="#">
+                <img src="<?php bloginfo('template_directory') ?>/images/demo_thumb.jpg" width="86" height="54" alt="Watch Video">
+                <span style="vertical-align: top; display: block; float: right; width: 40px" class="lbp-inline-link" href="#">Watch Video</span></a>
             </p>
-            <div id="lightbox">
-                <div id="lbp-inline-href">
-                    <object width="601" height="338">
-                        <param name="allowfullscreen" value="true" />
-                        <param name="allowscriptaccess" value="always" />
-                        <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=11647770&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" />
-                        <embed src="http://vimeo.com/moogaloop.swf?clip_id=11647770&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="601" height="338"></embed>
-                    </object>
-                    <p>
-                        <a href="http://vimeo.com/11647770">Hoccer: Data sharing simplified</a> from 
-                        <a href="http://vimeo.com/artcom">ART+COM</a> on <a href="http://vimeo.com">Vimeo</a>.
-                    </p>
-            </div>
-            </div>
-            
-            
+                
             <div class="grid_3" id="iphone">
               <img src="<?php bloginfo('template_directory') ?>/images/iphone.jpg" alt="iphone" />
             </div>
@@ -98,11 +85,24 @@
               <?php endwhile; ?>
               </ul>
             </div>
-
           </div>
-
         </div>
 
+        <div id="lightbox">
+            <div id="lbp-inline-href">
+                <object width="601" height="338">
+                    <param name="allowfullscreen" value="true" />
+                    <param name="allowscriptaccess" value="always" />
+                    <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=11647770&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" />
+                    <embed src="http://vimeo.com/moogaloop.swf?clip_id=11647770&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="601" height="338"></embed>
+                </object>
+                <p>
+                    <a href="http://vimeo.com/11647770">Hoccer: Data sharing simplified</a> from 
+                    <a href="http://vimeo.com/artcom">ART+COM</a> on <a href="http://vimeo.com">Vimeo</a>.
+                </p>
+            </div>
+        </div>
+    
         <?php get_footer() ?>
   </body>
 </html>
