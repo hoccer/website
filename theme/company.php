@@ -65,7 +65,7 @@
 
           <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
-              <h2>Latest Posts</h2>
+              <h2>Latest Posts <a href="/blog/">more »</a></h2>
               <hr />
 
               <ul>
