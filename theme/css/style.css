@@ -218,8 +218,12 @@ div#latest_posts footer {
 }
 
 .info_box header h2 {
+  background-image: url(../images/light_bulp.png);
+  background-repeat: no-repeat;
+  background-position: 18px 13px;
   padding-top: 18px;
-  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-left: 50px;
   font-size: 24px;
   font-weight: normal;
   color: #ffffff;
