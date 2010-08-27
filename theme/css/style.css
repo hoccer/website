@@ -433,7 +433,7 @@ html, body {
 }
 
 .push {
-  height: 300px;
+  height: 200px;
   clear: both;
 }
 
@@ -456,9 +456,9 @@ body > footer hr {
 }
 
 .lbp-inline-link span {
-  vertical-align: top; 
-  display: block; 
-  float: right; 
+  vertical-align: top;
+  display: block;
+  float: right;
   width: 40px;
 }
 #latest_posts h2 a {
@@ -466,11 +466,9 @@ body > footer hr {
   font-size: 14px;
 }
 
-
 ul#social li a {
   line-height: 20px;
 }
-
 
 ul#social img {
   -moz-box-shadow:1px 1px 1px #808080;

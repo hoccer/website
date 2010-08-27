@@ -49,67 +49,24 @@
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
-           <?php
-              $title = get_post_meta($post->ID, "sidebar_title", false);
-              $content = get_post_meta($post->ID, "sidebar_content", false);
-              if ($content != null && $title != null) :
-                for ($i = 0; $i < count($content); $i++):
-           ?>
-              <div class="widget_box">
-                <h4><?php echo $title[$i] ?></h4>
-                <section>
-                  <?php echo $content[$i] ?>
-                </section>
-              </div>
-           <? endfor; endif; ?>
-
-
-
-            <?php dynamic_sidebar( 'company_sidebar' ) ?>
-
-
-          <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
-          <div id="latest_posts">
-              <h2>Latest Posts</h2>
-              <hr />
-
-              <ul>
-                 <?php query_posts('type=page&posts_per_page=3') ?>
-                 <?php while ( have_posts() ) : the_post(); ?>
-                 <li>
-                 <h5><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
-                 <p><?php the_excerpt() ?></p>
-                 <footer><?php the_date() ?> by <?php the_author() ?></footer>
-                  </li>
-                  <?php endwhile; ?>
-              </ul>
-            </div>
-            <? endif; ?>
-            <div class="column grid_1">&nbsp;</div>
-             <div class="column grid_4">
-               <?php get_sidebar(); ?>
-             </div>
-          </div>
+             <?php get_sidebar(); ?>
+           </div>
+         </div>
         </div>
 
         <?php /* Display navigation to next/previous pages when applicable */ ?>
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-        	<nav id="nav-below" class="row">
-        		<div class="nav-previous column grid_2">
-        		<?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?>
-        		</div>
-        		<div class="column grid_3">&nbsp;</div>
-        		<div class="nav-next column grid_2">
-        		<?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?>
-        		</div>
-        	</nav><!-- #nav-below -->
+          <nav id="nav-below" class="row">
+            <div class="nav-previous column grid_2">
+            <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'themename' ) ); ?>
+            </div>
+            <div class="column grid_3">&nbsp;</div>
+            <div class="nav-next column grid_2">
+            <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'themename' ) ); ?>
+            </div>
+          </nav><!-- #nav-below -->
         <?php endif; ?>
         </div>
         <?php get_footer() ?>
   </body>
 </html>
-
-
-<?php get_header(); ?>
-
-<?php get_footer(); ?>
