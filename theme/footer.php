@@ -61,7 +61,6 @@
 
 <script>!window.jQuery && document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.4.2.min.js"><\/script>')</script>
 
-<script src="<?php bloginfo('template_url'); ?>/js/plugins.js?v=1"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/script.js?v=1"></script>
 <script type="text/javascript" charset="utf-8" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script>
 
