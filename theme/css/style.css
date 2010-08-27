@@ -318,7 +318,7 @@ div#latest_posts hr {
 }
 
 .widget_box input[type=search] {
-  width: 180px;
+  width: 200px;
 }
 
 .widget_box p, .widget_box ul, .widget_box form {
@@ -327,6 +327,10 @@ div#latest_posts hr {
 
 .widget_box input[type=text] {
   border: 1px solid #BDBDBD;
+}
+
+.widget_box.headless {
+  padding-top: 0px;
 }
 
 div#splash_screen, div.page_header {

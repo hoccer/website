@@ -8,8 +8,7 @@
 <?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
 
 
-<div class="widget_box">
-  <h4>Search</h4>
+<div class="headless widget_box">
   <section>
     <?php get_search_form(); ?>
   </section>
