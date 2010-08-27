@@ -25,7 +25,6 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/defaults.css" />
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/grid.css" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/style.css" />
 
     <!-- For the less-enabled mobile browsers like Opera Mini -->
