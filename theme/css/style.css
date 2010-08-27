@@ -462,6 +462,7 @@ body > footer hr {
   width: 40px;
 }
 #latest_posts h2 a {
+  font-weight:lighter;
   float: right;
   font-size: 14px;
 }
