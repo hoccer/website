@@ -17,7 +17,7 @@
     initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
     maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
     -->
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <!--meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />-->
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
@@ -25,7 +25,6 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/defaults.css" />
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/grid.css" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/style.css" />
 
     <!-- For the less-enabled mobile browsers like Opera Mini -->

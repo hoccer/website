@@ -5,20 +5,45 @@
  */
 
 get_header(); ?>
+<div class="page">
+  <div class="row">
+    <?php $header_class = (get_post_meta($post->ID, "description", true) ? "" : "page_header_small")   ?>
+    <div class="column grid_12 page_header <?php echo $header_class ?>">
+      <h1><?php
+          printf( __( 'Category Archives: %s', 'themename' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+        ?></h1>
+      <p class="grid_5">
+        <?php
+          echo get_post_meta($post->ID, "description", true) ?>
+      </p>
+    </div>
+  </div>
+  <div class="row" id="articles">
+    <div class="column grid_7">
+      <?php the_post(); ?>
 
-		<div id="primary">
-			<div id="content">
+      <h2 class="page-title">
+      <?php if ( is_day() ) : ?>
+        <?php printf( __( 'Daily Archives: <span>%s</span>', 'themename' ), get_the_date() ); ?>
+      <?php elseif ( is_month() ) : ?>
+        <?php printf( __( 'Monthly Archives: <span>%s</span>', 'themename' ), get_the_date( 'F Y' ) ); ?>
+      <?php elseif ( is_year() ) : ?>
+        <?php printf( __( 'Yearly Archives: <span>%s</span>', 'themename' ), get_the_date( 'Y' ) ); ?>
+      <?php else : ?>
+        <?php _e( 'Blog Archives', 'themename' ); ?>
+      <?php endif; ?>
+      </h2>
 
-				<h2 class="page-title"><?php
-					printf( __( 'Category Archives: %s', 'themename' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-				?></h2>
+      <?php rewind_posts(); ?>
 
-				<?php $categorydesc = category_description(); if ( ! empty( $categorydesc ) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . $categorydesc . '</div>' ); ?>
+      <?php get_template_part( 'loop', 'archive' ); ?>
 
-				<?php get_template_part( 'loop', 'category' ); ?>
+    </div><!-- #primary -->
+    <div class="column grid_1">&nbsp;</div>
+    <div class="column grid_4">
+      <?php get_sidebar(); ?>
+    </div>
+  </div>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
