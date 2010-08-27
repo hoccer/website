@@ -2,6 +2,7 @@ body {
   background-color: #fbfbfb;
   line-height: 18px;
   font-size: 14px;
+  color: #666666;
   font-family: "Helvetica", sans-serif;
 }
 
@@ -41,6 +42,13 @@ a:visited {
   color: #339bb1;
 }
 
+input[type=text], textarea {
+  border: 1px solid #C5C5C5;
+}
+
+form#clean_contact input[type=text]{
+  margin-bottom: 18px;
+}
 
 /* Possible IE Breakage ahead */
 .column {
