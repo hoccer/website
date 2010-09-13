@@ -91,7 +91,7 @@
         <div id="lightbox">
             <div id="lbp-inline-href">
                 <!--<object width="601" height="338"> -->
-<iframe src="http://player.vimeo.com/video/14925523" width="601" height="318" frameborder="0"></iframe><p><a href="http://vimeo.com/14925523">Hoccer - App for Simple Data Sharing</a> from <a href="http://vimeo.com/artcom">Art+Com</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="http://player.vimeo.com/video/14925523" width="601" height="318" frameborder="0"></iframe>
                 
             </div>
         </div>
