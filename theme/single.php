@@ -24,11 +24,6 @@ get_header(); ?>
 
         <article>
           <h2><?php the_title(); ?></h2>
-          <hr />
-          <div class="post_content">
-            <?php the_content(); ?>
-            <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
-          </div>
           <div class="meta">
             <?php
               printf( __( '<span class="meta-prep meta-prep-author">Posted on </span>
@@ -43,9 +38,14 @@ get_header(); ?>
                 get_the_author()
               );
             ?>
-          </div><!-- .entry-meta -->
-
-
+          </div><!-- .entry -->
+          
+          
+          <hr />
+          <div class="post_content">
+            <?php the_content(); ?>
+            <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
+          </div>
           <footer class="entry-meta">
             <?php
               $tag_list = get_the_tag_list( '', ', ' );
