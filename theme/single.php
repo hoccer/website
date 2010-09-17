@@ -24,6 +24,7 @@ get_header(); ?>
 
         <article>
           <h2><?php the_title(); ?></h2>
+          <hr />
           <div class="meta">
             <?php
               printf( __( '<span class="meta-prep meta-prep-author">Posted on </span>
@@ -39,9 +40,6 @@ get_header(); ?>
               );
             ?>
           </div><!-- .entry -->
-          
-          
-          <hr />
           <div class="post_content">
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'themename' ), 'after' => '</div>' ) ); ?>
