@@ -17,7 +17,7 @@
             <?php echo get_post_meta($post->ID, "hoccer_description", true) ?>
             </p>
             <p class="grid_2">
-            <a class="lbp-inline-link" href="#" onclick="piwikTracker.trackGoal( 5 );">
+            <a class="lbp-inline-link" href="#" onclick="javascript:piwikTracker.trackGoal(5);">
                 <img src="<?php bloginfo('template_directory') ?>/images/demo_thumb.jpg" width="86" height="54" alt="Watch Video">
                 <span>Watch Video</span></a>
             </p>
