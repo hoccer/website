@@ -18,7 +18,8 @@
             </p>
             <p class="grid_2">
             <a class="lbp-inline-link" href="#">
-                <img src="<?php bloginfo('template_directory') ?>/images/demo_thumb.jpg" width="86" height="54" alt="Watch Video">
+                <img src="<?php bloginfo('template_directory') ?>/images/demo_thumb.jpg" width="86" height="54" alt="Watch Video" 
+					onClick="piwikTracker.trackGoal( 5 );">
                 <span>Watch Video</span></a>
             </p>
                 
