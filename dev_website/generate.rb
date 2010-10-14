@@ -9,7 +9,9 @@ require 'erb'
 @links = {
   "Developer-website" => "index",
   "More-about-the-hoccer-api" => "about_api",
-  "Hoccer-Server-Implementation-V3" => "api_overview"
+  
+  "Hoccer-Server-Implementation-V3" => "api_overview",
+  "Api-documentation" => "api_overview"
 }
 
 def erb file
@@ -53,6 +55,7 @@ def main
   
   generate_html "overview", "Developer-website", :index
   generate_html "overview", "More-about-the-hoccer-api", :index
+  
   generate_html "server", "Hoccer-Server-Implementation-V3", :documantation
   
 rescue => e
