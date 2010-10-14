@@ -1,0 +1,105 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>API Documantation</title>
+</head>
+	<div id="gollum-root">
+<h1>Server <span class="caps">API</span> 3</h1>
+<p>Successful Throw /Catch</p>
+<h2>General</h2>
+<p>First Run &ndash;  Hoccer Client<br></p>
+<pre><br><span class="caps">POST</span> /v3/clients/<br>
+{ &ldquo;device&rdquo;: &ldquo;iPhone&rdquo;, <br>
+  &ldquo;os&rdquo;: &ldquo;ios4&rdquo;, <br>
+   &hellip; }<br><del>-</del><br>
+303 See Other <br>
+http://api.hoccer.com/v3/clients/[client_id]<br></pre>
+<pre>
+GET http://api.hoccer.com/v3/clients/[client_id] 
+---
+200 OK (if client_id exists)
+{ uri: "http://api.hoccer.com/v3/clients/[client_id]
+---
+404 Not Found (if client_id does not exist)
+</pre>
+<p>Environment Update:<br></p>
+<pre><br><span class="caps">PUT</span> http://api/v3/clients/[client_id]/environment<br>
+{  gps: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: 2010-12-31 12:32:00 +0100},<br>
+   network: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: 2010-12-31 12:32:00 +0100},<br>
+   cell: [123:456:678, 312:413:123],<br>
+   bssids: [123:1231:hbsa, 123:23:dfb] } <br><del>-</del><br>
+200 OK<br></pre>
+<pre>
+PUT http://api/v3/clients/[client_id]/environment/gps
+{ latitude: 154.123, longitude: 123456, accuracy: 300, timestamp: "2010-12-31 12:32:00 +0100" } 
+---
+200 OK
+</pre>
+<p>Environment Update on nonexisting client id:<br></p>
+<pre><br><span class="caps">PUT</span> http://api/v3/clients/[non_existing_client_id]/environment<br>
+{  &hellip; } <br><del>-</del><br>
+200 OK (if id is a uuid &rarr; automaticly creates client)<br>
+412 Precondition Failed (if id is no uuid)
+</pre>
+<p>Close Hoccer Client<br></p>
+<pre><br><span class="caps">DELETE</span> http://api/v3/clients/[client_id]/environment<br><del>-</del><br>
+200 OK<br></pre>
+<h2>Sharing</h2>
+<p>Succsessfully sharing data:<br></p>
+<pre><br><span class="caps">POST</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
+{&hellip; json data &hellip;}<br><del>-</del><br>
+303 See Other<br>
+Location: http://api/v3/clients/[client_id]/action/[action_id]<br></pre>
+<p>When no other clients have a similar envrionment<br></p>
+<pre><br><span class="caps">POST</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
+{&hellip; json data &hellip;}<br><del>-</del><br>
+204 No Content<br></pre>
+<p>When environment is insufficient (no data or too bad)<br></p>
+<pre><br><span class="caps">POST</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
+{&hellip; json data &hellip;}<br><del>-</del><br>
+412 Precondition Failed<br></pre>
+<p>Infos about Share Action (longpolling)<br></p>
+<pre><br><span class="caps">GET</span>  http://api/v3/clients/[client_id]/action/[action_id]<br><del>-</del><br>
+200 <br>
+{ <br>
+  &ldquo;mode&rdquo; : [ &ldquo;one-to-one&rdquo; | &ldquo;one-to-many&rdquo; | &ldquo;many-to-many&rdquo; ]<br>
+  &ldquo;uri&rdquo;: http://api/v3/clients/[client_id]/action/[action_id]<br>
+  &ldquo;receivers&rdquo;:  1<br>
+}<br></pre>
+<p>Cancel Action<br></p>
+<pre><br><span class="caps">DELETE</span> http://api/v3/clients/action/[ one-to-one | one-to-many | many-to-many ]/<br><del>-</del><br>
+200 OK<br></pre>
+<h2>Receiving</h2>
+<pre>
+GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
+---
+200 
+[
+   {... json data ...}
+]
+</pre>
+<p>when receiving from multiple senders the array will contain a json object from each</p>
+<p>one-to-many can be watched by appending wait_for_data=true.<br>
+the server then keeps the connection open until the counter event happens</p>
+<p>When no other clients have a similar envrionment<br></p>
+<pre><br><span class="caps">GET</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br><del>-</del><br>
+204 No Content<br></pre>
+<h1>Upload Server</h1>
+<h2>Upload a file</h2>
+<p>A user uploads one or more files to the hoccer fileserver, authorized with a token / api key / credentials. <br>
+The files are then stored and associated with these credentials but only an anonymized url is returned for sharing.<br>
+The user with the proper credentials can look up his/her uploaded files and re-share them later with new anonymous urls.</p>
+<pre>
+POST files.hoccer.com/filename.foo (with authorization token)
+
+---
+302 Location: files.hoccer.com/&lt;unique_id&gt;/ 
+</pre>
+<h2>File Download</h2>
+<pre>
+GET file.hoccer.com/uuid
+---
+200 &lt;Filestream&gt;
+</pre>
+</div>
+</html>

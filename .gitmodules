@@ -1,3 +1,6 @@
 [submodule "dev_website/overview"]
 	path = dev_website/overview
 	url = git@github.com:hoccer/website.wiki
+[submodule "dev_website/server"]
+	path = dev_website/server
+	url = git@github.com:hoccer/server.wiki
