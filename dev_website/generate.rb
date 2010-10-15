@@ -1,20 +1,22 @@
 #!/usr/bin/env ruby
 
-@filepath = File.expand_path(File.dirname(__FILE__))
+filepath = File.expand_path(File.dirname(__FILE__))
+@root_dir = File.join(filepath, "..")
 
 def update_module name
-  dir = File.join(@filepath, name)
+  dir = File.join(@root_dir, name)
   system("cd #{dir} && git pull")
+  system("cd #{@root_dir} && git add #{name}")
 end
 
 def refresh_main_repo
-  dir = File.join(@filepath, "..")
-  system("cd #{dir} && git submodule update")
+  system("cd #{@root_dir} && git commit --allow-empty -m 'refreshed content from wikis'")
+  system("cd #{@root_dir} && git submodule update")
 end
 
 def main
-  update_module "server"
-  update_module "overview"
+  update_module "dev_website/server"
+  update_module "dev_website/overview"
   
   refresh_main_repo
 rescue => e 
