@@ -19,13 +19,11 @@ def main
   update_module "dev_website/overview"
   
   refresh_main_repo
+  
+  system("cd #{@root_dir} && ./dev_website/generate.rb")
 rescue => e 
   puts "oops: #{e}\n#{e.backtrace.join "\n"}"
   exit 1
 end
-
-
-
-
 
 (__FILE__ == $0) and (main) #end.
