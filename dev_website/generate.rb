@@ -18,9 +18,10 @@ def main
   update_module "dev_website/server"
   update_module "dev_website/overview"
   
-  refresh_main_repo
+  system("cd #{@root_dir} && cd dev_website && ./generate_html.rb")
+  system("cd #{@root_dir} && git add dev_website/html")
   
-  system("cd #{@root_dir} && ./dev_website/generate.rb")
+  refresh_main_repo
 rescue => e 
   puts "oops: #{e}\n#{e.backtrace.join "\n"}"
   exit 1
