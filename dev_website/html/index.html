@@ -81,15 +81,15 @@
 <p>Kicks ass, blabla<br><a class="internal present" href="about_api.html">more about the Hoccer API</a></p>
 <h2>See how easy it is! (get started)</h2>
 <div class="highlight">
-<pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+<pre><span class="o">--</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
     <span class="n">client</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCClient</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
-                                                    <span class="nl">secret:</span> <span class="s">@"secret!!!11elf"</span><span class="p">];</span>
+                                       <span class="nl">secret:</span> <span class="s">@"secret!!!11elf"</span><span class="p">];</span>
     <span class="n">client</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nl">send:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
     <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">payload</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObject:</span> <span class="s">@"World"</span> 
-                                                                                  <span class="nl">forKey:</span> <span class="s">@"Hello"</span><span class="p">];</span>
+                                                        <span class="nl">forKey:</span> <span class="s">@"Hello"</span><span class="p">];</span>
     <span class="p">[</span><span class="n">client</span> <span class="nl">send:</span> <span class="n">payload</span> <span class="nl">withMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
 <span class="p">}</span>
 
