@@ -50,8 +50,8 @@ end
 def main
   output_dir = "html"
   
-  FileUtils.rm_r(output_dir) if File.exists?(output_dir)
-  FileUtils.mkdir(output_dir)
+  # FileUtils.rm_r(output_dir) if File.exists?(output_dir)
+  # FileUtils.mkdir(output_dir)
   
   generate_html "overview", "Developer-website", :index
   generate_html "overview", "More-about-the-hoccer-api", :index
