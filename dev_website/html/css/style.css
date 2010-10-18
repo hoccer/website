@@ -526,6 +526,12 @@ ul#social img {
   vertical-align: sub;
 }
 
+#objc {
+  border: 1px solid red;
+}
+
+
 .highlight {
+  border: 1px solid green;
   width: 800px;
 }
