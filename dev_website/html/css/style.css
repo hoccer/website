@@ -442,7 +442,8 @@ div.page_header p {
   color: #ffffff;
 }
 
-div.column article h2 {
+h2 {
+  color: black;
   margin-top: 54px;
   margin-bottom: 15px;
 }
@@ -523,4 +524,14 @@ ul#social img {
   -webkit-box-shadow:1px 1px 1px #808080;
   box-shadow:1px 1px 1px #808080;
   vertical-align: sub;
+}
+
+#objc {
+  border: 1px solid red;
+}
+
+
+.highlight {
+  border: 1px solid green;
+  width: 800px;
 }
