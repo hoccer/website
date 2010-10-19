@@ -25,7 +25,6 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="css/defaults.css" />
-    <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/code_highlight.css">
 
@@ -33,10 +32,24 @@
     <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1" />
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-    <script src="js/modernizr-1.5.min.js"></script>	
+    <!-- <script src="js/modernizr-1.5.min.js"></script> //-->
 	<script src="javascripts/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript" charset="utf-8"></script>
     
+
+
+	<!-- TABS -->
+	<script type="text/javascript" charset="utf-8">
+    	$().ready(function() {
+			$(".code").tabs();
+		})
+    </script>
+	<style type="text/css" media="screen">
+		.ui-tabs .ui-tabs-hide {
+		     display: none;
+		}
+	</style>
+
   </head>
 
   <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -83,6 +96,11 @@
 <h2>What Hoccer can do for you! (get excited)</h2>
 <p>Kicks ass, in under 10 Minutes.<br><a class="internal present" href="about_api.html">more about the Hoccer API</a></p>
 <h2>See how easy it is! (get started)</h2>
+<div id="tabs">
+<ul>
+<li><a href="#objc">Objective-C</a></li>
+	<li><a href="#java">Java</a></li>
+</ul>
 <div class="code" id="objc"><div class="highlight">
 <pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
     <span class="n">client</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCClient</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
@@ -121,6 +139,7 @@
 <span class="o">}</span>
 </pre>
 </div></div>
+</div>
 <p>See how to integrate drag and drop, how to use the android api and much more.</p>
 <p>Read the <a class="internal present" href="api_overview.html">API Documentation</a></p>
 <h2>Who uses the hoccer <span class="caps">API</span><br><a href="http://hoccer.com">http://hoccer.com</a><br><a href="http://lb-lab.de">http://lb-lab.de</a>
@@ -189,11 +208,6 @@
 
           </div>
         </footer>
-
-
-    <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
-
-    <script src="js/script.js?v=1"></script>
 
     <!--[if lt IE 7 ]>
       <script src="js/dd_belatedpng.js?v=1"></script>
