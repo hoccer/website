@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-filepath = File.expand_path(File.dirname(__FILE__))
-@root_dir = File.join(filepath, "..")
+@root_dir = File.expand_path(File.dirname(__FILE__))
 
 def update_module name
   dir = File.join(@root_dir, name)
@@ -15,11 +14,11 @@ def refresh_main_repo
 end
 
 def main
-  update_module "dev_website/server"
-  update_module "dev_website/overview"
+  update_module "developer/wikis/server"
+  update_module "developer/wikis/overview"
   
-  system("cd #{@root_dir} && cd dev_website && ./generate_html.rb")
-  system("cd #{@root_dir} && git add dev_website/html")
+  system("cd #{@root_dir} && ./generate_html.rb")
+  system("cd #{@root_dir} && git add developer/public")
   
   refresh_main_repo
 rescue => e 

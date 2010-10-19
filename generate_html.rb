@@ -6,6 +6,8 @@ require 'tempfile'
 require 'gollum'
 require 'erb'
 
+WIKI_DIR = 'developer/wikis'
+
 @links = {
   "Developer-website" => "index",
   "More-about-the-hoccer-api" => "about_api",
@@ -15,19 +17,20 @@ require 'erb'
 }
 
 def erb file
-  file = File.read("views/#{file}.erb")
+  file = File.read("developer/views/#{file}.erb")
   template = ERB.new file
   template.result(binding)
 end
 
 def generate_html wiki_name, page_name, template
-  wiki = Gollum::Wiki.new(wiki_name)
+  puts File.join(WIKI_DIR, wiki_name)
+  wiki = Gollum::Wiki.new( File.join(WIKI_DIR, wiki_name) )
   page = wiki.page(page_name)
   
   @html = replace_links page.formatted_data
   
   output_file = @links[page_name]  
-  File.open("html/#{output_file}.html", "w+") do |file|
+  File.open("developer/public/#{output_file}.html", "w+") do |file|
     file.write erb template
   end 
 end
