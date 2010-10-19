@@ -16,6 +16,18 @@ WIKI_DIR = 'developer/wikis'
   "Api-documentation" => "api_overview"
 }
 
+class ERB
+  @output_num = 0
+  class << self
+    attr_accessor :output_num
+  end
+end
+
+def import path
+  n = ERB.output_num += 1
+  ERB.new(File.read(path), nil, nil, '_x_'+n.to_s).result()
+end
+
 def erb file
   file = File.read("developer/views/#{file}.erb")
   template = ERB.new file
