@@ -27,9 +27,11 @@
     <link rel="stylesheet" href="http://hoccer.com/wp-content/themes/hoccer/css/defaults.css" />
     <link rel="stylesheet" href="http://hoccer.com/wp-content/themes/hoccer/css/grid.css" />
     <link rel="stylesheet" href="http://hoccer.com/wp-content/themes/hoccer/css/style.css" />
-	<link rel="stylesheet" href="css/code_highlight.css">
+	<link rel="stylesheet" href="http://hoccer.com/wp-content/themes/hoccer/css/code_highlight.css">
 	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.5.custom.css">
-    <!-- For the less-enabled mobile browsers like Opera Mini -->
+    
+	<link rel="stylesheet" href="http://hoccer.com/wp-content/themes/hoccer/css/developer.css">
+	<!-- For the less-enabled mobile browsers like Opera Mini -->
     <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1" />
 
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -38,8 +40,8 @@
 	<script src="javascripts/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>	
     <script src="javascripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript" charset="utf-8"></script>
 
+	
    <!-- TABS -->
-    43	
    <script type="text/javascript" charset="utf-8">
        $().ready(function() {
        $("#tabs").tabs();
@@ -132,15 +134,15 @@ Location: http://api/v3/clients/[client_id]/action/[action_id]<br></pre>
 {&hellip; json data &hellip;}<br><del>-</del><br>
 412 Precondition Failed<br></pre>
 <p>Infos about Share Action (longpolling)<br></p>
-<pre><br><span class="caps">GET</span>  http://api/v3/clients/[client_id]/action/[action_id]<br><del>-</del><br>
+<pre><br><span class="caps">GET</span>  http://api/v3/clients/[client_id]/actions/[action_id]<br><del>-</del><br>
 200 <br>
 { <br>
   &ldquo;mode&rdquo; : [ &ldquo;one-to-one&rdquo; | &ldquo;one-to-many&rdquo; | &ldquo;many-to-many&rdquo; ]<br>
-  &ldquo;uri&rdquo;: http://api/v3/clients/[client_id]/action/[action_id]<br>
+  &ldquo;uri&rdquo;: http://api/v3/clients/[client_id]/actions/[action_id]<br>
   &ldquo;receivers&rdquo;:  1<br>
 }<br></pre>
 <p>Cancel Action<br></p>
-<pre><br><span class="caps">DELETE</span> http://api/v3/clients/action/[ one-to-one | one-to-many | many-to-many ]/<br><del>-</del><br>
+<pre><br><span class="caps">DELETE</span> http://api/v3/clients/action/[ one-to-one | one-to-many | many-to-many ]<br><del>-</del><br>
 200 OK<br></pre>
 <h2>Receiving</h2>
 <pre>
