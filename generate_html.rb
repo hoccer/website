@@ -29,12 +29,12 @@ def import path
 end
 
 def erb file
-  file = File.read("developer/views/#{file}.erb")
+  file = File.read("developer/app/views/static/#{file}.erb")
   template = ERB.new file
   template.result(binding)
 end
 
-def generate_html wiki_name, page_name, template
+def generate_static wiki_name, page_name, template
   puts File.join(WIKI_DIR, wiki_name)
   wiki = Gollum::Wiki.new( File.join(WIKI_DIR, wiki_name) )
   page = wiki.page(page_name)
@@ -44,6 +44,18 @@ def generate_html wiki_name, page_name, template
   output_file = @links[page_name]  
   File.open("developer/public/#{output_file}.html", "w+") do |file|
     file.write erb template
+  end 
+end
+
+def generate_partial wiki_name, page_name
+  wiki = Gollum::Wiki.new( File.join(WIKI_DIR, wiki_name) )
+  page = wiki.page(page_name)
+  
+  html = replace_links page.formatted_data
+  
+  output_file = @links[page_name]  
+  File.open("developer/app/views/shared/_#{output_file}.erb", "w+") do |file|
+    file.write html
   end 
 end
 
@@ -68,10 +80,10 @@ def main
   # FileUtils.rm_r(output_dir) if File.exists?(output_dir)
   # FileUtils.mkdir(output_dir)
   
-  generate_html "overview", "Developer-website", :index
-  generate_html "overview", "More-about-the-hoccer-api", :index
+  generate_partial "overview", "Developer-website"
+  generate_static "overview", "More-about-the-hoccer-api",     :documentation
   
-  generate_html "server", "Hoccer-Server-Implementation-V3", :documantation
+  generate_static "server", "Hoccer-Server-Implementation-V3", :documentation
   
 rescue => e
   puts "oops: #{e}\n#{e.backtrace.join "\n"}"

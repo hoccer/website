@@ -147,9 +147,19 @@
               <h4>Login</h4>
               <section>
               	<p>
-  					<input type="text" id="signin_name" /><br />
-					<input type="password" id="signin_name" />
-				</p>
+  					<form accept-charset="UTF-8" action="/accounts/sign_in" class="account_new" id="account_new" method="post"><div style="margin:0;padding:0;display:inline">
+						<input name="utf8" type="hidden" value="&#x2713;" />
+						<input name="authenticity_token" type="hidden" value="32+DVDpUphRefKS4hX7WbeSx3WeOMAqAQ/VjOyreOHo=" /></div>
+					  	<p><label for="account_email">Email</label><br />
+					  	<input id="account_email" name="account[email]" size="30" type="text" value="" /></p>
+
+					  	<p><label for="account_password">Password</label><br />
+					  	<input id="account_password" name="account[password]" size="30" type="password" /></p>
+
+					    <p><input name="account[remember_me]" type="hidden" value="0" /><input id="account_remember_me" name="account[remember_me]" type="checkbox" value="1" /> <label for="account_remember_me">Remember me</label></p>
+
+					  <p><input id="account_submit" name="commit" type="submit" value="Sign in" /></p>
+					</form></p>
               </section>
             </div>
           </div>
