@@ -1,0 +1,23 @@
+<h1>Welcome to the Hoccer API</h1>
+
+blablabla
+
+<h2>Your Account</h2>
+
+<%= render :partial => 'shared/index' %>
+
+
+<% if current_account %>
+  <%= render :partial => 'account' %>
+<% else %>
+ 
+
+  You're currently not signed in:
+  <%= link_to "Log in", new_account_session_path %>
+
+	<%= form_tag new_account_session_path do %>
+	<%=  text_field_tag 'account[email]' %>
+	<%=  password_field_tag 'account[password]' %>
+	<%=  submit_tag "Login" %>
+	<% end %>
+<% end %>

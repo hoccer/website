@@ -1,12 +1,85 @@
-<h1>Welcome to the Hoccer API</h1>
+	  <%= render :partial => 'static/header' %>
+      <div class="page">
+        <div class="row">
+          <div class="column grid_12 page_header page_header_small">
+            <h1>Developer</h1>
+          </div>
+        </div>
 
-blablabla
+        <div class="row" id="articles">
+          <div class="column grid_7">
+            <article>
+              <%= render :partial => 'shared/index' %>
+            </article>
+          </div>
+          <div class="column grid_1">&nbsp;</div>
+          <div class="column grid_4">
+            <div class="widget_box">
+              <h4>Login</h4>
+              <section>
+              	<p>
+					<%= form_tag new_account_session_path do %>
+					<%=  text_field_tag 'account[email]' %>
+					<%=  password_field_tag 'account[password]' %>
+					<%=  submit_tag "Login" %>
+					<% end %>
+				</p>
+              </section>
+            </div>
+          </div>
+        </div>
 
-<h2>Your Account</h2>
 
-<% if current_account %>
-  <%= render :partial => 'account' %>
-<% else %>
-  You're currently not signed in:
-  <%= link_to "Log in", new_account_session_path %>
-<% end %>
+        </div>
+        <footer>
+          <hr />
+          <div class="row">
+            <div class="column grid_8">
+              <h4>Latest Tweets</h4>
+            </div>
+            <div class="column grid_4">
+              <h4>About Hoccer</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column grid_3">
+              <p>
+                We proudly present you the best android Hoccer ever! Enjoy major
+                performance and user interface improvements. Download at android
+                market. <em>18.08.2010</em>
+              </p>
+            </div>
+            <div class="column grid_3">
+              <p>
+                We released another Android update: Improved History view and
+                minor usability enhancements. <em>12.07.2010</em>
+              </p>
+            </div>
+            <div class="column grid_2">
+              &nbsp;
+            </div>
+            <div class="column grid_2">
+              <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Press</a></li>
+              </ul>
+            </div>
+            <div class="column grid_2">
+              <ul>
+                <li><a href="#">Subscribe RSS Feed</a></li>
+                <li><a href="#">Follow us on Twitter</a></li>
+                <li><a href="#">Hoccer on Facebooki</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </footer>
+
+    <!--[if lt IE 7 ]>
+      <script src="js/dd_belatedpng.js?v=1"></script>
+    <![endif]-->
+
+  </body>
+</html>
