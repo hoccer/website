@@ -38,7 +38,7 @@ def generate_html wiki_name, page_name, template
   puts File.join(WIKI_DIR, wiki_name)
   wiki = Gollum::Wiki.new( File.join(WIKI_DIR, wiki_name) )
   page = wiki.page(page_name)
-  puts page.formatted_data
+  
   @html = replace_links page.formatted_data
   
   output_file = @links[page_name]  
