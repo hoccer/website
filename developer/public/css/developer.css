@@ -18,3 +18,10 @@
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #67C5D8; background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #eb8f00; }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #999; text-decoration: none; }
 .ui-widget :active { outline: none; }
+
+/* normalize monospace sizing
+ * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+ */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+code { font-size: 0.9 em }
