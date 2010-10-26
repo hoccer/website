@@ -19,9 +19,4 @@
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #999; text-decoration: none; }
 .ui-widget :active { outline: none; }
 
-/* normalize monospace sizing
- * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
- */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-
-code { font-size: 0.9 em }
+.code { font-size: 0.9 em; font-family: monospace, sans-serif; }
