@@ -13,6 +13,10 @@ $(document).ready(function(){
     return false;
   });
 
+  $('#signin_errors').hide();
+  if ($('#signin_errors').text().length > 0) {
+    $('#signin_errors').delay(300).slideDown();
+  }
 });
 
 

@@ -29,6 +29,7 @@
 					          <%=  text_field_tag 'account[email]' %>
 					          <%=  password_field_tag 'account[password]' %>
 					        </p>
+                  <div id="signin_errors"><%= flash[:alert] %></div>
                   <p>
                     <%=  submit_tag "Login" %>
 					          <% end %>
@@ -53,7 +54,7 @@
 
                       <p><%= label_tag :password_confirmation %><br />
                       <%= password_field_tag "account[password_confirmation]" %></p>
-
+                      <div id="signin_errors"><%= flash[:alert] %></div>
                       <p><%= submit_tag "Sign up" %></p>
                     <% end %>
        				    </p>
