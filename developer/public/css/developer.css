@@ -20,3 +20,7 @@
 .ui-widget :active { outline: none; }
 
 .code { font-size: 0.9 em; font-family: monospace, sans-serif; }
+
+dl { margin: 18px 0 18px 0; }
+dt { font-weight: bold; }
+dd { padding-left: 10px; margin-bottom: 18px;}
