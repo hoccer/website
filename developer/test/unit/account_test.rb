@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "account validations" do
+    a = Account.create
+    assert !a.valid?
   end
 end

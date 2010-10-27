@@ -32,4 +32,9 @@ dd { padding-left: 10px; margin-bottom: 18px;}
   color: #ffffff;
   background-color: #FF6F7B;
   border: 2px dashed #000000;
+  display: none;
+}
+
+#signup {
+  display: none;
 }

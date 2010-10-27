@@ -3,9 +3,12 @@ class Account
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable
+         :recoverable, :rememberable, :trackable, :validatable
 
   after_create :generate_keys
+
+  validates_presence_of :password
+  validates_length_of   :password, :minimum => 7
 
   private
 
