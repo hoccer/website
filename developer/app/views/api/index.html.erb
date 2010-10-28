@@ -14,17 +14,71 @@
           </div>
           <div class="column grid_1">&nbsp;</div>
           <div class="column grid_4">
-            <div class="widget_box">
-              <h4>Login</h4>
-              <section>
-              	<p>
-					<%= form_tag new_account_session_path do %>
-					<%=  text_field_tag 'account[email]' %>
-					<%=  password_field_tag 'account[password]' %>
-					<%=  submit_tag "Login" %>
-					<% end %>
-				</p>
-              </section>
+
+            <div class="widget_box" id="account_box">
+              <% if current_account.nil? %>
+              <div id="login">
+                <h4>Login</h4>
+                <section>
+                  <p>
+                     <%= link_to 'Signup for an API Key', new_account_registration_path %> 
+                     or Login:
+                  </p>
+                	<p>
+					          <%= form_tag new_account_session_path do %>
+					          <%=  text_field_tag 'account[email]' %>
+					          <%=  password_field_tag 'account[password]' %>
+					        </p>
+                  <div id="signin_errors"><%= flash[:alert] %></div>
+                  <p>
+                    <%=  submit_tag "Login" %>
+					          <% end %>
+       				    </p>
+                </section>
+              </div>
+              <div id="signup">
+                <h4>Signup</h4>
+                <section>
+                  <p>
+                     <%= link_to 'Login', new_account_registration_path %> 
+                     or signup for an API Key:
+                  </p>
+                  <p>
+                    <%= form_tag account_registration_path do %>
+
+                      <p><%= label_tag :email %><br />
+                      <%= text_field_tag "account[email]" %></p>
+
+                      <p><%= label_tag :password %><br />
+                      <%= password_field_tag "account[password]" %></p>
+
+                      <p><%= label_tag :password_confirmation %><br />
+                      <%= password_field_tag "account[password_confirmation]" %></p>
+                      <div id="signin_errors"><%= flash[:alert] %></div>
+                      <p><%= submit_tag "Sign up" %></p>
+                    <% end %>
+       				    </p>
+                </section>
+              </div>
+ 
+              <% else %>
+ 
+              <div>
+                <h4>API Key</h4>
+                <section>
+                 <p>
+                    Welcome <strong><%= current_account.email %></strong>,
+                 </p>
+                 <dl>
+                    <dt>API Key</dt><dd><%= current_account.api_key %></dd>
+                    <dt>Shared Secret</dt><dd><%= current_account.shared_secret %></dd>
+                 </dl>
+                 <p>
+                     <%= link_to 'Logout', destroy_account_session_path %> 
+                 </p>
+                </section>
+              </div>
+  <% end %>
             </div>
           </div>
         </div>

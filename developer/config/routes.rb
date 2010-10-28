@@ -1,7 +1,9 @@
 NewApi::Application.routes.draw do
   get "api/index"
 
-  devise_for :accounts
+  devise_for :accounts do 
+    get "sign_in", :to => "api#index"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
