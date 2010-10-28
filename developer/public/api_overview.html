@@ -100,17 +100,16 @@
    network: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: 2010-12-31 12:32:00 +0100},<br>
    cell: [123:456:678, 312:413:123],<br>
    bssids: [123:1231:hbsa, 123:23:dfb] } <br><del>-</del><br>
-200 OK<br></pre>
+201 Created<br></pre>
 <pre>
 PUT http://api/v3/clients/[client_id]/environment/gps
 { latitude: 154.123, longitude: 123456, accuracy: 300, timestamp: "2010-12-31 12:32:00 +0100" } 
 ---
-200 OK
+201 Created
 </pre>
 <p>Environment Update on nonexisting client id:<br></p>
 <pre><br><span class="caps">PUT</span> http://api/v3/clients/[non_existing_client_id]/environment<br>
 {  &hellip; } <br><del>-</del><br>
-200 OK (if id is a uuid &rarr; automaticly creates client)<br>
 412 Precondition Failed (if id is no uuid)
 </pre>
 <p>Close Hoccer Client<br></p>
@@ -118,12 +117,12 @@ PUT http://api/v3/clients/[client_id]/environment/gps
 200 OK<br></pre>
 <h2>Sharing</h2>
 <p>Succsessfully sharing data:<br></p>
-<pre><br><span class="caps">POST</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
+<pre><br><span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
 {&hellip; json data &hellip;}<br><del>-</del><br>
-303 See Other<br>
-Location: http://api/v3/clients/[client_id]/action/[action_id]<br></pre>
+200 OK<br>
+{&hellip; json data &hellip;}<br></pre>
 <p>When no other clients have a similar envrionment<br></p>
-<pre><br><span class="caps">POST</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
+<pre><br><span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]<br>
 {&hellip; json data &hellip;}<br><del>-</del><br>
 204 No Content<br></pre>
 <p>When environment is insufficient (no data or too bad)<br></p>

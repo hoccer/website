@@ -89,14 +89,48 @@
           <div class="column grid_7">
             <article>
               <div id="gollum-root">
-<p>Komplizierte Grafik was die Hoccer <span class="caps">API</span> alles kann?</p>
-<p>und:</p>
+<h2>The Linccer <span class="caps">API</span>
+</h2>
+<p>The Linccer <span class="caps">API</span> is intended to connect arbitrary devices on the same location. The devices do not need to be in the same local network or .., they just need to share the same environment . Our server uses environment informations, like gps coordinates to detect the devices that should be grouped.</p>
 <ul>
 <li>
 <span class="caps">WIESO</span> <span class="caps">VERDIENT</span> <span class="caps">EIN</span> <span class="caps">ENTWICKLER</span> <span class="caps">DER</span> <span class="caps">LINCCER</span> IN <span class="caps">SEINE</span> <span class="caps">APP</span> <span class="caps">EINBAUT</span> <span class="caps">MEHR</span> <span class="caps">GELD</span>?</li>
 	<li>
 <span class="caps">WIESO</span> <span class="caps">SOLLTE</span> <span class="caps">MAN</span> <span class="caps">ZEIT</span> <span class="caps">UND</span> <span class="caps">GELD</span> IN <span class="caps">LINCCER</span> <span class="caps">INVESTIEREN</span>?</li>
 </ul>
+<h2>The Hoccer Utilities</h2>
+<p>The Linccer/Hoccer APIs are intended to be as flexible as possible. We split them up in several components:</p>
+<p>image goes here</p>
+<h2>Which part should you use?</h2>
+<p>Depending on your needs, you have to decide which parts to use.</p>
+<h3>You want to connect some devices</h3>
+<p>The Linccer <span class="caps">API</span> allows to transfere arbitrary json data between grouped devices. It offers high flexibility what to share. Just share the data that fits best to your app. If you write an app for passing urls you can send <br>
+{ url : &ldquo;http://hoccer.com&rdquo; }. <br>
+But remember: to keep the passing experience smooth the transferred <span class="caps">JSON</span> data should not be to large. If you want to pass larger content like images you should look at the FileCache <span class="caps">API</span>.</p>
+<h3>You want to build a file sharing app.</h3>
+<p>In addition to the plain linking <span class="caps">API</span> we offer a Hoccer spec. Hoccer is our populare file sharing app available for iPhone and Android. It aimes to simplify data sharing between devices. All Apps complying with the hoccer spec can exchange data between each other.</p>
+<h2>RESTful <span class="caps">API</span>
+</h2>
+<p>The Linccer <span class="caps">API</span> is implemented as RESTful webservice. So if your favourite language has a http library (most have ;)) you can easily connect to the our service. <br>
+For convienence we offer higher level APIs in Objective-C, Java, Ruby or JavaScript.</p>
+<p>Even when you plan to use one of the higher level <span class="caps">API</span> clients, you should read the RESTful flow. It will give you a better understanding of how the Linccer <span class="caps">API</span> works.</p>
+<h3>RESTful Flow</h3>
+<h4>
+<span class="caps">PUT</span> http://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
+<p>As mentioned above Linccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client.<br>
+To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
+You should also continue to watch changes in the environment and send another <span class="caps">PUT</span> request for each change.<br>
+Our official Hoccer Apps start sending the environment just after the startup. For other Apps it might be more appropriate to begin updating the environment when the user enters a sharing mode, but that depands on the type of your application.</p>
+<h4>
+<span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<p>To send data <span class="caps">PUT</span> a valid <span class="caps">JSON</span> string to the action uri.</p>
+<h4>
+<span class="caps">GET</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<p>To receive data perform a <span class="caps">GET</span> request on an action uri.</p>
+<h2>How to continue?</h2>
+<p>If you want to write a Linccer Client in another language read the complete RESTful spezification.</p>
+<p>If you want to use Linccer in your App, read the appropriate reference (iOS, Java, JaveScript).</p>
+<p>If you want to connect your App with the Hoccer File Sharing ecosystem, read the Hoccer spec.</p>
 </div>
             </article>
           </div>
