@@ -33,3 +33,6 @@ dd { padding-left: 10px; margin-bottom: 18px;}
   background-color: #FF6F7B;
   border: 2px dashed #000000;
 }
+
+article img { display: block;   margin-left: auto; padding-right: 55px; margin-right: auto;}
+
