@@ -97,17 +97,16 @@
 <h2>The Hoccer Utilities</h2>
 <p>The Hoccer Utilities are build on top of Linccer to provide a common protocol for sharing files and content:</p>
 <p><img src="http://developer.hoccer.com/images/linccer-api-layers.png"></p>
-<h2>Which part should you use?</h2>
+<h2>Which parts should you use?</h2>
 <p>Depending on your needs, you have to decide which parts to use.</p>
 <h3>You want to connect your Apps</h3>
-<p>The Linccer <span class="caps">API</span> allows to transfer arbitrary <span class="caps">JSON</span> data between the grouped devices. This offers high flexibility what to share. Just share the data that fits best to your app. If you write an app for passing urls you can just send <br>
-{ url : &ldquo;http://hoccer.com&rdquo; }.<br>
+<p>The Linccer <span class="caps">API</span> allows to transfer arbitrary <span class="caps">JSON</span> data between the grouped devices. This allows high flexibility in what to share. Just transfer the data that best fits for your app. If you write an app for passing urls you can just send <code>{ url : "http://hoccer.com" }</code>, an app <br>
 But remember: to keep the sharing experiance smooth and fast, the <span class="caps">JSON</span> should not be to large. If you want to pass larger content like images you should look at our FileCache <span class="caps">API</span>.</p>
 <h3>You want to offer a file sharing app.</h3>
 <p>In addition to the plain linking <span class="caps">API</span> we offer a Hoccer spec. Hoccer is our populare file sharing app available for iPhone and Android. It aimes to simplify data sharing between devices. All Apps complying with the hoccer spec can exchange data between each other.</p>
 <h2>Actions</h2>
 <p>A Linccer transaction consists of two actions, a send action and a receive action. E.g. the Hoccer App uses the throw and catch methaphors for triggering these actions. <br>
-Currently both actions have to be performed (nearly) simultaniously. The way to trigger the actions is up to you. Some Apps may use buttons and others allow the users to bump their phones togeher.</p>
+Currently both actions have to be performed (nearly) simultaniously. The way to trigger the actions is up to you. Some Apps may use buttons, others may require the users to bump their phones together.</p>
 <h3>Action Modes</h3>
 <p>Actions modes determine how many people can can share and receive simultaniously.</p>
 <h4>One-to-many</h4>

@@ -1,11 +1,12 @@
 <div id="gollum-root">
 <h2>Geocialize your software!</h2>
-<p>Add connectivity to your App in under ten minutes. Linccer, the Connection <span class="caps">API</span> Hoccer is based on, gives your users the ability to connect devices at hand. Use the Linccer <span class="caps">API</span> to join devices for a game, a collaborative tool and much more. You can even connect to a website.<br><a class="internal present" href="about_api.html">more about the Hoccer API</a></p>
+<p>Add connectivity to your App in under ten minutes. Linccer, the Connection <span class="caps">API</span> Hoccer is based on, gives your users the ability to connect devices at hand. Use the Linccer <span class="caps">API</span> to join devices for a game, a collaborative tool and much more. You can even connect to a website.<br><a class="internal present" href="about_api.html">Read more about the Hoccer API</a></p>
 <h2>Example Code</h2>
 <div id="tabs">
 <ul>
 <li><a href="#java">Java</a></li>
 	<li><a href="#objc">iOS</a></li>
+	<li><a href="#ruby">Ruby</a></li>
 </ul>
 <div class="code" id="java"><div class="highlight">
 <pre><span class="n">Linccer</span> <span class="n">linccer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Linccer</span><span class="o">(</span><span class="k">new</span> <span class="n">ClientDescription</span><span class="o">(</span><span class="s">"Demo App"</span><span class="o">));</span>
@@ -22,45 +23,66 @@
 </div></div>
 <div class="code" id="objc"><div class="highlight">
 <pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCClient</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
+    <span class="n">linccer</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCLinccer</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
                                        <span class="nl">secret:</span> <span class="s">@"secret!!!11elf"</span><span class="p">];</span>
-    <span class="n">client</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="n">linccer</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nl">send:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
     <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">payload</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObject:</span> <span class="s">@"World"</span> 
                                                         <span class="nl">forKey:</span> <span class="s">@"Hello"</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">client</span> <span class="nl">send:</span> <span class="n">payload</span> <span class="nl">withMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">linccer</span> <span class="nl">send:</span> <span class="n">payload</span> <span class="nl">withMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nl">receive:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">client</span> <span class="nl">receiveWithMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">linccer</span> <span class="nl">receiveWithMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="cp">#pragme mark -</span>
-<span class="cp">#pragma mark HCClient Delegate Methods</span>
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">clientDidRegister:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">hoccer</span> <span class="p">{</span>
+<span class="cp">#pragma mark HCLinccer Delegate Methods</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccerDidRegister:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"ready for transfering data"</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">client:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">hoccer</span> <span class="nl">didSendDataWithInfo:</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">info</span>  <span class="p">{</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccer:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="nl">didSendDataWithInfo:</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">info</span>  <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"successfully send something %@"</span><span class="p">,</span> <span class="n">info</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">client:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">client</span> <span class="nl">didReceiveData:</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccer:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="nl">didReceiveData:</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"received data: %@"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="p">}</span>
 </pre>
 </div></div>
+<div class="code" id="ruby"><div class="highlight">
+<pre><span class="c1"># Create new LinccerClient instance</span>
+<span class="n">client</span> <span class="o">=</span> <span class="no">LinccerClient</span><span class="o">.</span><span class="n">new</span>
+
+<span class="c1"># Update client environment</span>
+<span class="n">client</span><span class="o">.</span><span class="n">update_environment</span><span class="p">(</span>
+  <span class="ss">:gps</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:longitude</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="ss">:latitude</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="ss">:accuracy</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="o">.</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Share data</span>
+<span class="c1"># The share method expects a mode and an arbitrary ruby hash which will</span>
+<span class="c1"># be transformed to JSON and used as the payload.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">share</span><span class="p">(</span> <span class="s2">"one-to-one"</span><span class="p">,</span> <span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s2">"bar"</span> <span class="p">)</span>
+
+<span class="c1"># Receive data</span>
+<span class="c1"># The receive method expects a mode parameter and returns a ruby hash</span>
+<span class="c1"># containing the payload</span>
+<span class="n">c</span><span class="o">.</span><span class="n">receive</span><span class="p">(</span> <span class="s2">"one-to-one"</span> <span class="p">)</span>
+</pre>
+</div></div>
 </div>
 
-<p>Read the <a class="internal present" href="api_overview.html">API Documentation</a>.</p>
+
 <h2>Getting started</h2>
 <ol>
-<li>Sign up for a test <span class="caps">API</span> Key on <a href="http://api.hoccer.com:443">developer.hoccer.com/signup</a>.</li>
-	<li>Fetch an <span class="caps">API</span> developer package for <a href="https://github.com/hoccer/ios-api/downloads">iOS</a>, <a href="https://github.com/hoccer/java-api/downloads">Java</a> or <a href="https://github.com/hoccer/ruby-api/downloads">Ruby</a> and follow the instructions from the <span class="caps">README</span>.</li>
+<li>Sign up for a <a href="/accounts/sign_up">test <span class="caps">API</span> Key</a>.</li>
+	<li>
+<a class="internal present" href="about_api.html">Read more about our APIs</a> <span class="caps">API</span> and follow the instructions from the READMEs for <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a> or <a href="https://github.com/hoccer/ruby-api">Ruby</a>.</li>
 	<li>Try out the provided examples from the package.</li>
 	<li>Implement world shuttering Apps.</li>
-	<li>Register on <a href="http://github.com">GitHub</a> and get involved to improve the <span class="caps">API</span> for <a href="https://github.com/hoccer/ios-api">iOS</a> or <a href="https://github.com/hoccer/ruby-api">Ruby</a>.</li>
+	<li>Register on <a href="http://github.com">GitHub</a> and get involved to improve the APIs or make suggestions.</li>
 </ol>
 </div>
