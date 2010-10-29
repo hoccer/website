@@ -22,32 +22,32 @@
 </div></div>
 <div class="code" id="objc"><div class="highlight">
 <pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCClient</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
+    <span class="n">linccer</span> <span class="o">=</span> <span class="p">[[</span><span class="n">HCLinccer</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithApiKey:</span> <span class="s">@"1234567890"</span> 
                                        <span class="nl">secret:</span> <span class="s">@"secret!!!11elf"</span><span class="p">];</span>
-    <span class="n">client</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="n">linccer</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nl">send:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
     <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">payload</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObject:</span> <span class="s">@"World"</span> 
                                                         <span class="nl">forKey:</span> <span class="s">@"Hello"</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">client</span> <span class="nl">send:</span> <span class="n">payload</span> <span class="nl">withMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">linccer</span> <span class="nl">send:</span> <span class="n">payload</span> <span class="nl">withMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nl">receive:</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">client</span> <span class="nl">receiveWithMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">linccer</span> <span class="nl">receiveWithMode:</span> <span class="n">HCTransferModeOneToOne</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="cp">#pragme mark -</span>
-<span class="cp">#pragma mark HCClient Delegate Methods</span>
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">clientDidRegister:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">hoccer</span> <span class="p">{</span>
+<span class="cp">#pragma mark HCLinccer Delegate Methods</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccerDidRegister:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"ready for transfering data"</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">client:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">hoccer</span> <span class="nl">didSendDataWithInfo:</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">info</span>  <span class="p">{</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccer:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="nl">didSendDataWithInfo:</span> <span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">info</span>  <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"successfully send something %@"</span><span class="p">,</span> <span class="n">info</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">client:</span> <span class="p">(</span><span class="n">HCClient</span> <span class="o">*</span><span class="p">)</span><span class="n">client</span> <span class="nl">didReceiveData:</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">linccer:</span> <span class="p">(</span><span class="n">HCLinccer</span> <span class="o">*</span><span class="p">)</span><span class="n">aLinccer</span> <span class="nl">didReceiveData:</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span> <span class="p">{</span>
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"received data: %@"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="p">}</span>
 </pre>
