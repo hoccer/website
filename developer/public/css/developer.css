@@ -1,3 +1,17 @@
+#signup {
+  display: none;
+}
+
+#signin_errors {
+  display: none;
+  font-weight: bold;
+  margin: 18px 0 18px 0;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #FF6F7B;
+  border: 2px dashed #000000;
+}
+
 #tabs {
   font-size: 0.9em;
   width: 600px;
@@ -24,20 +38,6 @@
 dl { margin: 18px 0 18px 0; }
 dt { font-weight: bold; }
 dd { padding-left: 10px; margin-bottom: 18px;}
-
-#signin_errors {
-  font-weight: bold;
-  margin: 18px 0 18px 0;
-  padding: 10px;
-  color: #ffffff;
-  background-color: #FF6F7B;
-  border: 2px dashed #000000;
-  display: none;
-}
-
-#signup {
-  display: none;
-}
 
 article img { display: block;   margin-left: auto; padding-right: 55px; margin-right: auto;}
 
