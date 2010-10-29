@@ -1,5 +1,9 @@
+function goToByScroll(id){
+  $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+}
+
+
 $(document).ready(function(){
-  //$('#signup').hide();
 
   $('#login section p a').bind("click", function(){
     $('#login').hide();
@@ -17,6 +21,15 @@ $(document).ready(function(){
   if ($('#signin_errors').text().length > 0) {
     $('#signin_errors').delay(300).slideDown();
   }
+
+  $('.signup_link').each( function() {
+    $(this).bind("click", function() {
+      $('#login').hide();
+      $('#signup').show();
+      goToByScroll('account_box');
+      return false;
+    });
+  });
 });
 
 
