@@ -1,5 +1,5 @@
-$(document).ready(function(){ 
-  $('#signup').hide();
+$(document).ready(function(){
+  //$('#signup').hide();
 
   $('#login section p a').bind("click", function(){
     $('#login').hide();
