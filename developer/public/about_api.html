@@ -101,30 +101,30 @@
 <p>Depending on your needs, you have to decide which parts to use.</p>
 <h3>You want to connect your Apps</h3>
 <p>The Linccer <span class="caps">API</span> allows to transfer arbitrary <span class="caps">JSON</span> data between the grouped devices. This allows high flexibility in what to share. Just transfer the data that best fits for your app. If you write an app for passing urls you can just send <code>{ url : "http://hoccer.com" }</code>, an app <br>
-But remember: to keep the sharing experiance smooth and fast, the <span class="caps">JSON</span> should not be to large. If you want to pass larger content like images you should look at our FileCache <span class="caps">API</span>.</p>
+But remember: to keep the sharing experience smooth and fast, the <span class="caps">JSON</span> should not be to large. If you want to pass larger content like images you should look at our FileCache <span class="caps">API</span>.</p>
 <h3>You want to offer a file sharing app.</h3>
-<p>In addition to the plain linking <span class="caps">API</span> we offer a Hoccer spec. Hoccer is our populare file sharing app available for iPhone and Android. It aimes to simplify data sharing between devices. All Apps complying with the hoccer spec can exchange data between each other.</p>
+<p>In addition to the plain linking <span class="caps">API</span> we offer a Hoccer spec. Hoccer is our popular file sharing app available for iPhone and Android. It aims to simplify data sharing between devices. All Apps complying with the hoccer spec can exchange data between each other.</p>
 <h2>Actions</h2>
-<p>A Linccer transaction consists of two actions, a send action and a receive action. E.g. the Hoccer App uses the throw and catch methaphors for triggering these actions. <br>
-Currently both actions have to be performed (nearly) simultaniously. The way to trigger the actions is up to you. Some Apps may use buttons, others may require the users to bump their phones together.</p>
+<p>A Linccer transaction consists of two actions, a send action and a receive action. E.g. the Hoccer App uses the throw and catch metaphor for triggering these actions. <br>
+Currently both actions have to be performed (nearly) simultaneously. The way to trigger the actions is up to you. Some Apps may use buttons, others may require the users to bump their phones together.</p>
 <h3>Action Modes</h3>
-<p>Actions modes determine how many people can can share and receive simultaniously.</p>
+<p>Actions modes determine how many people can share and receive simultaneously.</p>
 <h4>One-to-many</h4>
 <p>A one to many connection lets you distribute content from one device to several others.</p>
 <h4>One-to-one</h4>
 <p>This mode ensures a one-to-one transaction.</p>
 <h2>RESTful <span class="caps">API</span>
 </h2>
-<p>The Linccer <span class="caps">API</span> is a RESTful webservice. So if your favourite language has a http library (most have ;)) you can easily connect to the our service. <br>
+<p>The Linccer <span class="caps">API</span> is a RESTful webservice. So if your favorite language has a http library (most have ;)) you can easily connect to our service. <br>
 For convienence we offer higher level APIs in Objective-C, Java, Ruby or JavaScript.</p>
 <p>Even when you plan to use one of the higher level api clients, you should read the RESTful Flow. It will give you a better understanding of how the linccer api works.</p>
 <h3>RESTful Flow</h3>
 <h4>
 <span class="caps">PUT</span> http://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
 <p>As mentioned above hoccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client.<br>
-To allow a fast coupling groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
+To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
 You should also continue to watch changes in the environment and send another <span class="caps">PUT</span> request for each change.<br>
-Our Hoccer App starts sending the environment just after the startup. For other apps it might be more appropriate to start the environment updates when the user enters a sharing mode, but that depands on the type of your application.</p>
+Our Hoccer App starts sending the environment just after the startup. For other apps it might be more appropriate to start the environment updates when the user enters a sharing mode, but that depends on the type of your application.</p>
 <h4>
 <span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
 <p>To send data <span class="caps">PUT</span> a valid <span class="caps">JSON</span> string to the action uri. Send the data as <span class="caps">JSON</span> in the Request-Body.</p>
