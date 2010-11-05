@@ -44,3 +44,32 @@ article img { display: block;   margin-left: auto; padding-right: 55px; margin-r
 h3 {font-size: 1.1em}
 
 h4 {font-size: 1em; margin-top: 10px;}
+
+form#account_new input[type=email], form#account_new input[type=password] {
+  font-size: 36px;
+  width: 100%;
+  margin-bottom: 36px;
+  border:solid 1px #C5C5C5;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  color: #686868;
+}
+
+form#account_new input[type=submit] {
+  background-color: #5FB7CC;
+  font-size: 18px;
+  color: #ffffff;
+  padding: 18px;
+  border: 1px solid #C5C5C5;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+form#account_new label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
