@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   def index
-    expires_in 3.hours, :public => true
+    #expires_in 3.hours, :public => true
   end
 
 end
