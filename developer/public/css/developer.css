@@ -73,3 +73,11 @@ form#account_new label {
   margin-bottom: 16px;
   font-size: 24px;
 }
+
+div#error_explanation {
+  margin-bottom: 18px;
+}
+
+form#account_new div.field_with_errors input {
+  border: 1px solid red;
+}

@@ -7,9 +7,6 @@ class Account
 
   after_create :generate_keys
 
-  validates_presence_of :password
-  validates_length_of   :password, :minimum => 7
-
   private
 
   def generate_keys
