@@ -30,7 +30,6 @@ $(document).ready(function(){
   //    return false;
   //  });
   //});
-  alert("foo");
   $("body").append('<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script');
 });
 
