@@ -8,7 +8,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: new_api_development
+  database: hoccer_development
 
 test:
   <<: *defaults
