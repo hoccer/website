@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     case resource_or_scope
-    when :account, Account 
-       "bla"
+    when :account, Account
+       ""
     else
-       "foo"
+       ""
     end
   end
 end
