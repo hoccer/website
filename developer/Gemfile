@@ -6,6 +6,7 @@ gem 'mongoid', '>= 2.0.0.beta.18'
 gem 'uuid'
 gem 'devise'
 gem 'ruby-debug19'
+gem 'thin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
