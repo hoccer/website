@@ -81,3 +81,13 @@ div#error_explanation {
 form#account_new div.field_with_errors input {
   border: 1px solid red;
 }
+
+p#flash_notice {
+  margin-bottom: 18px;
+  padding: 18px;
+  background-color: yellow;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #BDBDBD;
+}

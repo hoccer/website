@@ -1,5 +1,11 @@
 <%= content_for(:headline) { "Developer" } %>
 
+<% if flash[:notice] %>
+  <div class="column grid_12">
+    <p id="flash_notice"><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
 <div class="column grid_7">
   <article>
     <%= render :partial => 'shared/index' %>
@@ -21,12 +27,17 @@
         </p>
         <p>
           <%= form_tag new_account_session_path do %>
-          <%=  text_field_tag 'account[email]' %>
-          <%=  password_field_tag 'account[password]' %>
-        </p>
-        <div id="signin_errors"><%= flash[:alert] %></div>
-        <p>
-          <%=  submit_tag "Login" %>
+            <p>
+              <%= label_tag :email %><br / >
+              <%= text_field_tag 'account[email]' %>
+            </p>
+            <p>
+              <%= label_tag :password %><br />
+              <%= password_field_tag 'account[password]' %>
+            </p>
+            <div id="signin_errors"><%= flash[:alert] %></div>
+          <p>
+          <%= submit_tag "Login" %>
           <% end %>
         </p>
       </section>
