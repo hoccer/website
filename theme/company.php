@@ -58,10 +58,7 @@
               </div>
            <? endfor; endif; ?>
 
-
-
             <?php dynamic_sidebar( 'company_sidebar' ) ?>
-
 
           <?php if (get_post_meta($post->ID, "show_posts", true) == 1): ?>
           <div id="latest_posts">
@@ -87,5 +84,3 @@
 
         </div>
         <?php get_footer() ?>
-  </body>
-</html>
