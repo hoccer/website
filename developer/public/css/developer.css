@@ -91,3 +91,7 @@ p#flash_notice {
   border-radius: 5px;
   border: 1px solid #BDBDBD;
 }
+
+input[type=password] {
+  border: 1px solid #C5C5C5;
+}
