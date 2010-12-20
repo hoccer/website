@@ -96,17 +96,10 @@
 <p>The Clients need to generate a unique client id.</p>
 <p>Continious Environment Updates:<br></p>
 <pre><br><span class="caps">PUT</span> http://api/v3/clients/[client_id]/environment<br>
-{  gps: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: 2010-12-31 12:32:00 +0100},<br>
-   network: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: 2010-12-31 12:32:00 +0100},<br>
-   cell: [123:456:678, 312:413:123],<br>
-   bssids: [123:1231:hbsa, 123:23:dfb] } <br><del>-</del><br>
+{  gps: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: <em>unit timestamp</em> },<br>
+   network: {"latitude": 154.123, &ldquo;longitude&rdquo;: 123456, &ldquo;accuracy&rdquo;: 300, timestamp: <em>unix timestamp</em> },<br>
+   wifi: {bssids: [123:1231:hbsa, 123:23:dfb], timestamp: <em>unix timestamp</em> } <br><del>-</del><br>
 201 Created<br></pre>
-<pre>
-PUT http://api/v3/clients/[client_id]/environment/gps
-{ latitude: 154.123, longitude: 123456, accuracy: 300, timestamp: "2010-12-31 12:32:00 +0100" } 
----
-201 Created
-</pre>
 <p>Environment Update on nonexisting client id:<br></p>
 <pre><br><span class="caps">PUT</span> http://api/v3/clients/[non_existing_client_id]/environment<br>
 {  &hellip; } <br><del>-</del><br>

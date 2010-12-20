@@ -118,24 +118,33 @@ Currently both actions have to be performed (nearly) simultaneously. The way to 
 <p>The Linccer <span class="caps">API</span> is a RESTful webservice. So if your favorite language has a http library (most have ;)) you can easily connect to our service. <br>
 For convienence we offer higher level APIs in Objective-C, Java, Ruby or JavaScript.</p>
 <p>Even when you plan to use one of the higher level api clients, you should read the RESTful Flow. It will give you a better understanding of how the linccer api works.</p>
-<h3>RESTful Flow</h3>
+<h3>
+<span class="caps">API</span> Commands</h3>
+<p>All commands require a self generated client-id which is simply a <span class="caps">UUID</span> like 1122ffaa-8c99-49ee-b045-33d737cc50f9. We recommend to keep the same uuid between sessions to make environment updates all more efficent.</p>
 <h4>
-<span class="caps">PUT</span> http://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
-<p>As mentioned above hoccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client.<br>
-To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
+<span class="caps">PUT</span> https://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
+<p>As mentioned above Linccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client:</p>
+<pre><code>{"gps":
+    {"timestamp":1291816828,"accuracy":280,"longitude":13.409,"latitude":52.516},
+ "network":
+    {"timestamp":1291644002,"accuracy":650,"longitude":13.409,"latitude":52.516}
+ "wifi":
+    {"timestamp":1291644028,"bssids":["00:22:3f:11:5e:5e","00:22:3f:10:a8:bf"]},
+}</code></pre>
+<p>To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
 You should also continue to watch changes in the environment and send another <span class="caps">PUT</span> request for each change.<br>
 Our Hoccer App starts sending the environment just after the startup. For other apps it might be more appropriate to start the environment updates when the user enters a sharing mode, but that depends on the type of your application.</p>
 <h4>
-<span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<span class="caps">PUT</span> https://linccer.hoccer.com/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
 <p>To send data <span class="caps">PUT</span> a valid <span class="caps">JSON</span> string to the action uri. Send the data as <span class="caps">JSON</span> in the Request-Body.</p>
 <h4>
-<span class="caps">GET</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<span class="caps">GET</span> https://linccer.hoccer.com/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
 <p>To receive data perform a <span class="caps">GET</span> request on an action uri. <br>
 The arrival order on the server is not importend. They just hava to arrive within three seconds.</p>
 <h2>How to continue?</h2>
-<p>If you want to write a Linccer Client in another language read the complete RESTful specification.</p>
-<p>If you want to use Linccer in your app, read the appropriate reference (iOs, Java, JaveScript).</p>
-<p>If you want to connect your app with the Hoccer File Sharing Ecosystem, read the Hoccer spec.</p>
+<p>If you want to use Linccer in your App, read the appropriate reference (<a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a>).</p>
+<p>If you want to write a Linccer Client in another language or platform read the complete RESTful specification.</p>
+<p>If you want to connect your app with the Hoccer File Sharing Ecosystem, read the Hoccer Utilities spec (jet to come).</p>
 </div>
             </article>
           </div>
