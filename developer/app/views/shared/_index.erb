@@ -76,7 +76,8 @@
 </pre>
 </div></div>
 <div class="code" id="android"><div class="highlight">
-<pre><span class="n">AsyncLinccer</span> <span class="n">linccer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AsyncLinccer</span><span class="o">(</span><span class="k">new</span> <span class="n">ClientDescription</span><span class="o">(</span><span class="s">"Demo Android App"</span><span class="o">));</span>
+<pre><span class="n">AsyncLinccer</span> <span class="n">linccer</span> <span class="o">=</span> 
+      <span class="k">new</span> <span class="nf">AsyncLinccer</span><span class="o">(</span><span class="k">new</span> <span class="n">ClientDescription</span><span class="o">(</span><span class="s">"Demo Android App"</span><span class="o">));</span>
 
 <span class="c1">// publish a gps position obtained from Android's LocationListener</span>
 <span class="n">linccer</span><span class="o">.</span><span class="na">onGpsChanged</span><span class="o">(</span><span class="n">location</span><span class="o">);</span>
@@ -100,7 +101,9 @@
          <span class="o">};</span>
 
 <span class="c1">// safely pass data to an other client here and now</span>
-<span class="n">linccer</span><span class="o">.</span><span class="na">asyncShare</span><span class="o">(</span><span class="s">"one-to-one"</span><span class="o">,</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="s">"{ 'demo' : 'arbitrary json' }"</span><span class="o">),</span> <span class="n">handler</span><span class="o">);</span>
+<span class="n">linccer</span><span class="o">.</span><span class="na">asyncShare</span><span class="o">(</span><span class="s">"one-to-one"</span><span class="o">,</span> 
+                    <span class="k">new</span> <span class="nf">JSONObject</span><span class="o">(</span><span class="s">"{ 'demo' : 'arbitrary json' }"</span><span class="o">),</span> 
+                    <span class="n">handler</span><span class="o">);</span>
 
 <span class="c1">// safely receive passed data from an other client here and now</span>
 <span class="n">linccer</span><span class="o">.</span><span class="na">asyncReceive</span><span class="o">(</span><span class="s">"one-to-one"</span><span class="o">,</span> <span class="n">handler</span><span class="o">);</span>
@@ -111,10 +114,12 @@
 <p>Read the <a class="internal present" href="about_api.html">API Documentation</a>.</p>
 <h2>Getting started</h2>
 <ol>
-<li>Choose <span class="caps">README</span> file for your specified <span class="caps">API</span>: <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a> or <a href="https://github.com/hoccer/android-api">Android</a>  and check the genaral <a class="internal present" href="about_api.html">API Documentation</a>.</li>
-	<li>Try the examples.</li>
-	<li>Sign up for your <a class="signup_link" href="/accounts/sign_up"><span class="caps">API</span> Key</a>.</li>
-	<li>Implement world shattering Apps.</li>
-	<li><a href="http://github.com">Get involved to improve the APIs and make suggestions.</a></li>
+<li>Choose <span class="caps">README</span> file for your specified <span class="caps">API</span>: <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a> or <a href="https://github.com/hoccer/android-api">Android</a>  and check the genaral <a class="internal present" href="about_api.html">API Documentation</a>
+</li>
+	<li>Try the examples</li>
+	<li>Sign up for your <a class="signup_link" href="/accounts/sign_up"><span class="caps">API</span> Key</a>
+</li>
+	<li>Implement world shattering Apps</li>
+	<li><a href="http://github.com">Get involved to improve the APIs and make suggestions</a></li>
 </ol>
 </div>
