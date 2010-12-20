@@ -90,14 +90,17 @@
           <div class="column grid_7">
             <article>
               <div id="gollum-root">
-<h2>Server <span class="caps">API</span> 3</h2>
-<h3>General</h3>
+<h2>General</h2>
 <p>At first run the clients need to generate a unique client id which is recommended to be used through all sessions.</p>
 <p>Continious Environment Updates (should happen at least every two minutes):</p>
 <pre><code>PUT /v3/clients/[client_id]/environment
-{  gps: {"latitude": 154.123, "longitude": 123456, "accuracy": 300, timestamp: _unit timestamp_ },
-   network: {"latitude": 154.123, "longitude": 123456, "accuracy": 300, timestamp: _unix timestamp_ },
-   wifi: {bssids: [123:1231:hbsa, 123:23:dfb], timestamp: _unix timestamp_ }
+{  gps: {"latitude": 154.123, "longitude": 123456, 
+           "accuracy": 300, timestamp: _unit timestamp_ },
+   network: {"latitude": 154.123, "longitude": 123456, 
+                 "accuracy": 300, timestamp: _unix timestamp_ },
+   wifi: {bssids: [123:1231:hbsa, 123:23:dfb], 
+           timestamp: _unix timestamp_ }
+}
 ---
 201 Created</code></pre>
 <p>Environment Update on nonexisting client id:</p>
@@ -109,7 +112,7 @@
 <pre><code>DELETE /v3/clients/[client_id]/environment
 ---
 200 OK</code></pre>
-<h3>Sharing</h3>
+<h2>Sharing</h2>
 <p>Succsessfully sharing data:</p>
 <pre><code>PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
 {... json data ...}
@@ -130,7 +133,7 @@
 <pre><code>PUT /v3/clients/action/[ one-to-one | one-to-many | many-to-many ]
 ---
 409 Conflict</code></pre>
-<h3>Receiving</h3>
+<h2>Receiving</h2>
 <pre><code>GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
 ---
 200 
