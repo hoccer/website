@@ -14,7 +14,7 @@
 <pre><span class="n">Linccer</span> <span class="n">linccer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Linccer</span><span class="o">(</span><span class="k">new</span> <span class="n">ClientDescription</span><span class="o">(</span><span class="s">"Demo App"</span><span class="o">));</span>
 
 <span class="c1">// publish a gps position (lat, long, accuracy)</span>
-<span class="n">linccer</span><span class="o">.</span><span class="na">onGpsMeasurement</span><span class="o">(</span><span class="mf">23.44</span><span class="o">,</span> <span class="mf">102.13</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span> 
+<span class="n">linccer</span><span class="o">.</span><span class="na">onGpsChanged</span><span class="o">(</span><span class="mf">23.44</span><span class="o">,</span> <span class="mf">102.13</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span> 
 
 <span class="c1">// safely pass data to an other client here and now</span>
 <span class="n">linccer</span><span class="o">.</span><span class="na">share</span><span class="o">(</span><span class="s">"one-to-one"</span><span class="o">,</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="s">"{ 'demo' : 'arbitrary json' }"</span><span class="o">));</span>
