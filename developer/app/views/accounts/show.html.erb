@@ -1,0 +1,22 @@
+<%= content_for(:headline) { "Developer Dashboard" } %>
+
+<div class="column grid_7">
+  <article>
+		<h1>Welcome <%= current_account.email %></h1>
+		
+		<p>API-Key: <%= current_account.api_key %></p>
+		
+		<hr />
+		<p>Shared Secret: <%= current_account.shared_secret %></p>
+		
+		<hr />
+		<h2>Your websites</h2>
+		facebook.com (delete)
+		
+		<%= form_tag({:controller => "accounts", :action => "websites"}, :method => "post") do%>
+			<%= text_field_tag(:website) %>
+			<%= submit_tag("add") %>
+		<% end %>
+  </article>
+</div>
+

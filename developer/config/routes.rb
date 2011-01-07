@@ -1,11 +1,21 @@
 NewApi::Application.routes.draw do
+  get "account/index"
+
   get "api/index"
 
   devise_for :accounts
   
-  namespace :account do
-    root :to => "account#index"
+  resource :account do
+    member do
+      get "websites"
+    end
   end
+
+  # do
+  #   root :to => "account#index"
+  #   
+  #   put 'website' => "account#website"
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
