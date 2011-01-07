@@ -6,9 +6,11 @@ NewApi::Application.routes.draw do
   devise_for :accounts
   
   resource :account do
-    member do
-      get "websites"
-    end
+    resource :websites
+    # member do
+    #   post "websites"
+    #   delete "websites"
+    # end
   end
 
   # do

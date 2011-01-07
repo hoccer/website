@@ -11,9 +11,17 @@
 		
 		<hr />
 		<h2>Your websites</h2>
-		facebook.com (delete)
 		
-		<%= form_tag({:controller => "accounts", :action => "websites"}, :method => "post") do%>
+		<ul>
+		<% current_account.websites.each do |site| %>
+			<li><%= site %> (<%= link_to 'delete', 
+													 account_websites_path(site),
+													:method => "delete" %>)
+			</li>
+		<% end %>
+		</ul>
+		
+		<%= form_tag( account_websites_path ) do %>
 			<%= text_field_tag(:website) %>
 			<%= submit_tag("add") %>
 		<% end %>

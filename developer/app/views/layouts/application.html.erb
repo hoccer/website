@@ -23,11 +23,14 @@
     <link rel="stylesheet" href="/css/code_highlight.css">
     <!-- For the less-enabled mobile browsers like Opera Mini -->
     <link rel="stylesheet" media="handheld" href="/css/handheld.css?v=1" />
-
-    <script src="/javascripts/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		
+    <script src="/javascripts/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/api-keys.js" type="text/javascript" charset="utf-8"></script>
-
+		
+		<%= javascript_include_tag :defaults %>
+		<%= csrf_meta_tag %>
+		
     <!-- TABS -->
     <script type="text/javascript" charset="utf-8">
         $().ready(function() {
