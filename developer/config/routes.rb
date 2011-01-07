@@ -6,18 +6,8 @@ NewApi::Application.routes.draw do
   devise_for :accounts
   
   resource :account do
-    resource :websites
-    # member do
-    #   post "websites"
-    #   delete "websites"
-    # end
+    resource :websites, :only => [:create, :destroy]
   end
-
-  # do
-  #   root :to => "account#index"
-  #   
-  #   put 'website' => "account#website"
-  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
