@@ -96,3 +96,36 @@ p#flash_notice {
 input[type=password] {
   border: 1px solid #C5C5C5;
 }
+
+#dashboard {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  
+  font-size: 15px;
+}
+
+#dashboard h1 {
+  font-size: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 40px;
+  
+  background-color: #eee;
+}
+
+#dashboard h2 {
+  font-size: 20px;
+}
+
+#dashboard section {
+  padding: 20px 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+#dashboard input[type=text] {
+  width: 350px;
+  font-size: 20px;
+}
+

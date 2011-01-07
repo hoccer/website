@@ -5,7 +5,7 @@ NewApi::Application.routes.draw do
 
   devise_for :accounts
   
-  resource :account do
+  resource :account, :only => [:show, :edit] do
     resource :websites, :only => [:create, :destroy]
   end
 

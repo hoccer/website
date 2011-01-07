@@ -1,16 +1,27 @@
 <%= content_for(:headline) { "Developer Dashboard" } %>
 
-<div class="column grid_7">
-  <article>
+<div class="column grid_4">
+	<br />
+</div>
+
+<div class="column grid_8">
+  <article id="dashboard">
 		<h1>Welcome <%= current_account.email %></h1>
 		
-		<p>API-Key: <%= current_account.api_key %></p>
+		<section>
+		<h2>Your API-Key:
+		<%= text_field_tag(:api_key, current_account.api_key) %></h2>
+		</section>
+
+		<section>
+		<h2>Shared Secret:
+		<%= text_field_tag(:shared_secret, current_account.shared_secret) %></h2>
+
+		<p>Use the shared sectret together with </p>
+		</section>
 		
-		<hr />
-		<p>Shared Secret: <%= current_account.shared_secret %></p>
-		
-		<hr />
-		<h2>Your websites</h2>
+		<section>
+		<h2>Your websites:</h2>
 		
 		<ul>
 		<% current_account.websites.each do |site| %>
@@ -25,6 +36,10 @@
 			<%= text_field_tag(:website) %>
 			<%= submit_tag("add") %>
 		<% end %>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+		</section>
+		
   </article>
 </div>
 
