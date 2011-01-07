@@ -240,8 +240,17 @@ The arrival order on the server is not importend. They just hava to arrive withi
 <script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.2.min.js"><\/script>')</script>
 
 <script src="http://hoccer.com/wp-content/themes/hoccer/js/script.js?v=1"></script>
-<!--script type="text/javascript" charset="utf-8" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script-->
-
+<script type="text/javascript">
+	var pkBaseURL = document.location.protocol + "//" + "stats.artcom.de" + "/";
+	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+	try {
+		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+		piwikTracker.setDocumentTitle(document.title);
+		piwikTracker.trackPageView();
+		piwikTracker.enableLinkTracking();
+	} catch( err ) {}
+</script>
 
 
 <!--[if lt IE 7 ]>

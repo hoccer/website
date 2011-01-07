@@ -91,7 +91,7 @@
             <article>
               <div id="gollum-root">
 <h2>General</h2>
-<p>At first run the clients need to generate a unique client id which is recommended to be used through all sessions.</p>
+<p>After installing a Linccer client on some device, the application code should generate a unique id which should be used throughout all sessions.</p>
 <p>Continious Environment Updates (should happen at least every two minutes):</p>
 <pre><code>PUT /v3/clients/[client_id]/environment
 {  gps: {"latitude": 154.123, "longitude": 123456, 
@@ -108,7 +108,7 @@
 {  ... }
 ---
 412 Precondition Failed (if id is no uuid)</code></pre>
-<p>Closesing the Client (sign off)</p>
+<p>Closing the Client (sign off)</p>
 <pre><code>DELETE /v3/clients/[client_id]/environment
 ---
 200 OK</code></pre>
@@ -242,8 +242,17 @@ The server then keeps the connection open until the counter event happens.</p>
 <script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.2.min.js"><\/script>')</script>
 
 <script src="http://hoccer.com/wp-content/themes/hoccer/js/script.js?v=1"></script>
-<!--script type="text/javascript" charset="utf-8" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script-->
-
+<script type="text/javascript">
+	var pkBaseURL = document.location.protocol + "//" + "stats.artcom.de" + "/";
+	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+	try {
+		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+		piwikTracker.setDocumentTitle(document.title);
+		piwikTracker.trackPageView();
+		piwikTracker.enableLinkTracking();
+	} catch( err ) {}
+</script>
 
 
 <!--[if lt IE 7 ]>
