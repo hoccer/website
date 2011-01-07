@@ -1,8 +1,10 @@
 NewApi::Application.routes.draw do
   get "api/index"
 
-  devise_for :accounts do 
-    get "sign_in", :to => "api#index"
+  devise_for :accounts
+  
+  namespace :account do
+    root :to => "account#index"
   end
 
   # The priority is based upon order of creation:
