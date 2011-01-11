@@ -1,43 +1,51 @@
 <%= content_for(:headline) { "Developer Dashboard" } %>
 
-<div class="column grid_4">
-	<br />
+<div class="column grid_3">
+	<div id="sidebar">
+		<ul>
+			<a href="#"><li>API Keys</li></a>
+			<a href="#"><li>Your Account</li></a>
+			<a href="#"><li>Statistics</li></a>
+			<a href="#"><li>Tutorials</li></a>
+			<a href="#"><li id="helpdesk">Help Desk</li></a>
+	</div>
 </div>
 
-<div class="column grid_8">
+<div class="column grid_9">
   <article id="dashboard">
 		<h1>Welcome <%= current_account.email %></h1>
 		
-		<section>
-		<h2>Your API-Key:
-		<%= text_field_tag(:api_key, current_account.api_key) %></h2>
-		</section>
+		<section id="api_keys">
+			<strong>API-Key:</strong> <%= text_field_tag(:api_key, current_account.api_key) %><br />
+			<strong>Shared Secret:</strong>	<%= text_field_tag(:shared_secret, current_account.shared_secret) %>
 
-		<section>
-		<h2>Shared Secret:
-		<%= text_field_tag(:shared_secret, current_account.shared_secret) %></h2>
-
-		<p>Use the shared sectret together with </p>
+			<p>You need this keys to authenticate your clients.</p>
 		</section>
 		
 		<section>
-		<h2>Your websites:</h2>
+			<h3>Javascript</h3>
+			<p>In order to use the JavaScript API on your website enter the site's url.</p>
 		
-		<ul>
-		<% current_account.websites.each do |site| %>
-			<li><%= site %> (<%= link_to 'delete', 
-													 account_websites_path(site),
-													:method => "delete" %>)
-			</li>
-		<% end %>
-		</ul>
 		
-		<%= form_tag( account_websites_path ) do %>
-			<%= text_field_tag(:website) %>
-			<%= submit_tag("add") %>
-		<% end %>
+		<div id="website_form">
+			<h4>Your Websites:</h4>
+			
+			<ul>
+			<% current_account.websites.each do |site| %>
+				<li><%= site %> (<%= link_to 'delete', 
+														 account_websites_path(site),
+														:method => "delete" %>)
+				</li>
+			<% end %>
 		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+			<li><%= form_tag( account_websites_path ) do %>
+				<%= text_field_tag(:website) %>
+				<%= submit_tag("add") %>
+			<% end %></li>
+			<ul>
+		</div>
+		
+		<p>We only allow requests from the specified urls. It is importent that the protocol matches. If you use both 'https' and 'http' you need to enter both urls.</p>
 		</section>
 		
   </article>
