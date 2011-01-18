@@ -3,7 +3,7 @@
 <div class="column grid_3">
 	<div id="sidebar">
 		<ul>
-			<a href="#"><li>API Keys</li></a>
+			<a href="#"><li>General</li></a>
 			<li>Your Account</li>
 			<li>Statistics</li>
 			<li>Tutorials</li>
@@ -14,6 +14,11 @@
 <div class="column grid_9">
   <article id="dashboard">
 		<h1>Welcome <%= current_account.email %></h1>
+		
+		<section class="note">
+		The Linccer API is still in beta, you should not use it in production yet.
+		<br /><br /> We appreciate your feedback at <a href="mailto:support@hoccer.com">support@hoccer.com</a>.
+		</section>
 		
 		<section id="api_keys">
 			<strong>API-Key:</strong> <%= text_field_tag(:api_key, current_account.api_key) %><br />

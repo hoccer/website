@@ -172,6 +172,10 @@ div#articles #dashboard {
   margin: 15px 0 30px;
 }
 
+#dashboard .note {
+  background: #FFEFD7;
+}
+
 #sidebar {
   margin-right: -20px;
   margin-top: 90px;
