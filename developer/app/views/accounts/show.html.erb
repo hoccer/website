@@ -24,7 +24,7 @@
 		
 		<section>
 			<h3>Javascript</h3>
-			<p>In order to use the JavaScript API on your website enter the sites' urls.</p>
+			<p>In order to use the JavaScript API on your website you must enter the sites' urls.</p>
 		
 		
 		<div id="website_form">
@@ -34,6 +34,7 @@
 			<% current_account.websites.each do |site| %>
 				<li><%= site %> (<%= link_to 'delete', 
 														 account_websites_path(site),
+														:confirm => "remove #{site}?",
 														:method => "delete" %>)
 				</li>
 			<% end %>
