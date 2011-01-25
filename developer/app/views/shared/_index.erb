@@ -5,11 +5,34 @@
 <h2>Example Code</h2>
 <div id="tabs">
 <ul>
-<li><a href="#java">Java</a></li>
+<li><a href="#javascript">Javascript</a></li>
+	<li><a href="#java">Java</a></li>
 	<li><a href="#objc">iOS</a></li>
 	<li><a href="#ruby">Ruby</a></li>
 	<li><a href="#android">Android</a></li>
 </ul>
+<div class="code" id="javascript"><div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">linncer</span> <span class="o">=</span> <span class="nx">Linccer</span><span class="p">({</span><span class="s2">"api_key"</span><span class="o">:</span> <span class="s2">"your_api_key"</span><span class="p">,</span> <span class="s2">"server"</span><span class="o">:</span> <span class="s2">"sandbox"</span> <span class="p">});</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">Linccer</span><span class="p">.</span><span class="nx">autoLocate</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">linccer</span><span class="p">.</span><span class="nx">setEnvironmentCoordinates</span><span class="p">(</span><span class="nx">longitude</span><span class="p">,</span> <span class="nx">latitude</span><span class="p">,</span> <span class="nx">accuracy</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">linccer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'received'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do somthing with the received data</span>
+  <span class="p">});</span>
+
+  <span class="c1">// receive data from a distribution</span>
+  <span class="nx">linccer</span><span class="p">.</span><span class="nx">receive</span><span class="p">(</span><span class="s1">'ont-to-many'</span><span class="p">);</span>
+
+  <span class="c1">// distribute data</span>
+  <span class="nx">linccer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">'one-to-many'</span><span class="p">,</span> <span class="p">{</span><span class="nx">arbitrary</span> <span class="o">:</span> <span class="s1">'json data'</span><span class="p">});</span>
+
+<span class="p">}</span>
+</pre>
+</div></div>
 <div class="code" id="java"><div class="highlight">
 <pre><span class="n">Linccer</span> <span class="n">linccer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Linccer</span><span class="o">(</span><span class="k">new</span> <span class="n">ClientDescription</span><span class="o">(</span><span class="s">"Demo App"</span><span class="o">));</span>
 
@@ -114,7 +137,7 @@
 <p>Read the <a class="internal present" href="about_api.html">API Documentation</a>.</p>
 <h2>Getting started</h2>
 <ol>
-<li>Choose <span class="caps">README</span> file for your specified <span class="caps">API</span>: <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a> or <a href="https://github.com/hoccer/android-api">Android</a>  and check the genaral <a class="internal present" href="about_api.html">API Documentation</a>
+<li>Choose <span class="caps">README</span> file for your specified <span class="caps">API</span>: <a href="https://github.com/hoccer/javascript-api">JavaScript</a>, <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a> or <a href="https://github.com/hoccer/android-api">Android</a>  and check the genaral <a class="internal present" href="about_api.html">API Documentation</a>
 </li>
 	<li>Try the examples</li>
 	<li>Sign up for your <a class="signup_link" href="/accounts/sign_up"><span class="caps">API</span> Key</a>
