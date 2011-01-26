@@ -9,7 +9,8 @@
 	<meta name = "viewport" content = "width = 320,
 	       initial-scale = 1, user-scalable = no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<script src="http://linccer.sandbox.hoccer.com/v3/linccer.min.js" type="text/javascript" charset="utf-8"></script> /
+  <!-- either use the compressed linner.min.js or base.js + linccer.js -->
+	<script src="http://linccer.hoccer.com/v3/linccer.min.js" type="text/javascript" charset="utf-8"></script> /
 	<!-- <script src="../lib/base.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../lib/linccer.js" type="text/javascript" charset="utf-8"></script>	 -->
 	<link rel="stylesheet" href="images/sytle.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -31,7 +32,7 @@
 							
 			if (Linccer.autoLocation()) {
 				// initialize a new linccer
-				linccer = Linccer({"api_key": "e101e890ea97012d6b6f00163e001ab0", 'server': 'sandbox'});
+				linccer = Linccer({"api_key": "e101e890ea97012d6b6f00163e001ab0"});
 				
 				// add several event listener
 				linccer.on('error', function(error) {
@@ -60,7 +61,7 @@
 					var lat = new String(data.gps.latitude).substr(0,7);
 					var lng = new String(data.gps.longitude).substr(0,7);
 					
-					locationElement.innerHTML = lat + " " + lng + " ~" + data.gps.accuracy + "m";
+					locationElement.innerHTML = lat + " " + lng + " ~" + data.gps.accuracy + " m";
 				});
 				
 			}
@@ -96,10 +97,10 @@
 
 <body>
 	<div id="content">
-		<div id="header">
-			<a href="developer.hoccer.com"><img src="images/logo.jpg"></a>
+		<div id="header" style="text-align:center">
+			<a href="developer.hoccer.com"><img src="../images/linccer_logo_240px.png" style="border:0px;"></a>
 		</div>
-		<h1>Linccer Demo</h1>
+		<h1>Linccer Web Client Demo</h1>
 		<div id="location">
 		Location: <span id="coords"><img src="images/ajax-loader.gif" width="14" height="14" alt="Loader"></span>
 		</div>
@@ -107,7 +108,7 @@
 		<hr />
 		
 		<div id="send">
-			Send text to another device.
+			Send text to another client.
 			<input id="send_field" type="text" />
 			<span id="send_button"><input type="button" value="Send" onClick="send()" /></span>
 		</div>
@@ -115,7 +116,7 @@
 		<hr />
 		
 		<div id="receive">
-			Receive text from another device.<br />
+			Receive text from another client.<br />
 			<span id="receive_button"><input type="button" value="Receive" onClick="receive()" /></span>
 			<input id="receive_field" type="text" />
 		</div>
