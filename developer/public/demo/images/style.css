@@ -59,7 +59,7 @@ textarea {
 }		
 
 
-@media screen and (min-device-width: 481px) {
+@media (min-device-width: 481px) {
   #content {
     margin-top: 40px;
     padding: 30px 50px;
