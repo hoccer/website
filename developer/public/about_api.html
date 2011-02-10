@@ -243,21 +243,19 @@ The arrival order on the server is not importend. They just hava to arrive withi
 <script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.4.min.js"><\/script>')</script>
 
 <script src="http://hoccer.com/wp-content/themes/hoccer/js/script.js?v=1"></script>
+
+<!-- Piwik --> 
 <script type="text/javascript">
-	var pkBaseURL = document.location.protocol + "//" + "stats.hoccer-project.com" + "/";
-	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-	<!-- Piwik --> 
-	<script type="text/javascript">
-	var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.hoccer-project.com/" : "http://stats.hoccer-project.com/");
-	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-	</script><script type="text/javascript">
-	try {
-	var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
-	piwikTracker.trackPageView();
-	piwikTracker.enableLinkTracking();
-	} catch( err ) {}
-	</script><noscript><p><img src="http://stats.hoccer-project.com/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
-	<!-- End Piwik Tracking Tag -->
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.hoccer-project.com/" : "http://stats.hoccer-project.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.hoccer-project.com/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
 	
 
 
