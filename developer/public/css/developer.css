@@ -34,6 +34,7 @@
 .ui-widget :active { outline: none; }
 
 .code { font-size: 0.95em; font-family: monospace, sans-serif; }
+code { font-size: 0.95em; font-family: monospace, sans-serif; }
 
 dl { margin: 18px 0 18px 0; }
 dt { font-weight: bold; }
@@ -41,7 +42,7 @@ dd { padding-left: 10px; margin-bottom: 18px;}
 
 article img { display: block;   margin-left: auto; padding-right: 55px; margin-right: auto;}
 
-h3 {font-size: 1.1em}
+h3 {font-size: 1.1em; margin-top: 10px;}
 
 h4 {font-size: 1em; margin-top: 10px;}
 
@@ -94,4 +95,111 @@ p#flash_notice {
 
 input[type=password] {
   border: 1px solid #C5C5C5;
+}
+
+#dashboard {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  margin: 30px 0 40px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  
+  font-size: 17px;
+}
+
+div#articles #dashboard {
+  margin-bottom: 50px;
+}
+
+#dashboard h1 {
+  font-size: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 40px;
+  
+  background-color: #eee;
+}
+
+#dashboard h2 {
+  font-size: 20px;
+}
+
+#dashboard h3 {
+  padding-bottom: 12px;
+  font-size: 20px;
+}
+
+#dashboard section {
+  padding: 40px 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+#dashboard section:last-child {
+  border-bottom: 0;
+}
+
+#dashboard input[type=text] {
+  width: 400px;
+  font-size: 20px;
+}
+
+#dashboard #api_keys strong {
+  width: 130px;
+  height: 23px;
+  padding-top: 7px;
+
+  display: block;
+  float:left;
+}
+
+#dashboard ul {
+  list-style-type: none;
+  margin: 0 0 20px;
+}
+
+#dashboard ul li {
+  padding: 3px 0;
+}
+
+#dashboard ul li input[type=text] {
+  width: 250px;
+}
+
+#dashboard #website_form {
+  margin: 15px 0 30px;
+}
+
+#dashboard .note {
+  background: #FFEFD7;
+}
+
+#sidebar {
+  margin-right: -20px;
+  margin-top: 90px;
+   
+  font-size: 17px;
+  
+  border: 1px solid #e5e5e5;
+  border-right-width: 0;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+#sidebar ul li {
+  padding: 15px 25px;
+  border-bottom: 1px dashed #e5e5e5;  
+}
+
+#sidebar ul li#helpdesk {
+  margin-top: 80px;
+  border-top: 1px dashed #e5e5e5;
+  border-bottom: 0;
 }

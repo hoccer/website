@@ -1,8 +1,12 @@
 NewApi::Application.routes.draw do
+  get "account/index"
+
   get "api/index"
 
-  devise_for :accounts do 
-    get "sign_in", :to => "api#index"
+  devise_for :accounts
+  
+  resource :account, :only => [:show, :edit] do
+    resource :websites, :only => [:create, :destroy]
   end
 
   # The priority is based upon order of creation:

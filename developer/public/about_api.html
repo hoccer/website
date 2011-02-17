@@ -37,7 +37,7 @@
     <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
     <!-- <script src="js/modernizr-1.5.min.js"></script> //-->
 
-    <script src="/javascripts/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/jquery-ui-1.8.5.custom.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/javascripts/api-keys.js" type="text/javascript" charset="utf-8"></script>
 
@@ -95,47 +95,60 @@
 <p>The Linccer <span class="caps">API</span> is intended to connect arbitrary devices on the same location. The devices do not need to be in the same local network or use a common connection type, they just need to share the same (geo) environment. Our server uses environment informations, like gps coordinates to detect the devices that should be grouped:</p>
 <p><img src="http://developer.hoccer.com/images/environment-group-flow.png"></p>
 <h2>The Hoccer Utilities</h2>
-<p>The Hoccer Utilities are build on top of Linccer to provide a common protocol for sharing files and content:</p>
+<p>The Hoccer Utilities (jet to release) are build on top of Linccer to provide a common protocol for sharing files and content:</p>
 <p><img src="http://developer.hoccer.com/images/linccer-api-layers.png"></p>
 <h2>Which parts should you use?</h2>
 <p>Depending on your needs, you have to decide which parts to use.</p>
 <h3>You want to connect your Apps</h3>
-<p>The Linccer <span class="caps">API</span> allows to transfer arbitrary <span class="caps">JSON</span> data between the grouped devices. This allows high flexibility in what to share. Just transfer the data that best fits for your app. If you write an app for passing urls you can just send <code>{ url : "http://hoccer.com" }</code>, an app <br>
-But remember: to keep the sharing experience smooth and fast, the <span class="caps">JSON</span> should not be to large. If you want to pass larger content like images you should look at our FileCache <span class="caps">API</span>.</p>
-<h3>You want to offer a file sharing app.</h3>
-<p>In addition to the plain linking <span class="caps">API</span> we offer a Hoccer spec. Hoccer is our popular file sharing app available for iPhone and Android. It aims to simplify data sharing between devices. All Apps complying with the hoccer spec can exchange data between each other.</p>
+<p>The Linccer <span class="caps">API</span> allows to transfer arbitrary <span class="caps">JSON</span> data between the grouped devices. This allows high flexibility in what to share. Just transfer the data that best fits for your app. If you write an App for passing urls you can just send <code>{ url : "http://hoccer.com" }</code> or similar. Of course receivers must know the choosen lingo. To keep the sharing experience smooth and fast, the <span class="caps">JSON</span> should not be to large. If you want to pass larger content like images you can use our FileCache and transfer only the generated uri&rsquo;s with Linccer.</p>
+<h3>You want to offer a file sharing App</h3>
+<p>In addition to the plain linking <span class="caps">API</span> we soon offer a Hoccer transfer spec. Hoccer is our popular file sharing App currently available for iPhone and Android. It aims to simplify data sharing between devices. All Apps complying with the Hoccer spec can exchange data between each other.</p>
 <h2>Actions</h2>
-<p>A Linccer transaction consists of two actions, a send action and a receive action. E.g. the Hoccer App uses the throw and catch metaphor for triggering these actions. <br>
+<p>A Linccer transaction consists of two actions, a send action and a receive action. For example the Hoccer App uses the throw and catch metaphor for triggering these actions.<br>
 Currently both actions have to be performed (nearly) simultaneously. The way to trigger the actions is up to you. Some Apps may use buttons, others may require the users to bump their phones together.</p>
 <h3>Action Modes</h3>
-<p>Actions modes determine how many people can share and receive simultaneously.</p>
+<p>Actions modes determine how many devices can share and receive simultaneously in the same environment (eg. group). If the constrains are violated no transfer will happen at all. To make sure no other devices interfere actions may take some seconds to perform successful. If your App does not need <em>secure</em> transfer, drop us an email to change this behavior.</p>
 <h4>One-to-many</h4>
-<p>A one to many connection lets you distribute content from one device to several others.</p>
+<p>A one to many connection lets you distribute content from one device to several others. If two or more shares are triggered almost simultaneously in the same environment (eg. group), a collision error (Status Code 409) is send to all participants.</p>
 <h4>One-to-one</h4>
-<p>This mode ensures a one-to-one transaction.</p>
+<p>This mode ensures a one-to-one transaction between devices. If two or more shares or receives are triggered almost simultaneously in the same environment (eg. group), a collision error (Status Code 409) is send to all participants.</p>
 <h2>RESTful <span class="caps">API</span>
 </h2>
-<p>The Linccer <span class="caps">API</span> is a RESTful webservice. So if your favorite language has a http library (most have ;)) you can easily connect to our service. <br>
-For convienence we offer higher level APIs in Objective-C, Java, Ruby or JavaScript.</p>
-<p>Even when you plan to use one of the higher level api clients, you should read the RESTful Flow. It will give you a better understanding of how the linccer api works.</p>
-<h3>RESTful Flow</h3>
+<p>The Linccer <span class="caps">API</span> is a RESTful webservice. So if your favorite language has a http library (most have) you can easily connect to our service. <br>
+For convienence we offer higher level APIs in Objective-C, Java, Ruby, JavaScript and more (see our <a href="https://github.com/organizations/hoccer">GitHub page</a>).</p>
+<p>Even when you plan to use one of the higher level <span class="caps">API</span> implementations, you should read the <a href="api_overview.html">RESTful Flow</a>. It will give you a better understanding of how the Linccer <span class="caps">API</span> works.</p>
+<h3>
+<span class="caps">API</span> Commands</h3>
+<p>All commands require a self generated client-id which is simply a <span class="caps">UUID</span> like 1122ffaa-8c99-49ee-b045-33d737cc50f9. We recommend to keep the same uuid between sessions to make environment updates all more efficent.</p>
 <h4>
-<span class="caps">PUT</span> http://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
-<p>As mentioned above hoccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client.<br>
-To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
+<span class="caps">PUT</span> https://linccer.hoccer.com/v3/clients/[client_id]/environment</h4>
+<p>As mentioned above Linccer groups clients based on the environment. Currently an environment consists of the clients location (latitude, longitude, accuracy) and the bssids around the client:</p>
+<pre><code>{"gps":
+    {"accuracy":280,"longitude":13.409,"latitude":52.516, "timestamp":1291816828},
+ "network":
+    {"accuracy":650,"longitude":13.408,"latitude":52.517, "timestamp":1291644002}
+ "wifi":
+    {"bssids":["00:22:3f:11:5e:5e","00:22:3f:10:a8:bf"], "timestamp":1291644028},
+}</code></pre>
+<p>To allow a fast coupling, groups are created before the exchange is triggered. You must <span class="caps">PUT</span> the environment to our server and you are only allowed to exchange data afterwards.<br>
 You should also continue to watch changes in the environment and send another <span class="caps">PUT</span> request for each change.<br>
 Our Hoccer App starts sending the environment just after the startup. For other apps it might be more appropriate to start the environment updates when the user enters a sharing mode, but that depends on the type of your application.</p>
 <h4>
-<span class="caps">PUT</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<span class="caps">PUT</span> https://linccer.hoccer.com/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
 <p>To send data <span class="caps">PUT</span> a valid <span class="caps">JSON</span> string to the action uri. Send the data as <span class="caps">JSON</span> in the Request-Body.</p>
 <h4>
-<span class="caps">GET</span> http://api/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
+<span class="caps">GET</span> https://linccer.hoccer.com/v3/clients/[client_id]/action/[ one-to-one | one-to-many]</h4>
 <p>To receive data perform a <span class="caps">GET</span> request on an action uri. <br>
 The arrival order on the server is not importend. They just hava to arrive within three seconds.</p>
+<h3>
+<span class="caps">API</span> Keys and authentication</h3>
+<p>To make sure the Linccer actions of your App does not interfere with other Apps, you need to <a href="https://developer.hoccer.com/accounts/sign_up">register for an <span class="caps">API</span> Key</a> and use it for in all your requests. To simplify the try outs we use and demo <span class="caps">API</span> Key in all code examples on <a href="https://github.com/organizations/hoccer">GitHub page</a>. But as soon as your implementation get&rsquo;s serious we recommend to switch to an own key!</p>
+<h3>FileCache</h3>
+<p>If large files need to be transfered between devices you can use our FileCache to store the data temporary in the cloud. For example <code>POST &lt;multipart data&gt; http://filecache.hoccer.com/?expires_in=60</code> will return an uri where the posted file is available for one minute.</p>
 <h2>How to continue?</h2>
-<p>If you want to write a Linccer Client in another language read the complete RESTful specification.</p>
-<p>If you want to use Linccer in your app, read the appropriate reference (iOs, Java, JaveScript).</p>
-<p>If you want to connect your app with the Hoccer File Sharing Ecosystem, read the Hoccer spec.</p>
+<p>If you want to use Linccer in your App, read the appropriate reference (<a href="https://github.com/hoccer/javascript-api">JavaScript</a>, <a href="https://github.com/hoccer/ios-api">iOS</a>, <a href="https://github.com/hoccer/java-api">Java</a>, <a href="https://github.com/hoccer/ruby-api">Ruby</a>, <a href="https://github.com/hoccer/android-api">Android</a>).</p>
+<p>If you want to write a Linccer Client in another language or platform read the <a href="api_overview.html">complete RESTful specification</a>.</p>
+<p>If you want to connect your app with the Hoccer File Sharing Ecosystem, read the Hoccer Utilities spec (jet to come).</p>
 </div>
             </article>
           </div>
@@ -145,6 +158,9 @@ The arrival order on the server is not importend. They just hava to arrive withi
               <h4>APIs on GitHub</h4>
               <section>
                 <dl>
+                  <dt>JavaScript</dt>
+                  <dd>JS functions to simplify development of Linccer enabled webpages<br><a href="https://github.com/hoccer/javascript-api">Overview</a> |
+                      <a href="https://github.com/hoccer/javascript-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/javascript-api/archives/master">Download</a></dd>
                   <dt>iOS</dt>
                   <dd>Framework bundle for iPhone, iPodTouch and iPad<br><a href="https://github.com/hoccer/ios-api">Overview</a> |
                       <a href="https://github.com/hoccer/ios-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/ios-api/archives/master">Download</a></dd>
@@ -153,7 +169,10 @@ The arrival order on the server is not importend. They just hava to arrive withi
                       <a href="https://github.com/hoccer/java-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/java-api/archives/master">Download</a></dd>
                   <dt>Ruby</dt>
                   <dd>"gem install hoccer-api"<br><a href="https://github.com/hoccer/ruby-api">Overview</a> |
-                      <a href="https://github.com/hoccer/ruby-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/ios-api/archives/master">Download</a></dd>
+                      <a href="https://github.com/hoccer/ruby-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/ruby-api/archives/master">Download</a></dd>
+                  <dt>Android</dt>
+                  <dd>Library Project with an UI thread aware variant of the Java API<br><a href="https://github.com/hoccer/android-api">Overview</a> |
+                      <a href="https://github.com/hoccer/android-api/blob/master/README.textile">Readme</a> | <a href="https://github.com/hoccer/android-api/archives/master">Download</a></dd>
                 </dl>
               </section>
             </div>
@@ -221,11 +240,23 @@ The arrival order on the server is not importend. They just hava to arrive withi
     </footer>
 
 
-<script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.2.min.js"><\/script>')</script>
+<script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.4.min.js"><\/script>')</script>
 
 <script src="http://hoccer.com/wp-content/themes/hoccer/js/script.js?v=1"></script>
-<!--script type="text/javascript" charset="utf-8" src="http://api.twitter.com/1/statuses/user_timeline/hoccer.json?include_rts=true&count=2&callback=updateTwitter"></script-->
 
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.hoccer.com/" : "http://stats.hoccer.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.hoccer.com/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+	
 
 
 <!--[if lt IE 7 ]>

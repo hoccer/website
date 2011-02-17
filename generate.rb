@@ -5,7 +5,7 @@
 def update_module name
   puts "updateing module #{name}"
   dir = File.join(@root_dir, name)
-  system("cd #{dir} && git reset --hard && git pull")
+  system("cd #{dir} && git checkout master && git reset --hard && git pull")
   system("cd #{@root_dir} && git add #{name}")
 end
 

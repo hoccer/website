@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>SimpleTextTransfer</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name = "viewport" content = "width = 320,
+	       initial-scale = 1, user-scalable = no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- either use the compressed linner.min.js or base.js + linccer.js -->
+	<script src="https://linccer.hoccer.com/v3/linccer.min.js" type="text/javascript" charset="utf-8"></script> /
+	<!-- <script src="../lib/base.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../lib/linccer.js" type="text/javascript" charset="utf-8"></script>	 -->
+	<link rel="stylesheet" href="/demo/images/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<script type="text/javascript" charset="utf-8">
+		var inputField, outputField;
+		var sendButton, receiveButton;
+		var locationElement;
+
+		var linccer;
+
+		window.onload = function() {
+			locationElement = document.getElementById("coords");
+			inputField = document.getElementById("send_field");
+			outputField = document.getElementById("receive_field");
+			logArea = document.getElementById("logTextArea")
+			sendButton = document.getElementById("send_button");
+			receiveButton = document.getElementById("receive_button");
+							
+			if (Linccer.autoLocation()) {
+				// initialize a new linccer
+				linccer = Linccer({"api_key": "e101e890ea97012d6b6f00163e001ab0"});
+				
+				// add several event listener
+				linccer.on('error', function(error) {
+					alert(error.message);
+					
+					if (error.message == "timeout" || error.message == "conflict") {
+						unblock(sendButton);
+						unblock(receiveButton);
+					}
+				});
+			
+				linccer.on('received', function(data) {
+					unblock(receiveButton);
+					outputField.value = data[0].content;
+					outputField.style.visibility = 'visible';
+				});
+			
+				linccer.on('sent', function(data) {
+					unblock(sendButton);
+				});
+				
+				linccer.on('ready', function() {
+				});
+				
+				linccer.on('updated_environment', function(data) {
+					var lat = new String(data.gps.latitude).substr(0,7);
+					var lng = new String(data.gps.longitude).substr(0,7);
+					
+					locationElement.innerHTML = lat + " " + lng + " ~" + data.gps.accuracy + " m";
+				});
+				
+			}
+		}
+		
+		function send() {
+			linccer.send('one-to-one', {'content' : inputField.value});
+			block(sendButton);
+		}
+		
+		function receive() {
+			linccer.receive('one-to-one');
+			block(receiveButton);
+		}
+		
+		function block(element) {
+			element.tmp = element.innerHTML;
+			element.innerHTML = '<img src="/demo/images/ajax-loader.gif" width="14" height="14">'
+		}
+		
+		function unblock(element) {
+			if (element.tmp !== undefined) {
+				element.innerHTML = element.tmp;
+			}
+			
+			delete element.tmp
+		}
+		
+		
+	</script>
+
+</head>
+
+<body>
+	<div id="content">
+		<div id="header" style="text-align:center">
+			<a href="developer.hoccer.com"><img src="/demo/images/logo.png" style="border:0px;"></a>
+		</div>
+		<h1>Linccer Web Client Demo</h1>
+		<div id="location">
+		Location: <span id="coords"><img src="/demo/images/ajax-loader.gif" width="14" height="14" alt="Loader"></span>
+		</div>
+		
+		<hr />
+		
+		<div id="send">
+			Send text to another client.
+			<input id="send_field" type="text" />
+			<span id="send_button"><input type="button" value="Send" onClick="send()" /></span>
+		</div>
+		
+		<hr />
+		
+		<div id="receive">
+			Receive text from another client.<br />
+			<span id="receive_button"><input type="button" value="Receive" onClick="receive()" /></span>
+			<input id="receive_field" type="text" />
+		</div>
+		
+		<div id="log">
+			Log:
+			<textarea id="logTextArea"></textarea>
+		</div>
+	</div>
+</body>
+</html>
