@@ -1,2 +1,4 @@
-log
-tmp
+wordpress/*
+html_dummy/*
+developer/log/*
+developer/tmp/*
