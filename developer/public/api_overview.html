@@ -246,17 +246,20 @@ The server then keeps the connection open until the counter event happens.</p>
 <script>!window.jQuery && document.write('<script src="http://hoccer.com/wp-content/themes/hoccer/js/jquery-1.4.4.min.js"><\/script>')</script>
 
 <script src="http://hoccer.com/wp-content/themes/hoccer/js/script.js?v=1"></script>
+
+<!-- Piwik --> 
 <script type="text/javascript">
-	var pkBaseURL = document.location.protocol + "//" + "stats.artcom.de" + "/";
-	document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.hoccer.com/" : "http://stats.hoccer.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
 </script><script type="text/javascript">
-	try {
-		var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-		piwikTracker.setDocumentTitle(document.title);
-		piwikTracker.trackPageView();
-		piwikTracker.enableLinkTracking();
-	} catch( err ) {}
-</script>
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.hoccer.com/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+	
 
 
 <!--[if lt IE 7 ]>
