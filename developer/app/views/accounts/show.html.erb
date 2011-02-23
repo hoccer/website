@@ -10,7 +10,11 @@
 			<a href="https://developer.hoccer.com/about_api.html"><li>Documentation</li></a>
 			<a href="https://www.github.com/hoccer"><li>Plattform Libraries</li></a>
 			<a href="https://developer.hoccer.com/api_overview.html"><li>REST Spec</li></a>
-			<!-- <li id="helpdesk">Help Desk</li> -->
+			<% unless current_account.nil? %>
+				<a href="/accounts/sign_out"><li>Logout</li></a> 
+			<% end %>
+
+      <!-- <li id="helpdesk">Help Desk</li> -->
 	</div>
 </div>
 
