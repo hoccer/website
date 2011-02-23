@@ -16,7 +16,11 @@
 		<h1>Welcome <%= current_account.email %></h1>
 		
 		<section class="note">
-		The Linccer API is still in beta, you should not use it in production yet.
+    You can now start integrating Linccer magic in your Application. 
+          We suggest to read the 
+          <a href="https://developer.hoccer.com/about_api.html">General API Documentation</a>
+          and build upon one of our plattform libraries at 
+          <a href="https://github.com/organizations/hoccer">GitHub</a>.
 		<br /><br /> We appreciate your feedback at <a href="mailto:support@hoccer.com">support@hoccer.com</a>.
 		</section>
 		
@@ -24,7 +28,7 @@
 			<strong>API-Key:</strong> <%= text_field_tag(:api_key, current_account.api_key) %><br />
 			<strong>Shared Secret:</strong>	<%= text_field_tag(:shared_secret, current_account.shared_secret) %>
 
-			<p>Use this keys to authenticate your clients against the server (see in the <a href="https://github.com/hoccer">README</a> of the wrapper or in the <a href="https://developer.hoccer.com/about_api.html">REST API Documentation</a>).</p>
+			<p>Use this keys to authenticate your clients against the server (see in the README's of <a href="https://github.com/hoccer">the plattform SDK's</a> or the <a href="https://developer.hoccer.com/about_api.html">REST API Documentation</a>).</p>
 		</section>
 		
 		<section>
