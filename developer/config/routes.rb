@@ -7,6 +7,11 @@ NewApi::Application.routes.draw do
   devise_for :accounts
 
   resource :account, :only => [:show, :edit] do
+
+    member do
+      get 'statistics'
+    end
+
     resource :websites, :only => [:create, :destroy]
   end
 

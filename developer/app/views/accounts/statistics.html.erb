@@ -1,0 +1,42 @@
+<%= content_for(:headline) { "Developer Dashboard" } %>
+
+  <script src="/flot/jquery.flot.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/graph.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      HoccerGraph.graphs();
+    });
+  </script>
+
+<div class="column grid_3">
+	<div id="sidebar">
+		<ul>
+			<a href="https://developer.hoccer.com/account"><li>General</li></a>
+			<!-- <li>Your Account</li>
+			<li>Statistics</li> -->
+			<a href="https://developer.hoccer.com"><li>Examples</li></a>
+			<a href="https://developer.hoccer.com/about_api.html"><li>Documentation</li></a>
+			<a href="https://www.github.com/hoccer"><li>Plattform Libraries</li></a>
+			<a href="https://developer.hoccer.com/api_overview.html"><li>REST Spec</li></a>
+      <li><%= link_to 'Statistics', statistics_account_path %></li>
+			<% unless current_account.nil? %>
+				<a href="/accounts/sign_out"><li>Logout</li></a>
+			<% end %>
+
+      <!-- <li id="helpdesk">Help Desk</li> -->
+	</div>
+</div>
+
+<div class="column grid_9">
+  <article id="dashboard">
+    <h1>Statistics for <%= current_account.email %></h1>
+    <section>
+      <div class="graph" data-url="/statistics/per_date.js" style="width: 600px; height: 400px;"></div>
+    </section>
+  </article>
+
+</div>
+
+

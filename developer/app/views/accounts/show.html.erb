@@ -3,15 +3,16 @@
 <div class="column grid_3">
 	<div id="sidebar">
 		<ul>
-			<a href="https://developer.hoccer.com/account"><li>General</li></a>
+      <li><a href="https://developer.hoccer.com/account">General</a></li>
 			<!-- <li>Your Account</li>
 			<li>Statistics</li> -->
-			<a href="https://developer.hoccer.com"><li>Examples</li></a>
-			<a href="https://developer.hoccer.com/about_api.html"><li>Documentation</li></a>
-			<a href="https://www.github.com/hoccer"><li>Plattform Libraries</li></a>
-			<a href="https://developer.hoccer.com/api_overview.html"><li>REST Spec</li></a>
+      <li><a href="https://developer.hoccer.com">Examples</a></li>
+			<li><a href="https://developer.hoccer.com/about_api.html">Documentation</a></li>
+			<li><a href="https://www.github.com/hoccer">Plattform Libraries</a></li>
+      <li><a href="https://developer.hoccer.com/api_overview.html">REST Spec</a></li>
+      <li><%= link_to 'Statistics', statistics_account_path %></li>
 			<% unless current_account.nil? %>
-				<a href="/accounts/sign_out"><li>Logout</li></a> 
+        <li><a href="/accounts/sign_out">Logout</a></li>
 			<% end %>
 
       <!-- <li id="helpdesk">Help Desk</li> -->
@@ -21,50 +22,60 @@
 <div class="column grid_9">
   <article id="dashboard">
 		<h1>Welcome <%= current_account.email %></h1>
-		
+
 		<section class="note">
-    You can now start integrating Linccer magic in your Application. 
-          We suggest to read the 
+    You can now start integrating Linccer magic in your Application.
+          We suggest to read the
           <a href="https://developer.hoccer.com/about_api.html">General API Documentation</a>
-          and build upon one of our plattform libraries at 
+          and build upon one of our plattform libraries at
           <a href="https://github.com/organizations/hoccer">GitHub</a>.
 		<br /><br /> We appreciate your feedback at <a href="mailto:support@hoccer.com">support@hoccer.com</a>.
 		</section>
-		
+
 		<section id="api_keys">
 			<strong>API-Key:</strong> <%= text_field_tag(:api_key, current_account.api_key) %><br />
 			<strong>Shared Secret:</strong>	<%= text_field_tag(:shared_secret, current_account.shared_secret) %>
 
-			<p>Use this keys to authenticate your clients against the server (see in the README's of <a href="https://github.com/hoccer">the plattform libraries</a> or the <a href="https://developer.hoccer.com/about_api.html">REST API Documentation</a>).</p>
+      <p>
+        Use this keys to authenticate your clients against the server
+        (see in the README's of
+        <a href="https://github.com/hoccer">the plattform libraries</a>
+        or the <a href="https://developer.hoccer.com/about_api.html">REST API Documentation</a>).
+      </p>
 		</section>
-		
+
 		<section>
 			<h3>Javascript</h3>
-			<p>In order to use the <a href="https://github.com/hoccer/javascript-api">JavaScript API</a> on your website you must enter the sites' urls.</p>
-		
-		
-		<div id="website_form">
-			<h4>Your Websites:</h4>
-			
-			<ul>
-			<% current_account.websites.each do |site| %>
-				<li><%= site %> (<%= link_to 'delete', 
-														 account_websites_path(site),
-														:confirm => "remove #{site}?",
-														:method => "delete" %>)
-				</li>
-			<% end %>
-		
-			<li><%= form_tag( account_websites_path ) do %>
-				<%= text_field_tag(:website) %>
-				<%= submit_tag("add") %>
-			<% end %></li>
-			<ul>
-		</div>
-		
-		<p>We only allow requests from the specified urls. It is importent that the protocol matches. If you use both 'https' and 'http' you need to enter both urls.</p>
+      <p>In order to use the
+        <a href="https://github.com/hoccer/javascript-api">JavaScript API</a>
+        on your website you must enter the sites' urls.
+      </p>
+		  <div id="website_form">
+			  <h4>Your Websites:</h4>
+
+			  <ul>
+			    <% current_account.websites.each do |site| %>
+			    	<li><%= site %> (<%= link_to 'delete',
+			    											 account_websites_path(site),
+			    											:confirm => "remove #{site}?",
+			    											:method => "delete" %>)
+			    	</li>
+			    <% end %>
+
+			    <li><%= form_tag( account_websites_path ) do %>
+			    	<%= text_field_tag(:website) %>
+			    	<%= submit_tag("add") %>
+			    <% end %></li>
+			  <ul>
+		  </div>
+
+      <p>
+        We only allow requests from the specified urls. It is importent that
+        the protocol matches. If you use both 'https' and 'http' you need to
+        enter both urls.
+      </p>
 		</section>
-		
+
   </article>
 </div>
 

@@ -53,7 +53,12 @@ class ApiStats
         [ h["_id"].to_time.to_i*1000, h["value"]]
       end
 
-      [:label => "Transfers per Hour", :data  => data_array]
+      [
+        :label  => "Transfers per Hour",
+        :data   => data_array,
+        :color  => "rgb(65, 170, 193)",
+        :grid   => { :color => "rgb(40, 40, 40)" }
+      ]
 
     end
 

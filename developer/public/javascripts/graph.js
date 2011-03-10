@@ -13,18 +13,18 @@ var HoccerGraph = {};
           opacity: 0.80
       }).appendTo("body").fadeIn(200);
   };
-  
+
   HoccerGraph.graphs = function() {
     var previousPoint = null;
-  
+
     $(".graph").each(function(index) {
       var element = $(this),
               url = $(this).attr("data-url");
-            
+
       var request = $.getJSON(url, function(data) {
         $.plot(element,
               data,
-              {  grid: { hoverable: true, clickable: true },
+              {  grid: { hoverable: true, clickable: true, color : '#666666' },
                  xaxis: { mode: 'time' },
                  yaxis: { min: 0 },
                  legend: { position: 'sw' },
@@ -32,25 +32,25 @@ var HoccerGraph = {};
                  lines: { show: true }
                });
        });
-     
+
        element.bind("plothover", function (event, pos, item) {
            if (item) {
              if (previousPoint != item.datapoint) {
                previousPoint = item.datapoint;
-  
+
                $("#tooltip").remove();
                var x = new Date(item.datapoint[0]).toLocaleDateString(),
                    y = item.datapoint[1].toFixed(2);
-  
+
                showTooltip(item.pageX, item.pageY,
                            item.series.label + " of " + x + " = " + y);
              }
            } else {
                $("#tooltip").remove();
-               previousPoint = null;            
+               previousPoint = null;
            }
        });
-     
+
     });
   };
 })();
