@@ -2,9 +2,10 @@ NewApi::Application.routes.draw do
   get "account/index"
 
   get "api/index"
+  get "statistics/per_date"
 
   devise_for :accounts
-  
+
   resource :account, :only => [:show, :edit] do
     resource :websites, :only => [:create, :destroy]
   end
