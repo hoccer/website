@@ -9,64 +9,17 @@
 	<meta name="author" content="Robert Palmer">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="flot/jquery.flot.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/graph.js" type="text/javascript" charset="utf-8"></script>
 
+  <script type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
-    var showTooltip = function(x, y, contents) {
-        $('<div id="tooltip">' + contents + '</div>').css( {
-            position: 'absolute',
-            display: 'none',
-            top: y + 5,
-            left: x + 5,
-            border: '1px solid #fdd',
-            padding: '2px',
-            'background-color': '#fee',
-            opacity: 0.80
-        }).appendTo("body").fadeIn(200);
-    }
-    
-    $(document).ready( function() {
-      var previousPoint = null;
-      
-      $(".graph").each(function(index, element) {
-        var element = $(this),
-                url = $(this).attr("data-url");
-                
-        var request = $.getJSON(url, function(data) {
-          $.plot(element,
-                data,
-                {  grid: { hoverable: true, clickable: true },
-                   xaxis: { mode: 'time' },
-                   yaxis: { min: 0 },
-                   legend: { position: 'sw' },
-                   points: { show: true },
-                   lines: { show: true }
-                 });
-         });
-         
-         element.bind("plothover", function (event, pos, item) {
-             if (item) {
-               if (previousPoint != item.datapoint) {
-                 previousPoint = item.datapoint;
-
-                 $("#tooltip").remove();
-                 var x = new Date(item.datapoint[0]).toLocaleDateString(),
-                     y = item.datapoint[1].toFixed(2);
-
-                 showTooltip(item.pageX, item.pageY,
-                             item.series.label + " of " + x + " = " + y);
-               }
-             } else {
-                 $("#tooltip").remove();
-                 previousPoint = null;            
-             }
-         });
-         
-      });
+    $(document).ready(function() {
+      HoccerGraph.graphs();
     });
   </script>
+  
   </head>
 <body>
-  <div class="graph" data-url="/per_date.json" style="width: 700px; height: 400px;"></div>
   <div class="graph" data-url="/per_date.json" style="width: 700px; height: 400px;"></div>
 </body>
 </html>
