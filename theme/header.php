@@ -54,7 +54,7 @@
           <nav id="main_navigation" class="column grid_9">
             <ul>
               <!-- <li><a href="/hoc/">Send &amp; Receive</a></li> -->
-              <li><a href="http://www.hoccer.com/legacy/hoc.html">Web Client</a></li>
+              <li><a href="/webapp/">Web App</a></li>
               <li><a href="/support/">Support</a></li>
               <li><a href="/developer/">Developer</a></li>
               <li><a href="/blog/">Blog</a></li>
