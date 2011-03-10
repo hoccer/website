@@ -32,7 +32,7 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
-    bson (1.0.4)
+    bson (1.2.4)
     bson_ext (1.0.9)
     builder (2.1.2)
     columnize (0.3.1)
@@ -52,12 +52,11 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
-    mongo (1.0.7)
-      bson (>= 1.0.4)
-    mongoid (2.0.0.beta.18)
-      activemodel (~> 3.0.0)
-      bson (= 1.0.4)
-      mongo (= 1.0.7)
+    mongo (1.2.4)
+      bson (>= 1.2.4)
+    mongoid (2.0.0.rc.7)
+      activemodel (~> 3.0)
+      mongo (~> 1.2)
       tzinfo (~> 0.3.22)
       will_paginate (~> 3.0.pre)
     polyglot (0.3.1)
@@ -110,7 +109,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   devise
-  mongoid (>= 2.0.0.beta.18)
+  mongoid (>= 2.0.0.rc.7)
   rails (= 3.0.0)
   ruby-debug19
   thin
