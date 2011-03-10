@@ -23,14 +23,14 @@
             opacity: 0.80
         }).appendTo("body").fadeIn(200);
     }
-    
+
     $(document).ready( function() {
       var previousPoint = null;
-      
+
       $(".graph").each(function(index, element) {
         var element = $(this),
                 url = $(this).attr("data-url");
-                
+
         var request = $.getJSON(url, function(data) {
           $.plot(element,
                 data,
@@ -42,7 +42,7 @@
                    lines: { show: true }
                  });
          });
-         
+
          element.bind("plothover", function (event, pos, item) {
              if (item) {
                if (previousPoint != item.datapoint) {
@@ -57,16 +57,15 @@
                }
              } else {
                  $("#tooltip").remove();
-                 previousPoint = null;            
+                 previousPoint = null;
              }
          });
-         
+
       });
     });
   </script>
   </head>
 <body>
-  <div class="graph" data-url="/per_date.json" style="width: 700px; height: 400px;"></div>
-  <div class="graph" data-url="/per_date.json" style="width: 700px; height: 400px;"></div>
+  <div class="graph" data-url="/statistics/per_date.js" style="width: 700px; height: 400px;"></div>
 </body>
 </html>
