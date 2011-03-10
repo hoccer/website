@@ -3,16 +3,16 @@
 <div class="column grid_3">
 	<div id="sidebar">
 		<ul>
-      <li><a href="https://developer.hoccer.com/account">General</a></li>
+      <li><%= link_to 'General', account_path %></a></li>
 			<!-- <li>Your Account</li>
 			<li>Statistics</li> -->
-      <li><a href="https://developer.hoccer.com">Examples</a></li>
+			<li><a href="https://developer.hoccer.com">Examples</a></li>
 			<li><a href="https://developer.hoccer.com/about_api.html">Documentation</a></li>
 			<li><a href="https://www.github.com/hoccer">Plattform Libraries</a></li>
-      <li><a href="https://developer.hoccer.com/api_overview.html">REST Spec</a></li>
+			<li><a href="https://developer.hoccer.com/api_overview.html">REST Spec</a></li>
       <li><%= link_to 'Statistics', statistics_account_path %></li>
 			<% unless current_account.nil? %>
-        <li><a href="/accounts/sign_out">Logout</a></li>
+        <li><%= link_to 'Logout', destroy_account_session_path %></a></li>
 			<% end %>
 
       <!-- <li id="helpdesk">Help Desk</li> -->
