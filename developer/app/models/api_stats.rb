@@ -46,7 +46,7 @@ class ApiStats
         reduce_stats,
         :out    => { :inline => 1},
         :raw    => true,
-        :query  => {"timestamp" => {"$gt" => 24.hours.ago }}
+        :query  => {"timestamp" => {"$gt" => 24.hours.ago.utc }}
       )["results"]
 
       data_array = results.map do |h|
