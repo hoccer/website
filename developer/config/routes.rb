@@ -6,7 +6,7 @@ NewApi::Application.routes.draw do
 
   devise_for :accounts
 
-  resource :account, :only => [:show, :edit] do
+  resource :account, :only => [:show, :edit, :update] do
 
     member do
       get 'statistics'
