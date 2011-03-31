@@ -47,8 +47,8 @@ class ApiStats
         :out    => { :inline => 1},
         :raw    => true,
         :query  => {
-          "api_key" => api_key,
-          "timestamp" => {"$gt" => 24.hours.ago.utc }
+          "api_key" => api_key#,
+          #"timestamp" => {"$gt" => 24.hours.ago.utc }
         }
       )["results"]
 
