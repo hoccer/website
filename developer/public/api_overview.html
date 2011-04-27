@@ -60,11 +60,11 @@
       <header>
         <div class="row">
           <div class="column grid_3">
-            <a href="http://developer.hoccer.com"><img src="images/logo.jpg" alt="logo" /></a>
+            <a href="http://hoccer.com"><img src="images/logo.jpg" alt="logo" /></a>
           </div>
           <nav id="main_navigation" class="column grid_9">
             <ul>
-              <li><a href="http://www.hoccer.com/legacy/hoc.html">Web Client</a></li>
+              <li><a href="http://hoccer.com/webapp">Web App</a></li>
               <li><a href="http://hoccer.com/support/">Support</a></li>
               <li><a href="http://developer.hoccer.com/">Developer</a></li>
               <li><a href="http://hoccer.com/blog/">Blog</a></li>
@@ -100,7 +100,8 @@
                  "accuracy": 300, timestamp: _unix timestamp_ },
    wifi: {bssids: [123:1231:hbsa, 123:23:dfb], 
            timestamp: _unix timestamp_ },
-   latency: 300
+   latency: 300,
+   client_name: "robert's iphone"
 }
 ---
 201 Created</code></pre>
@@ -113,6 +114,20 @@
 <pre><code>DELETE /v3/clients/[client_id]/environment
 ---
 200 OK</code></pre>
+<h2>Peek</h2>
+<p>Peek allows you to get information about the client&rsquo;s group (the clients nearby). <br>
+If you pass the group hash in the request, the request is held until <br>
+the group changed.</p>
+<pre><code>GET /v3/clients/[uuid]/peek?group_id=[group_hash]
+---
+200 OK
+{
+    group_id: "[group_hash]",
+    group: [
+       {name: "robert's iphone", id: "[client_id]"},
+       {name: "john's iphone", id: "[client_id]"},
+    ]
+}</code></pre>
 <h2>Sharing</h2>
 <p>Succsessfully sharing data:</p>
 <pre><code>PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
