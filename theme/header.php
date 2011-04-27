@@ -54,12 +54,13 @@
           <nav id="main_navigation" class="column grid_9">
             <ul>
               <!-- <li><a href="/hoc/">Send &amp; Receive</a></li> -->
-              <li><a href="/webapp/">Web App</a></li>
-              <li><a href="/support/">Support</a></li>
-              <li><a href="/developer/">Developer</a></li>
-              <li><a href="/blog/">Blog</a></li>
-              <li><a href="/company/">Company</a></li>
-              <li><a href="/contact/">Contact</a></li>
+              <li><a href="http://webapp.hoccer.com">Web App</a></li>
+              <li><a href="http://hoccer.com/support/">Support</a></li>
+              <li><a href="http://hoccer.com/developer/">Developer</a></li>
+              <li><a href="http://hoccer.com/blog/">Blog</a></li>
+              <li><a href="http://hoccer.com/company/">Company</a></li>
+              <li><a href="http://hoccer.com/press/">Hoccer in the Press</a></li>
+              <li><a href="http://hoccer.com/contact/">Contact</a></li>
               <li><a href="http://www.twitter.com/hoccer"><img src="<?php bloginfo('template_url'); ?>/images/twitter.png" alt="twitter"/></a></li>
               <li><a href="http://www.facebook.com/hoccer"><img src="<?php bloginfo('template_url'); ?>/images/facebook.png" alt="facebook"/></a></li>
             </ul>
