@@ -52,7 +52,7 @@
                     </a>
                 </div>
                 <div class="column grid_3 app_market">
-                    <a href="http://www.doubletwist.com/apps/android/hoccer-data-sharing/5712903324521828760" alt="Hoccer for Android">
+                    <a href="https://market.android.com/details?id=com.artcom.hoccer" alt="Hoccer for Android">
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/market.jpg" alt="andriod market" />
                     </a>
                 </div>
