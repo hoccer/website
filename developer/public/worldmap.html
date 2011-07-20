@@ -26,7 +26,7 @@
       socket.connect();
 
       socket.on('message', function(data){
-          addMarker(map, data.latitude, data.longitude);
+		addMarker(map, data.latitude, data.longitude);
       });
     }
 
