@@ -100,7 +100,7 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
  * Register widgetized area and update sidebar with default widgets
  */
 function toolbox_widgets_init() {
-	register_sidebar( array (
+	register_sidebar( array (1,
 		'name' => __( 'Frontpage Features', 'themename' ),
 		'id' => 'frontpage-features',
 		'before_widget' => '',
@@ -109,13 +109,22 @@ function toolbox_widgets_init() {
 		'after_title' => '',
 	) );
 	
-	register_sidebar( array (
+	register_sidebar( array (2,
 		'name' => __( 'Company Infobox', 'themename' ),
 		'id' => 'company_infobox',
 		'before_widget' => '<div class="info_box">',
 		'after_widget' => '</div>',
 		'before_title' => ' <header><h2>',
 		'after_title' => '</h2></header>',
+	) );
+
+	register_sidebar( array (3,
+		'name' => __( 'Sidebar', 'themename' ),
+		'id' => 'sidebar',
+		'before_widget' => '<div class="widget_box">',
+		'after_widget' => '</section></div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4><section>',
 	) );
 		
 }

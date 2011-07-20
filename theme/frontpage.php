@@ -53,7 +53,10 @@
                 </div>
                 <div class="column grid_3 app_market">
                     <a href="https://market.android.com/details?id=com.artcom.hoccer" alt="Hoccer for Android">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/market.jpg" alt="andriod market" />
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/market_1.jpg" alt="andriod market" />
+                    </a>
+                    <a href="https://market.android.com/details?id=com.artcom.hoccer" alt="Hoccer for Android">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/market_2.png" alt="andriod market" />
                     </a>
                 </div>
               </div>
