@@ -40,13 +40,16 @@ class ApiStats
     end
 
     def unique_users_for_api_key api_key
-      
+
       results = collection.map_reduce(
         map_stats,
         reduce_stats,
         :out    => { :inline => 1},
         :raw    => true,
-        :query  => {"api_key" => api_key, "timestamp" => {"$gt" => 24.hours.ago.utc }}
+        :query  => {
+          "api_key" => api_key,
+          "timestamp" => {"$gt" => 24.hours.ago.utc }
+        }
       )["results"]
 
       data_array = results.map do |h|

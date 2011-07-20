@@ -35,7 +35,11 @@
 		<section id="api_keys">
 			<strong>API-Key:</strong> <%= text_field_tag(:api_key, current_account.api_key) %><br />
 			<strong>Shared Secret:</strong>	<%= text_field_tag(:shared_secret, current_account.shared_secret) %>
-
+      <p id="hoccer_compatible_widget">
+        <strong></strong>
+        <%= check_box_tag( :hoccer_compatible, 'true', current_account.hoccer_compatible ) %>
+        <span>Hoccer Compatible?</span>
+      </p>
       <p>
         Use this keys to authenticate your clients against the server
         (see in the README's of
