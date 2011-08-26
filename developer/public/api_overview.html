@@ -89,84 +89,176 @@
         <div class="row" id="articles">
           <div class="column grid_7">
             <article>
-              <div id="gollum-root">
-<h2>General</h2>
-<p>After installing a Linccer client on some device, the application code should generate a unique id which should be used throughout all sessions.</p>
-<p>Continious Environment Updates (should happen at least every ten seconds):</p>
-<pre><code>PUT /v3/clients/[client_id]/environment
-{  gps: {"latitude": 154.123, "longitude": 123456, 
+              <div id="gollum-root">h2. General
+
+After installing a Linccer client on some device, the application code should generate a unique id which should be used throughout all sessions. To view the implementation for public HTTPRequests ( such as in JavaScript ) view the "Hoccer server js implementation":https://github.com/hoccer/server/wiki/Hoccer-server-js-implementation page.
+
+Continuous Environment Updates (should happen at least every ten seconds):
+
+bc. PUT /v3/clients/[client_id]/environment
+{  
+   api_key : "valid_api_key",
+   signature : "valid_signature",
+   gps: {"latitude": 154.123, "longitude": 123456, 
            "accuracy": 300, timestamp: _unix timestamp_ },
    network: {"latitude": 154.123, "longitude": 123456, 
                  "accuracy": 300, timestamp: _unix timestamp_ },
-   wifi: {bssids: [123:1231:hbsa, 123:23:dfb], 
+   wifi: {bssids: [01:93:12:31:8b:0a, 12:03:43:0d:fb], 
            timestamp: _unix timestamp_ },
    latency: 300,
-   client_name: "robert's iphone"
+   , ],
+   client_name: "robert's iphone",
+   pubkey: "12345678"
 }
 ---
-201 Created</code></pre>
-<p>Environment Update on nonexisting client id:</p>
-<pre><code>PUT /v3/clients/[non_existing_client_id]/environment
-{  ... }
+201 Created
+{  coordinates: {quality: 1, info: "imprecise_data"},
+   wifi: {quality: 2, info: "good_data"},
+   quality: 2,
+   devices: 2}
+}
+
+If environment info could not be parsed:
+
+bc. PUT /v3/clients/[client_id]/environment
+{ bad json formated data }
 ---
-412 Precondition Failed (if id is no uuid)</code></pre>
-<p>Closing the Client (sign off)</p>
-<pre><code>DELETE /v3/clients/[client_id]/environment
+400 Bad Request
+{error:  [error returned by parser]}
+
+If API key or signature (not implemented!!!!) are invalid:
+
+bc. PUT /v3/clients/[client_id]/environment
 ---
-200 OK</code></pre>
-<h2>Peek</h2>
-<p>Peek allows you to get information about the client&rsquo;s group (the clients nearby). <br>
-If you pass the group hash in the request, the request is held until <br>
-the group changed.</p>
-<pre><code>GET /v3/clients/[uuid]/peek?group_id=[group_hash]
+401 Unauthorized
+{error: "Invalid API Key"}
+
+Closing the Client (sign off):
+
+bc. DELETE /v3/clients/[client_id]/environment
+---
+200 OK
+"deleted"
+
+Getting environment info for client:
+
+bc. GET /v3/clients/[client_id]
+---
+200 OK
+{  _id: 
+   api_key: ,
+   gps: {"latitude": 154.123, "longitude": 123456, 
+           "accuracy": 300, timestamp: _unix timestamp_ },
+   network: {"latitude": 154.123, "longitude": 123456, 
+                 "accuracy": 300, timestamp: _unix timestamp_ },
+   wifi: {bssids: [01:23:12:31:hb:0a, 12:03:23:0d:fb], 
+           timestamp: _unix timestamp_ },
+   latency: 300,
+   selected_clients: [, ],
+   client_name: "robert's iphone",
+   pubkey_id: "12345678",
+   client_uuid: ,
+   group_id: ,
+   created_at: 
+}
+
+If no client with that uuid was found:
+
+bc. GET /v3/clients/[client_id]
+---
+404 Not Found
+{error: "Client with uuid  was not found"}
+
+Getting public key of client with [pubkey_id]:
+
+bc. GET /v3/clients/[client_id]/[pubkey_id]/publickey
+---
+200 OK
+(public key)
+
+h2. Peek
+
+Peek allows you to get information about the client's group (the clients nearby). 
+If you pass the group hash in the request, the request is held until 
+the group changes.
+
+bc. GET /v3/clients/[uuid]/peek
 ---
 200 OK
 {
     group_id: "[group_hash]",
     group: [
-       {name: "robert's iphone", id: "[client_id]"},
-       {name: "john's iphone", id: "[client_id]"},
+       {name: "robert's iphone", id: "[client_id]", &gt;},
+       {name: "john's iphone", id: "[client_id]", &gt;},
     ]
-}</code></pre>
-<h2>Sharing</h2>
-<p>Succsessfully sharing data:</p>
-<pre><code>PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
+}
+
+h2. Sharing
+
+Sharing data:
+
+bc. PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
 {... json data ...}
 ---
 200 OK
-{... json data ...}</code></pre>
-<p>When no other clients has a similar envrionment or does not perform the counter part action in time</p>
-<pre><code>PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
-{... json data ...}
----
-204 No Content</code></pre>
-<p>When environment is insufficient (none provided or to inaccurate)</p>
-<pre><code>POST /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
-{... json data ...}
----
-412 Precondition Failed</code></pre>
-<p>Multiple incompatible actions at the same time (eg. collision)</p>
-<pre><code>PUT /v3/clients/action/[ one-to-one | one-to-many | many-to-many ]
----
-409 Conflict</code></pre>
-<h2>Receiving</h2>
-<pre><code>GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
----
-200 
 [
    {... json data ...}
-]</code></pre>
-<p>when receiving from multiple senders the array will contain a json object from each one-to-many can be watched by appending <code>waiting=true</code>.<br>
-The server then keeps the connection open until the counter event happens.</p>
-<p>When no other clients has a similar envrionment or does not perform the counter part action in time</p>
-<pre><code>GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many | many-to-many ]
+]
+
+If data could not be parsed:
+
+bc. PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+{ bad json formated data }
 ---
-204 No Content</code></pre>
-<p>Multiple incompatible actions at the same time (eg. collision)</p>
-<pre><code>PUT /v3/clients/action/[ one-to-one | one-to-many | many-to-many ]
+400 Bad Request
+{error:  [error returned by parser]}
+
+When no other client is in the same group or no receiving client is found in time 
+
+bc. PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+---
+204 No Content
+{message: timeout}
+
+Multiple incompatible actions at the same time (more than one sender or more than one receiver in case of one-to-one)
+
+bc. PUT /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
 ---
 409 Conflict
-</code></pre>
+{message: conflict}
+
+h2. Receiving
+
+bc. GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+---
+200 OK
+[
+   {... json data ...}
+]
+
+Can be watched by appending @waiting=true@.
+The server then keeps the connection open until the counter event happens.
+
+When no other client is in the same group or no sending client is found in time (if @waiting@ not set to @true@):
+
+bc. GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+---
+204 No Content
+{message: timeout}
+
+When no sending client is found after 60s (if @waiting=true@):
+
+bc. GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+---
+504 Gateway Timeout
+{message: request_timeout}
+
+Multiple incompatible actions at the same time (more than one sender or more than one receiver in case of one-to-one):
+
+bc. GET /v3/clients/[client_id]/action/[ one-to-one | one-to-many ]
+---
+409 Conflict
+{message: conflict}
 </div>
             </article>
           </div>
